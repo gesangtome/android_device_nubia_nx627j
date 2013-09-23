@@ -167,6 +167,10 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
+# Linux shell scripts
+PRODUCT_PACKAGES += \
+    init.mdm.sh
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \

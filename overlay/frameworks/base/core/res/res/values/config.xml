@@ -40,4 +40,7 @@
    <!-- Device supports Sustained Performance Mode-->
    <bool name="config_sustainedPerformanceModeSupported">true</bool>
 
+   <!-- Should the pinner service pin the Camera application? -->
+   <bool name="config_pinnerCameraApp">true</bool>
+
 </resources>

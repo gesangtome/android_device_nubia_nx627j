@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+PRODUCT_ENFORCE_RRO_TARGETS := framework-res
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
 	device/nubia/nx627j/overlay \

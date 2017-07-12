@@ -50,6 +50,9 @@ TARGET_ENABLE_MEDIADRM_64 := true
 DEVICE_MANIFEST_FILE := \
     device/nubia/nx627j/manifest.xml
 
+DEVICE_MATRIX_FILE   := \
+    device/nubia/nx627j/compatibility_matrix.xml
+
 # Kernel 
 TARGET_KERNEL_SOURCE := kernel/nubia/sm8150
 TARGET_KERNEL_CONFIG := sm8150-perf_defconfig

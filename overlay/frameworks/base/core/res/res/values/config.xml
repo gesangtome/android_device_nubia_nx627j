@@ -47,6 +47,9 @@
    <!-- Device supports Sustained Performance Mode-->
    <bool name="config_sustainedPerformanceModeSupported">true</bool>
 
+   <!-- enable wifi wakeup -->
+   <integer translatable="false" name="config_wifi_wakeup_available">1</integer>
+
    <!-- Should the pinner service pin the Camera application? -->
    <bool name="config_pinnerCameraApp">true</bool>
 

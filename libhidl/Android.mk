@@ -1,4 +1,5 @@
-# Copyright (C) 2017-2018 The LineageOS Project
+#
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,26 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-	device/nubia/nx627j/overlay \
-	device/nubia/nx627j/overlay-lineage
+include $(CLEAR_VARS)
+LOCAL_SHARED_LIBRARIES := libhidltransport
+LOCAL_MODULE := android.hidl.base@1.0
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+include $(BUILD_SHARED_LIBRARY)
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
-
-$(call inherit-product-if-exists, vendor/nubia/nx627j/nx627j-vendor.mk)
-
-# HIDL
-PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.manager@1.0
-
-
-# VNDK
-PRODUCT_PACKAGES += \
-    vndk_package
-
-# VNDK-SP
-PRODUCT_PACKAGES += \
-    vndk-sp
+include $(CLEAR_VARS)
+LOCAL_SHARED_LIBRARIES := libhidltransport
+LOCAL_MODULE := android.hidl.manager@1.0
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+include $(BUILD_SHARED_LIBRARY)

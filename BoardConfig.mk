@@ -43,6 +43,9 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := \
 TARGET_FS_CONFIG_GEN := \
     device/nubia/nx627j/config.fs
 
+# DRM
+TARGET_ENABLE_MEDIADRM_64 := true
+
 # Kernel 
 TARGET_KERNEL_SOURCE := kernel/nubia/sm8150
 TARGET_KERNEL_CONFIG := sm8150-perf_defconfig

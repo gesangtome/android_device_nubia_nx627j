@@ -84,7 +84,8 @@ PRODUCT_PACKAGES += \
 
 # fstab
 PRODUCT_PACKAGES += \
-    fstab.qcom
+    fstab.qcom \
+    init.qti.getbootdevice.sh
 
 # HIDL
 PRODUCT_PACKAGES += \

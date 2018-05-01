@@ -14,7 +14,8 @@
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-	device/nubia/nx627j/overlay
+	device/nubia/nx627j/overlay \
+	device/nubia/nx627j/overlay-lineage
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)

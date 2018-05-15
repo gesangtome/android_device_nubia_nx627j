@@ -249,6 +249,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JAR += telephony-ext
 
+# USB default HAL
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service
+
 # VNDK
 PRODUCT_PACKAGES += \
     vndk_package

@@ -598,6 +598,7 @@
            <name>ISecureElement</name>
            <instance>SIM1</instance>
            <instance>SIM2</instance>
+           <instance>eSE1</instance>
        </interface>
     </hal>
     <!-- RIL OEM HOOK -->

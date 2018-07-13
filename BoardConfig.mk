@@ -124,6 +124,9 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USES_QCOM_BSP := true
 
+# RIL
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 

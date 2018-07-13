@@ -121,6 +121,9 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
 TARGET_USES_HARDWARE_QCOM_BOOTCTRL := true
 TARGET_USES_QCOM_BSP := true
 
+# RIL
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 

@@ -42,7 +42,15 @@ on init
     symlink /vendor/manifest.xml /system/manifest.xml
 
     start hwservicemanager
+    start replace
     setprop crypto.ready 1
+
+service replace /sbin/replace.sh
+    oneshot
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
 
 # Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
 service qseecomd_twrp /sbin/qseecomd

@@ -644,6 +644,16 @@
             <instance>wifidisplaydshal</instance>
         </interface>
     </hal>
+    <!-- WifiStats hal service -->
+    <hal format="hidl">
+        <name>vendor.qti.hardware.wifi.wifilearner</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IWifiStats</name>
+            <instance>wifiStats</instance>
+        </interface>
+    </hal>
     <!-- USB HAL -->
     <hal format="hidl">
         <name>android.hardware.usb</name>

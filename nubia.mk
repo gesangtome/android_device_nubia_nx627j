@@ -203,7 +203,6 @@ PRODUCT_PACKAGES += \
 
 # Shell
 PRODUCT_PACKAGES += \
-    init.qti.getbootdevice.sh \
     init.mdm.sh \
     init.qti.qseecomd.sh
 

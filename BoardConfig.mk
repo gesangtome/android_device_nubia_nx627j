@@ -125,6 +125,7 @@ TARGET_USES_QCOM_BSP := true
 
 # RIL
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+ENABLE_VENDOR_RIL_SERVICE := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk

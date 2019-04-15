@@ -19,6 +19,9 @@ PRODUCT_RELEASE_NAME := nubia NX627J
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 # Inherit from natrium device
 $(call inherit-product, device/nubia/nx627j/nubia.mk)
 

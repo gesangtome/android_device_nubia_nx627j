@@ -132,5 +132,9 @@ VENDOR_SECURITY_PATCH := 2018-08-05
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
+# WLAN
+WIFI_HIDL_FEATURE_AWARE := true
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+
 # inherit from the proprietary version
 -include vendor/nubia/nx627j/BoardConfigVendor.mk

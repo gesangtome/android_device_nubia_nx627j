@@ -156,5 +156,9 @@ TW_DEVICE_VERSION := $(shell date "+%Y-%m-%d %H:%M")
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 
+# WLAN
+WIFI_HIDL_FEATURE_AWARE := true
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+
 # inherit from the proprietary version
 -include vendor/nubia/nx627j/BoardConfigVendor.mk

@@ -127,9 +127,6 @@ TARGET_USES_QCOM_BSP := true
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 ENABLE_VENDOR_RIL_SERVICE := true
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += device/nubia/nx627j
-
 # Security patch level
 VENDOR_SECURITY_PATCH := 2018-08-05
 

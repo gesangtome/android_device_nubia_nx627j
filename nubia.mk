@@ -24,6 +24,9 @@ $(call inherit-product-if-exists, vendor/nubia/nx627j/nx627j-vendor.mk)
 
 PRODUCT_ENFORCE_RRO_TARGETS := framework-res
 
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+    device/nubia/nx627j/overlay-lineage/lineage-sdk
+
 # Vendor properties
 -include device/nubia/nx627j/vendor_props.mk
 

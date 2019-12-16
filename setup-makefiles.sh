@@ -7,6 +7,9 @@
 
 set -e
 
+DEVICE_COMMON=nx627j
+VENDOR=nubia
+
 INITIAL_COPYRIGHT_YEAR=2018
 
 # Load extract_utils and do some sanity checks

@@ -1049,9 +1049,9 @@ service profiler_daemon /system/bin/profiler_daemon
     group root
     disabled
 
-service charger /charger
+service poweroffcharge /sbin/poweroffcharge
     class charger
-    group system graphics
+    group root system graphics
     seclabel u:r:healthd:s0
 
 service vendor.ssr_diag /system/vendor/bin/ssr_diag

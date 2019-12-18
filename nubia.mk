@@ -98,7 +98,8 @@ PRODUCT_PACKAGES += \
 
 # Charger
 PRODUCT_PACKAGES += \
-    charger
+    charger \
+    poweroffcharge
 
 # DRM
 PRODUCT_PACKAGES += \

@@ -131,7 +131,8 @@ endif
 
 # Charger
 PRODUCT_PACKAGES += \
-    charger
+    charger \
+    poweroffcharge
 
 # CNE
 PRODUCT_COPY_FILES += \

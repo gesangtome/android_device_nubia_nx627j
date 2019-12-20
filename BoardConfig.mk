@@ -203,6 +203,9 @@ VENDOR_SECURITY_PATCH := 2018-08-05
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
+# VNDK
+BOARD_VNDK_VERSION := current
+
 # WLAN
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211

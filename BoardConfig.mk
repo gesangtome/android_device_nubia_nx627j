@@ -202,6 +202,10 @@ VENDOR_SECURITY_PATCH := 2018-08-05
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
+# VNDK
+BOARD_VNDK_VERSION := current
+BOARD_VNDK_RUNTIME_DISABLE := false
+
 # WLAN
 BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := qcwcn

@@ -103,6 +103,9 @@ vendor/lib64/libcdsp_default_listener.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libsdsprpc.so
 
+# Charger
+vendor/bin/hvdcp_opti
+
 # QMI
 etc/permissions/qti_libpermissions.xml
 etc/permissions/qti_permissions.xml

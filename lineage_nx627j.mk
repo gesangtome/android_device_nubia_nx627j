@@ -12,3 +12,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Release name
+PRODUCT_RELEASE_NAME := nubia NX627J

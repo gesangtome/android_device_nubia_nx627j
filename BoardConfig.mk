@@ -114,6 +114,12 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/dsp:/dsp \
     /vendor/firmware_mnt:/firmware
 
+# QCOM
+QCOM_BOARD_PLATFORMS += msmnile
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
+TARGET_USES_HARDWARE_QCOM_BOOTCTRL := true
+TARGET_USES_QCOM_BSP := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk

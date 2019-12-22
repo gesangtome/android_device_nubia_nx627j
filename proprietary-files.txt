@@ -1285,6 +1285,10 @@ vendor/lib/libscvePanorama.so
 vendor/lib/libscvePanorama_lite.so
 vendor/lib/libscveScan3D.so
 
+# SSR
+vendor/bin/ssr_setup
+vendor/bin/subsystem_ramdump
+
 # Soter
 -app/SoterService/SoterService.apk
 vendor/bin/hw/vendor.qti.hardware.soter@1.0-service

@@ -33,6 +33,12 @@ TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := "nubia smartphone"
 TARGET_BOARD_PLATFORM := msmnile
 
+# Bluetooth
+BOARD_HAVE_BLUETOOTH_QCOM := true
+TARGET_USE_QTI_BT_STACK := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := \
+    device/nubia/nx627j/bluetooth/include
+
 # configfs
 TARGET_FS_CONFIG_GEN := \
     device/nubia/nx627j/config.fs

@@ -100,6 +100,9 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_FLASH_BLOCK_SIZE := 262144
 
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+
 # Recovery
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true

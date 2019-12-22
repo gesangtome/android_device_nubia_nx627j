@@ -93,6 +93,9 @@ TARGET_USES_QTI_CAMERA_DEVICE := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_USES_NUBIA_CAMERA := true
 
+# Charger
+BOARD_CHARGER_NO_UI := true
+
 # configfs
 TARGET_FS_CONFIG_GEN := \
     device/nubia/nx627j/config.fs

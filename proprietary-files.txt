@@ -1,3 +1,44 @@
+# ADSP
+vendor/bin/adsprpcd
+vendor/lib/libadsp_default_listener.so
+vendor/lib/libadsprpc.so
+vendor/lib/libmdsprpc.so
+vendor/lib/libsdsprpc.so
+vendor/lib64/libadsp_default_listener.so
+vendor/lib64/libadsprpc.so
+vendor/lib64/libmdsprpc.so
+
+# ADSP modules
+vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
+vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Encoder.so
+vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
+vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libarcsoft_hdrplus_hvx_skel.so
+vendor/lib/rfsa/adsp/libcamera_nn_skel.so
+vendor/lib/rfsa/adsp/libcvpdsp_skel.so
+vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libdsp_streamer_add_constant.so
+vendor/lib/rfsa/adsp/libdsp_streamer_binning.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libfastcvdsp_skel.so
+vendor/lib/rfsa/adsp/libhexagon_nn_skel.so
+vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
+vendor/lib/rfsa/adsp/libscveT2T_skel.so
+vendor/lib/rfsa/adsp/libsns_device_mode_skel.so
+vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
+vendor/lib/rfsa/adsp/libVC1DecDsp_skel.so
+vendor/lib/rfsa/adsp/libVC1Dec.so
+lib/rfsa/adsp/libdsp_streamer_qvrcam_receiver.so:vendor/lib/rfsa/adsp/libdsp_streamer_qvrcam_receiver.so
+lib/rfsa/adsp/libeye_tracking_dsp_sample_skel.so:vendor/lib/rfsa/adsp/libeye_tracking_dsp_sample_skel.so
+lib/rfsa/adsp/libqvr_cam_dsp_driver_skel.so:vendor/lib/rfsa/adsp/libqvr_cam_dsp_driver_skel.so
+lib/rfsa/adsp/libqvr_dsp_driver_skel.so:vendor/lib/rfsa/adsp/libqvr_dsp_driver_skel.so
+lib/rfsa/adsp/libqvr_dsp_driver_skel_v65.so:vendor/lib/rfsa/adsp/libqvr_dsp_driver_skel_v65.so
+lib/rfsa/adsp/libsns_device_mode_skel.so:vendor/lib/rfsa/adsp/libsns_device_mode_skel.so
+lib/rfsa/adsp/libsns_low_lat_stream_skel.so:vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
+lib/rfsa/adsp/libtracker_6dof_skel.so:vendor/lib/rfsa/adsp/libtracker_6dof_skel.so
+lib/rfsa/adsp/libtracker_6dof_skel_v65.so:vendor/lib/rfsa/adsp/libtracker_6dof_skel_v65.so
+
 # QMI
 etc/permissions/qti_libpermissions.xml
 etc/permissions/qti_permissions.xml

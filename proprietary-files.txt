@@ -1306,3 +1306,13 @@ vendor/bin/thermal-engine
 vendor/etc/thermal-engine.conf
 vendor/lib64/libthermalclient.so
 vendor/lib/libthermalclient.so
+
+# Thermal service - nubia
+bin/thermalserviced
+etc/init/thermalservice.rc
+lib64/libthermalservice.so
+lib64/libthermalcallback.so
+lib64/android.hardware.thermal@1.0.so
+lib64/android.hardware.thermal@1.1.so
+lib/android.hardware.thermal@1.0.so
+

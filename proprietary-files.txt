@@ -216,6 +216,73 @@ vendor/lib/vendor.qti.hardware.data.latency@1.0.so
 vendor/lib/vendor.qti.hardware.data.qmi@1.0.so
 vendor/lib/vendor.qti.latency@2.0.so
 
+# Display
+vendor/bin/qdcmss
+vendor/etc/init/qdcmss.rc
+
+# Display (HDR)
+vendor/lib/libhdr_tm.so
+vendor/lib64/libhdr_tm.so
+
+# Display (SDM)
+vendor/lib/libdpps.so
+vendor/lib/libsdm-colormgr-algo.so
+vendor/lib/libqseed3.so
+vendor/lib/libsdedrm.so
+vendor/lib/libsdm-color.so
+vendor/lib/libsdm-diag.so
+vendor/lib/libsdm-disp-vndapis.so
+vendor/lib/libsdmextension.so
+vendor/lib/libtinyxml2_1.so
+vendor/lib64/libdpps.so
+vendor/lib64/libsdm-colormgr-algo.so
+vendor/lib64/libqseed3.so
+vendor/lib64/libsdedrm.so
+vendor/lib64/libsdm-color.so
+vendor/lib64/libsdm-diag.so
+vendor/lib64/libsdm-disp-vndapis.so
+vendor/lib64/libsdmextension.so
+vendor/lib64/libtinyxml2_1.so
+
+# Display calibration data
+vendor/etc/qdcm_calib_data_dsi_ew811_1080_2340_amoled_cmd_panel.xml
+vendor/etc/qdcm_calib_data_nt35597_cmd_mode_dsi_truly_panel_with_DSC.xml
+vendor/etc/qdcm_calib_data_nt35597_video_mode_dsi_truly_panel_with_DSC.xml
+vendor/etc/qdcm_calib_data_nt35695b_truly_fhd_command_mode_dsi_panel.xml
+vendor/etc/qdcm_calib_data_nt35695b_truly_fhd_video_mode_dsi_panel.xml
+vendor/etc/qdcm_calib_data_sharp_1080p_cmd_mode_dsi_panel.xml
+vendor/etc/qdcm_calib_data_Sharp_4k_cmd_mode_dsc_dsi_panel.xml
+vendor/etc/qdcm_calib_data_Sharp_4k_video_mode_dsc_dsi_panel.xml
+vendor/etc/qdcm_calib_data_sw43404_amoled_cmd_mode_dsi_boe_panel_with_DSC.xml
+vendor/etc/qdcm_calib_data_sw43404_amoled_video_mode_dsi_boe_panel_with_DSC.xml
+
+# Display postprocessing
+vendor/bin/hw/vendor.display.color@1.0-service
+vendor/bin/ppd
+vendor/etc/init/vendor.display.color@1.0-service.rc
+vendor/lib/libdisp-aba.so
+vendor/lib/libmm-hdcpmgr.so
+vendor/lib/libdisplayqos.so
+vendor/lib/vendor.display.color@1.0.so
+vendor/lib/vendor.display.color@1.1.so
+vendor/lib/vendor.display.color@1.2.so
+vendor/lib/vendor.display.color@1.3.so
+vendor/lib/vendor.display.postproc@1.0.so
+vendor/lib64/libdisp-aba.so
+vendor/lib64/libmm-hdcpmgr.so
+vendor/lib64/libdisplayqos.so
+vendor/lib64/vendor.display.color@1.0.so
+vendor/lib64/vendor.display.color@1.1.so
+vendor/lib64/vendor.display.color@1.2.so
+vendor/lib64/vendor.display.color@1.3.so
+vendor/lib64/vendor.display.postproc@1.0.so
+
+# Display utils
+vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
+vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
+vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
+
 # QMI
 etc/permissions/qti_libpermissions.xml
 etc/permissions/qti_permissions.xml

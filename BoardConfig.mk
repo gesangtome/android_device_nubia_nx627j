@@ -28,6 +28,10 @@ TARGET_2ND_CPU_VARIANT := cortex-a75
 
 TARGET_USES_64_BIT_BINDER := true
 
+# Board
+TARGET_USES_HARDWARE_QCOM_BOOTCTRL := true
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
+
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := "nubia smartphone"
@@ -116,6 +120,9 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/dsp:/dsp \
     /vendor/firmware_mnt:/firmware
 
+# QCOM Hardware
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_USES_QCOM_BSP := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk

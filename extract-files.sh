@@ -1,67 +1,50 @@
 #!/bin/bash
-#
-# Copyright (C) 2018-2019 The LineageOS Project
-#
-# SPDX-License-Identifier: Apache-2.0
-#
+# Created by 弱弱的胖橘猫丷
 
-set -e
+source ../../../vendor/lineage/build/tools/extract_utils.sh
 
-# Load extract_utils and do some sanity checks
-MY_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
+function device_root_check() {
+    adb shell "type su" > /dev/null 2>&1
 
-LINEAGE_ROOT="${MY_DIR}"/../../..
+    if [ "$?" != "0" ];
+    then
+        return 1
+    fi
+}
 
-HELPER="${LINEAGE_ROOT}/vendor/lineage/build/tools/extract_utils.sh"
-if [ ! -f "${HELPER}" ]; then
-    echo "Unable to find helper script at ${HELPER}"
+function device_selinux_check() {
+    selinux_status=`adb shell "getenforce"`
+
+    if [ "$selinux_status" == "Enforcing" ];
+    then
+        disable_selinux=1
+    else
+        disable_selinux=0
+    fi
+}
+
+function selinux_disable() {
+    selinux_status=`adb shell "su -c 'setenforce 0'" > /dev/null 2>&1`
+}
+
+# Waiting for device to connect
+  init_adb_connection
+
+# Check device root status
+  printf "Checking device root status.\n" & device_root_check
+
+  if [ "$?" == 1 ];
+  then
+    printf "Device root detection failed, abort...\n"
     exit 1
-fi
-source "${HELPER}"
+  fi
 
-# Default to sanitizing the vendor folder before extraction
-CLEAN_VENDOR=true
+# Check selinux root status
+  printf "Checking device selinux status.\n" & device_selinux_check
 
-SECTION=
-KANG=
+  if [ "$disable_selinux" == 1 ];
+  then
+        printf "Disable device SELinux.\n" & selinux_disable
+  fi
 
-while [ "${#}" -gt 0 ]; do
-    case "${1}" in
-        -n | --no-cleanup )
-                CLEAN_VENDOR=false
-                ;;
-        -k | --kang )
-                KANG="--kang"
-                ;;
-        -s | --section )
-                SECTION="${2}"; shift
-                CLEAN_VENDOR=false
-                ;;
-        * )
-                SRC="${1}"
-                ;;
-    esac
-    shift
-done
-
-if [ -z "${SRC}" ]; then
-    SRC="adb"
-fi
-
-# Initialize the helper for common device
-setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" true "${CLEAN_VENDOR}"
-
-extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
-        "${KANG}" --section "${SECTION}"
-
-if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
-    # Reinitialize the helper for device
-    source "${MY_DIR}/../${DEVICE}/extract-files.sh"
-    setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" false "${CLEAN_VENDOR}"
-
-    extract "${MY_DIR}/../${DEVICE}/proprietary-files.txt" "${SRC}" \
-            "${KANG}" --section "${SECTION}"
-fi
-
-"${MY_DIR}/setup-makefiles.sh"
+  ./pull_adb.sh

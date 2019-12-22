@@ -1342,3 +1342,18 @@ vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
+
+# WLAN
+vendor/bin/cnss-daemon
+vendor/bin/wifilearner
+vendor/etc/wifi/fstman.ini
+vendor/etc/wifi/icm.conf
+vendor/etc/wifi/aoa_cldb_falcon.bin
+vendor/etc/wifi/aoa_cldb_swl14.bin
+vendor/etc/wifi/wpa_supplicant_diag.conf
+vendor/etc/wifi/wigig_p2p_supplicant.conf
+vendor/etc/wifi/wigig_supplicant.conf
+vendor/lib64/vendor.qti.hardware.wifi.keystore@1.0.so
+vendor/lib64/vendor.qti.hardware.wifi.wifilearner@1.0.so
+vendor/lib64/libmdmdetect.so
+vendor/lib/libmdmdetect.so

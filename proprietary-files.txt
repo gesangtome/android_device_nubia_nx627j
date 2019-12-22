@@ -503,6 +503,32 @@ vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
+# DPM
+bin/dpmd
+etc/dpm/dpm.conf
+etc/init/dpmd.rc
+etc/permissions/com.qti.dpmframework.xml
+etc/permissions/dpmapi.xml
+framework/com.qti.dpmframework.jar
+framework/dpmapi.jar
+framework/tcmclient.jar
+-priv-app/dpmserviceapp/dpmserviceapp.apk
+lib64/com.qualcomm.qti.dpm.api@1.0.so
+lib64/libdpmctmgr.so
+lib64/libdpmfdmgr.so
+lib64/libdpmframework.so
+lib64/libdpmtcm.so
+lib/com.qualcomm.qti.dpm.api@1.0.so
+lib/libdpmctmgr.so
+lib/libdpmfdmgr.so
+lib/libdpmframework.so
+lib/libdpmtcm.so
+vendor/bin/dpmQmiMgr
+vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
+vendor/lib64/libdpmqmihal.so
+vendor/lib/libdpmqmihal.so
+vendor/lib/com.qualcomm.qti.dpm.api@1.0.so
+
 # QMI
 etc/permissions/qti_libpermissions.xml
 etc/permissions/qti_permissions.xml

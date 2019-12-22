@@ -701,6 +701,49 @@ vendor/lib/vendor.qti.esepowermanager@1.0.so
 vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so
 vendor/lib64/vendor.qti.esepowermanager@1.0.so
 
+# Fingerprint
+-priv-app/FingerprintServiceExtension/FingerprintServiceExtension.apk
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
+etc/permissions/cn.nubia.fingerprintsupersnap.xml
+vendor/etc/permissions/qti_fingerprint_interface.xml
+vendor/etc/permissions/qti_fingerprint_interface.xml
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
+framework/ifaa_fingerprint.jar
+framework/vendor.goodix.hardware.biometrics.fingerprint-V2.1-java.jar
+framework/vendor.qti.hardware.fingerprint-V1.0-java.jar
+lib64/android.hardware.biometrics.fingerprint@2.1.so
+lib64/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
+vendor/lib64/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
+lib64/vendor.qti.hardware.fingerprint@1.0.so
+vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
+vendor/lib64/hw/fingerprint.goodix.so
+vendor/lib64/libgoodixhwfingerprint.so
+vendor/lib64/vendor.nubia.ifaa@1.0-impl.so
+vendor/lib64/libteeclientjni.so
+vendor/lib64/vendor.nubia.ifaa@1.0.so
+lib/vendor.qti.hardware.fingerprint@1.0.so
+lib/android.hardware.biometrics.fingerprint@2.1.so
+lib/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
+vendor/lib/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
+vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
+vendor/lib/hw/fingerprint.goodix.so
+vendor/lib/libgoodixhwfingerprint.so
+vendor/lib/vendor.nubia.ifaa@1.0-impl.so
+vendor/lib/libteeclientjni.so
+vendor/lib/vendor.nubia.ifaa@1.0.so
+
+# goodix fingerprint firmware
+vendor/firmware/goodix_firmware.bin
+vendor/firmware/goodix_cfg_group.bin
+vendor/firmware/goodix_front_firmware.bin
+vendor/firmware/goodix_front_cfg_group.bin
+vendor/firmware/goodix_front_cfg_group_1.bin
+vendor/firmware/goodix_front_cfg_group_2.bin
+
+# goodix fingerprint keylayout
+usr/keylayout/front_touch.kl
+usr/keylayout/second_touch.kl
+
 # QMI
 etc/permissions/qti_libpermissions.xml
 etc/permissions/qti_permissions.xml

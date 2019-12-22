@@ -73,6 +73,12 @@ AUDIO_FEATURE_ENABLED_RECORD_PLAY_CONCURRENCY := true
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
+# Avb
+BOARD_AVB_ENABLE := true
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += \
+    --set_hashtree_disabled_flag \
+    --flags 2
+
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := "nubia smartphone"

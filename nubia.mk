@@ -73,6 +73,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.1-service.clearkey
 
+# Fstab
+PRODUCT_PACKAGES += \
+    fstab.qcom
+
 # Graphics
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-impl \

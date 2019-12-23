@@ -153,6 +153,15 @@ PRODUCT_COPY_FILES += \
     device/nubia/nx627j/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml \
     device/nubia/nx627j/permissions/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    init.msm.usb.configfs.rc \
+    init.qcom.rc \
+    init.qcom.usb.rc \
+    init.recovery.qcom.rc \
+    init.target.rc \
+    ueventd.qcom.rc
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \

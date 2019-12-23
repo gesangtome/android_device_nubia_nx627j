@@ -82,6 +82,10 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.7 \
     vendor.qti.hardware.display.allocator@1.0-service
 
+# fstab
+PRODUCT_PACKAGES += \
+    fstab.qcom
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \

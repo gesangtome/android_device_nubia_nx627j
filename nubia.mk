@@ -174,7 +174,8 @@ PRODUCT_PACKAGES += \
 # Shell
 PRODUCT_PACKAGES += \
     init.qti.getbootdevice.sh \
-    init.mdm.sh
+    init.mdm.sh \
+    init.qti.qseecomd.sh
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \

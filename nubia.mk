@@ -24,6 +24,9 @@ $(call inherit-product-if-exists, vendor/nubia/nx627j/nx627j-vendor.mk)
 
 PRODUCT_ENFORCE_RRO_TARGETS := framework-res
 
+# Vendor properties
+-include device/nubia/nx627j/vendor_props.mk
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \

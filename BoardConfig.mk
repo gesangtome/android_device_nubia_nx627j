@@ -178,6 +178,10 @@ TARGET_USES_QCOM_BSP := true
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 ENABLE_VENDOR_RIL_SERVICE := true
 
+# System Properties
+TARGET_SYSTEM_PROP += \
+    device/nubia/nx627j/system.prop
+
 # Security patch level
 VENDOR_SECURITY_PATCH := 2018-08-05
 

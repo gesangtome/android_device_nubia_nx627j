@@ -169,7 +169,8 @@ PRODUCT_PACKAGES += \
 
 # Linux shell scripts
 PRODUCT_PACKAGES += \
-    init.mdm.sh
+    init.mdm.sh \
+    init.qti.qseecomd.sh
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \

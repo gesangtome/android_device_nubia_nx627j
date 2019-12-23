@@ -24,6 +24,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
 $(call inherit-product-if-exists, vendor/nubia/nx627j/nx627j-vendor.mk)
 
+# Vendor properties
+-include device/nubia/nx627j/vendor_props.mk
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \

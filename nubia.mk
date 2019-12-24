@@ -248,6 +248,11 @@ PRODUCT_COPY_FILES += \
     device/nubia/nx627j/permissions/qti_libpermissions.xml:system/etc/permissions/qti_libpermissions.xml \
     device/nubia/nx627j/permissions/qti_permissions.xml:system/etc/permissions/qti_permissions.xml
 
+# Radio
+PRODUCT_PACKAGES += \
+    libjson \
+    librmnetctl
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.msm.usb.configfs.rc \

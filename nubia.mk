@@ -224,6 +224,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.class_late.sh \
     init.class_main.sh \
+    init.crda.sh \
     init.mdm.sh \
     init.qti.qseecomd.sh
 

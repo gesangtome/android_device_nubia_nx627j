@@ -89,6 +89,10 @@ endif
 PRODUCT_PACKAGES += \
     ConfURIDialer
 
+# ConfigStore
+PRODUCT_PACKAGES += \
+    android.hardware.configstore@1.1-service
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \

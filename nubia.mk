@@ -278,6 +278,10 @@ PRODUCT_PACKAGES += \
     init.qti.can.sh \
     init.qti.qseecomd.sh
 
+# RenderScript
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \

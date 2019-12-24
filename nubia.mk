@@ -186,6 +186,10 @@ PRODUCT_COPY_FILES += \
     device/nubia/nx627j/configs/media_profiles_vendor.xml:vendor/etc/media_profiles_vendor.xml \
     device/nubia/nx627j/configs/system_properties.xml:vendor/etc/system_properties.xml
 
+# Netutils
+PRODUCT_PACKAGES += \
+    netutils-wrapper-1.0
+
 # Nubia
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/permissions/privapp-permissions-nubia.xml:system/etc/permissions/privapp-permissions-nubia.xml

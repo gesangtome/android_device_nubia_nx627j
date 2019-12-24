@@ -233,6 +233,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sdio.sh \
     init.qcom.sensors.sh \
     init.qcom.sh \
+    init.qti.can.sh \
     init.qti.qseecomd.sh
 
 # Seccomp policy

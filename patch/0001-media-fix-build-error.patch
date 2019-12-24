@@ -1,0 +1,63 @@
+From d9011bc2a92d574077590c64bf30036f06779b96 Mon Sep 17 00:00:00 2001
+From: flowertome <gesangtome@gmail.com>
+Date: Sun, 22 Dec 2019 20:45:11 +0800
+Subject: [PATCH] media: fix build error
+
+Change-Id: I69c3e0f052a33c806e43a9e8b617861dc721c1c1
+---
+ mm-core/Android.mk               | 4 ++++
+ mm-core/src/common/qc_omx_core.c | 6 ++++++
+ 2 files changed, 10 insertions(+)
+
+diff --git a/mm-core/Android.mk b/mm-core/Android.mk
+index 56b7cfc34..1ca361aed 100644
+--- a/mm-core/Android.mk
++++ b/mm-core/Android.mk
+@@ -8,6 +8,10 @@ OMXCORE_CFLAGS += -O0 -fno-inline -fno-short-enums
+ OMXCORE_CFLAGS += -D_ANDROID_
+ OMXCORE_CFLAGS += -U_ENABLE_QC_MSG_LOG_
+ 
++ifeq ($(strip $(ENABLE_CONFIGSTORE)),true)
++OMXCORE_CFLAGS := -DENABLE_CONFIGSTORE
++endif
++
+ #===============================================================================
+ #             Figure out the targets
+ #===============================================================================
+diff --git a/mm-core/src/common/qc_omx_core.c b/mm-core/src/common/qc_omx_core.c
+index 341a44d34..0408f675a 100644
+--- a/mm-core/src/common/qc_omx_core.c
++++ b/mm-core/src/common/qc_omx_core.c
+@@ -49,7 +49,9 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ #include "omx_core_cmp.h"
+ #include <cutils/properties.h>
+ 
++#ifdef ENABLE_CONFIGSTORE
+ #include "ConfigStore.h"
++#endif
+ 
+ extern omx_core_cb_type core[];
+ extern const unsigned int SIZE_OF_CORE;
+@@ -435,15 +437,19 @@ OMX_GetHandle(OMX_OUT OMX_HANDLETYPE*     handle,
+       if (!strncmp(core[cmp_index].so_lib_name, hwDecLib, strlen(hwDecLib)) ||
+           !strncmp(core[cmp_index].so_lib_name, swDecLib, strlen(swDecLib))) {
+         bool isVppEnabled = false;
++#ifdef ENABLE_CONFIGSTORE
+         if (isConfigStoreEnabled()) {
+           getConfigStoreBool("vpp", "enable", &isVppEnabled, false);
+         } else {
++#endif
+           char value[PROPERTY_VALUE_MAX];
+           if ((property_get("vendor.media.vpp.enable", value, NULL))
+                && (!strcmp("1", value) || !strcmp("true", value))) {
+             isVppEnabled = true;
+           }
++#ifdef ENABLE_CONFIGSTORE
+         }
++#endif
+         if (isVppEnabled) {
+           DEBUG_PRINT("VPP property is enabled");
+           vpp_cmp_index = get_cmp_index("OMX.qti.vdec.vpp");
+-- 
+2.24.1
+

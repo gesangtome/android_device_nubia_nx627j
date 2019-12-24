@@ -942,6 +942,14 @@ vendor/firmware/ipa_fws.b04
 vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
 
+# Light
+vendor/bin/hw/android.hardware.light@2.0-service
+vendor/etc/init/android.hardware.light@2.0-service.rc
+lib64/android.hardware.light@2.0.so
+lib/android.hardware.light@2.0.so
+vendor/lib64/hw/android.hardware.light@2.0-impl.so
+vendor/lib/hw/android.hardware.light@2.0-impl.so
+
 # Media
 lib/extractors/libmmparser.so
 lib/libFileMux.so

@@ -725,7 +725,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <!-- Vibrator -->
+    <!-- Vibrator HAL-->
     <hal format="hidl">
         <name>android.hardware.vibrator</name>
         <transport>hwbinder</transport>

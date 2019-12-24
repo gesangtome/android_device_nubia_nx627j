@@ -222,6 +222,7 @@ PRODUCT_PACKAGES += \
     init.crda.sh \
     init.mdm.sh \
     init.qcom.class_core.sh \
+    init.qcom.crashdata.sh \
     init.qti.qseecomd.sh
 
 # Seccomp policy

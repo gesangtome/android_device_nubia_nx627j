@@ -225,6 +225,7 @@ PRODUCT_PACKAGES += \
     init.qcom.crashdata.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
+    init.qcom.sdio.sh \
     init.qti.qseecomd.sh
 
 # Seccomp policy

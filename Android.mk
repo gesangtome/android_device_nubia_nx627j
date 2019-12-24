@@ -110,5 +110,6 @@ $(WCNSS_MAC_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /mnt/vendor/persist/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_INI_SYMLINK) $(WCNSS_MAC_SYMLINK)
-
+$(shell mkdir -p out/target/common/docs/; \
+        touch out/target/common/docs/lineage-api-stubs-timestamp;)
 endif

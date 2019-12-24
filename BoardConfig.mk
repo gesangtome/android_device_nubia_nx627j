@@ -204,6 +204,9 @@ BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 TARGET_SYSTEM_PROP += \
     device/nubia/nx627j/system.prop
 
+# RenderScript
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+
 # Security patch level
 VENDOR_SECURITY_PATCH := 2018-08-05
 

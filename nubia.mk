@@ -223,6 +223,7 @@ PRODUCT_PACKAGES += \
 # Shell
 PRODUCT_PACKAGES += \
     init.class_late.sh \
+    init.class_main.sh \
     init.mdm.sh \
     init.qti.qseecomd.sh
 

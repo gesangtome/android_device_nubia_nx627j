@@ -217,6 +217,7 @@ PRODUCT_PACKAGES += \
 
 # Linux shell scripts
 PRODUCT_PACKAGES += \
+    init.class_late.sh \
     init.mdm.sh \
     init.qti.qseecomd.sh
 

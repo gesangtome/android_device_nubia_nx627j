@@ -223,6 +223,7 @@ PRODUCT_PACKAGES += \
     init.mdm.sh \
     init.qcom.class_core.sh \
     init.qcom.crashdata.sh \
+    init.qcom.early_boot.sh \
     init.qti.qseecomd.sh
 
 # Seccomp policy

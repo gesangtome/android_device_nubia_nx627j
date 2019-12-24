@@ -877,4 +877,14 @@
             <instance>objectTracker</instance>
         </interface>
     </hal>
+    <!-- VPP -->
+    <hal format="hidl">
+        <name>vendor.qti.hardware.vpp</name>
+        <transport>hwbinder</transport>
+        <version>1.2</version>
+        <interface>
+            <name>IHidlVppService</name>
+            <instance>vppService</instance>
+        </interface>
+    </hal>
 </manifest>

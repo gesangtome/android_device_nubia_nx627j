@@ -105,6 +105,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.2-service.clearkey
 
+# DTS
+PRODUCT_PACKAGES += \
+    dts_sounds
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-service \

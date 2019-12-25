@@ -292,4 +292,29 @@ PRODUCT_PACKAGES += \
 # Whitelist
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+ 
+# WLAN
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
+    hostapd \
+    libwifi-hal-qcom \
+    libwpa_client \
+    wpa_supplicant \
+    wpa_supplicant.conf
 
+PRODUCT_COPY_FILES += \
+    device/nubia/nx627j/wifi/hostapd.accept:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd.accept \
+    device/nubia/nx627j/wifi/hostapd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd_default.conf \
+    device/nubia/nx627j/wifi/hostapd.deny:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd.deny \
+    device/nubia/nx627j/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    device/nubia/nx627j/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+    device/nubia/nx627j/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
+
+# WiFi Display
+PRODUCT_PACKAGES += \
+    libdisplayconfig \
+    libnl \
+    libqdMetaData.system
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon

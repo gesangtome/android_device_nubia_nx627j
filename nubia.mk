@@ -37,6 +37,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sdm
 
+# Nubia
+PRODUCT_COPY_FILES += \
+    device/nubia/nx627j/permissions/privapp-permissions-nubia.xml:system/etc/permissions/privapp-permissions-nubia.xml
+
 # QTI
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml \

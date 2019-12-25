@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <!-- Fingerprint service extension-->
+    <privapp-permissions package="com.fingerprints.serviceext">
+        <permission name="android.permission.MANAGE_FINGERPRINT"/>
+        <permission name="android.permission.STOP_APP_SWITCHES"/>
+    </privapp-permissions>
+</permissions>

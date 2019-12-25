@@ -170,15 +170,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.power</name>
-        <transport>hwbinder</transport>
-        <version>1.2</version>
-        <interface>
-            <name>IPower</name>
-            <instance>default</instance>
-       </interface>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.renderscript</name>
         <transport arch="32+64">passthrough</transport>
         <version>1.0</version>
@@ -366,11 +357,7 @@
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.qtiradio</name>
            <transport>hwbinder</transport>
-           <version>1.0</version>
            <version>2.0</version>
-           <version>2.1</version>
-           <version>2.2</version>
-           <version>2.3</version>
            <interface>
                <name>IQtiRadio</name>
                <instance>slot1</instance>
@@ -550,9 +537,9 @@
             <name>IDrmFactory</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.2::IDrmFactory/clearkey</fqname>
-        <fqname>@1.2::IDrmFactory/clearkey</fqname>
+        <fqname>@1.2::ICryptoFactory/clearkey</fqname>
         <fqname>@1.1::ICryptoFactory/widevine</fqname>
+        <fqname>@1.2::IDrmFactory/clearkey</fqname>
         <fqname>@1.1::IDrmFactory/widevine</fqname>
     </hal>
     <hal format="hidl">
@@ -877,16 +864,6 @@
         <interface>
             <name>IObjectTracker</name>
             <instance>objectTracker</instance>
-        </interface>
-    </hal>
-    <!-- VPP -->
-    <hal format="hidl">
-        <name>vendor.qti.hardware.vpp</name>
-        <transport>hwbinder</transport>
-        <version>1.2</version>
-        <interface>
-            <name>IHidlVppService</name>
-            <instance>vppService</instance>
         </interface>
     </hal>
     <!-- WifiStats hal service -->

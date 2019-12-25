@@ -42,6 +42,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/configs/media_profiles_vendor.xml:vendor/etc/media_profiles_vendor.xml
 
+# Nubia
+PRODUCT_COPY_FILES += \
+    device/nubia/nx627j/permissions/privapp-permissions-nubia.xml:system/etc/permissions/privapp-permissions-nubia.xml
+
 # QTI
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml \

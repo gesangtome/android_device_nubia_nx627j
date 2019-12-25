@@ -1,1 +1,193 @@
-# Created by 弱弱的胖橘猫丷
+# Audio
+audio.offload.gapless.enabled=true
+aaudio.hw_burst_min_usec=2000
+aaudio.mmap_exclusive_policy=2
+aaudio.mmap_policy=2
+af.fast_track_multiplier=2 \
+audio.deep_buffer.media=true \
+audio.offload.video=true \
+ro.af.client_heap_size_kbyte=7168 \
+
+# Bluetooth
+bt.max.hfpclient.connections=1
+ro.bluetooth.emb_wp_mode=false
+ro.bluetooth.wipower=false
+
+# Bringup properties
+persist.sys.force_sw_gles=1
+
+# Camera
+persist.sys.exif.model=nubia Z20
+persist.camera.front.flash.flag=1
+camera.aux.packagelist=com.android.camera,cn.nubia.factory,org.codeaurora.snapcam
+ro.camera.aux.packagelist=com.android.camera,cn.nubia.factory,org.codeaurora.snapcam
+ro.camera.mutil.packagelist=com.android.camera,org.codeaurora.snapcam
+
+# ZTEMT add for get total camera number
+ro.total.camera.number=7
+
+# CoreSight STM
+persist.debug.coresight.config=stm-events
+
+# CABC
+bsp.cabc.enable=true
+
+# DTS
+audio.offload.disable=1
+audio.effect.name=srs
+
+# Display
+debug.sf.enable_hwc_vds=1
+
+# ro.location properties below are used in conjunction
+# with NLP_MODE setting in /vendor/etc/izat.conf
+# either as the main network provider or as a fallback
+# provider depending on NLP_MODE that is set
+# These properties are optional and will not cause
+# issues if not set to existing packages.
+# ro.location.osnlp.package sets the name of default
+# OS sepecific network location provider package to use
+# ro.location.osnlp.region.package is set to the name
+# of the alternative network location provider package
+# to be used for a particular region where the default
+# network location provider is not functional
+ro.location.osnlp.package=com.google.android.gms
+ro.location.osnlp.region.package=
+
+# OpenGL ES
+# 196608 is decimal for 0x30000 to report version 3
+# 196609 is decimal for 0x30001 to report version 3.1
+# 196610 is decimal for 0x30002 to report version 3.2
+ro.opengles.version=196610
+
+# Media
+av.offload.enable=true
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+
+# Netflix
+ro.netflix.bsp_rev=Q855-16947-1
+
+# Nubia game mode
+ro.nubia.game_mode.enable=0
+ro.nubia.game_networkacc.enable=1
+
+# NFC
+#ro.nfc.port=I2C
+
+# Priv-app permissions whitelist
+ro.control_privapp_permissions=enforce
+
+# Telephony
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+persist.radio.phone.matchnum=11
+
+DEVICE_PROVISIONED=1
+ril.subscription.types=NV,RUIM
+rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
+
+# Set network mode to (T/L/G/W/1X/EVDO, T/L/G/W/1X/EVDO) for 7+7 mode device on DSDS mode
+ro.telephony.default_network=22,22
+
+# Turn on CdmaLTEPhone always
+telephony.lteOnCdmaDevice=1
+
+# rmnet
+persist.rmnet.data.enable=true
+persist.data.wda.enable=true
+persist.data.df.dl_mode=5
+persist.data.df.ul_mode=5
+persist.data.df.agg.dl_pkt=10
+persist.data.df.agg.dl_size=4096
+persist.data.df.mux_count=8
+persist.data.df.iwlan_mux=9
+persist.data.df.dev_name=rmnet_usb0
+
+# time-services
+persist.timed.enable=true
+
+# VOIP
+use.voice.path.for.pcm.voip=true
+
+# WFD
+persist.debug.wfd.enable=1
+persist.sys.wfd.virtual=0
+
+# Wlan
+config.disable_rtt=true
+
+# nubia
+# ro.build.rom.id=V7.0
+# ro.build.rom.internal.id=V2.0
+# ro.build.nubia.rom.code=V2.0
+# ro.build.nubia.rom.name=nubiaUI
+# ro.build.rom.pcb.silkscreen=NX627J_V1AMB
+# ro.nubia.qdcm.enable=1
+# ro.nubia.device.support_red_magic=1
+# ro.nubia.device.cmitid=2019CP4141
+ro.nubia.external=0
+# ro.nubia.edge.enable=1
+# ro.nubia.applock.enable=1
+
+# ro.nubia.dual_volte.enable=1
+# ro.nubia.device.recognition_screen=1
+ro.nubia.virtualgamekey.enable=1
+
+# ro.nubia.disable_proximity_outside_incall.enable=0
+# ro.nubia.dual_ct.enable=1
+# ro.nubia.AlipayGphone=true
+# ro.nubia.game_magicvoice.enable=0
+# ro.nubia.softsim_roaming.enable=1
+# ro.sf.enable.prlcdgpu=1
+# persist.sys.dumpsys.enable=0
+# persist.sys.devicename=nubia Z20
+# persist.nubia.multi.window=disable
+# debug.nubia.addfree=4
+# sys.nubia_safe_preset=1
+# sys.zte.bootsound.on=1
+# sys.zte.poalarm.support=1
+
+# System props for the MM modules
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-scan=true
+mmp.enable.3g2=true
+media.aac_51_output_enabled=true
+mm.enable.smoothstreaming=true
+
+# 13631487 is decimal sum of supported codecs in AAL
+# Codecs: (PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD MOV XVID
+vendor.mm.enable.qcom_parser=63963135
+persist.mm.enable.prefetch=true
+
+# System prop for power logs
+persist.power.logs.switch=0
+persist.power.logs.limit.time=24
+persist.power.logs.off.time=180
+persist.power.logs.off.level=5
+persist.power.logs.on.time=20
+persist.power.logs.on.level=8
+persist.power.logs.scecond=1
+
+# System prop for pm logs
+persist.power.pm.limit.time=120
+persist.power.pm.level=11
+persist.power.logs.hot.sumtime=5
+persist.power.logs.hot.pm.temp=410
+persist.power.logs.hot.temp=380
+
+# initialize QCA1530 detection
+sys.qca1530=detect
+
+ro.kernel.qemu.gles=0
+qemu.hw.mainkeys=0

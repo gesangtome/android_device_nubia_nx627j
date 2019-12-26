@@ -162,6 +162,12 @@ BOARD_KERNEL_CMDLINE := \
 BOARD_KERNEL_CMDLINE += \
     androidboot.usbcontroller=a600000.dwc3
 
+# OTA Package
+TARGET_OTA_ASSERT_DEVICE	:= nx627j,NX627J
+
+TARGET_RECOVERY_FSTAB := \
+    device/nubia/nx627j/recovery.fstab
+
 # Partitions
 TARGET_USES_UEFI := true
 TARGET_USES_MKE2FS := true

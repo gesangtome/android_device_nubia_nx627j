@@ -164,6 +164,10 @@ endif
 endif
 endif
 
+# OTA Package
+TARGET_OTA_ASSERT_DEVICE	:= NX627J,nx627j
+TARGET_RECOVERY_FSTAB	:= device/nubia/nx627j/recovery.fstab
+
 # Partitions
 TARGET_USES_UEFI := true
 TARGET_USES_MKE2FS := true

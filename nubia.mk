@@ -136,6 +136,16 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.allocator@1.0-service \
     vendor.display.config@1.11
 
+# GPS
+PRODUCT_COPY_FILES += \
+    device/nubia/nx627j/configs/gps/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
+    device/nubia/nx627j/configs/gps/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
+    device/nubia/nx627j/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
+    device/nubia/nx627j/configs/gps/izat.conf:$(TARGET_COPY_OUT_VENDOR)/etc/izat.conf \
+    device/nubia/nx627j/configs/gps/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
+    device/nubia/nx627j/configs/gps/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
+    device/nubia/nx627j/configs/gps/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \

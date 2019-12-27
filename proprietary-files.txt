@@ -106,6 +106,20 @@ vendor/lib64/libsdsprpc.so
 # Charger
 vendor/bin/hvdcp_opti
 
+# CVP
+vendor/bin/hw/vendor.qti.hardware.cvp@1.0-service
+vendor/etc/init/vendor.qti.hardware.cvp@1.0-service.rc
+vendor/lib/vendor.qti.hardware.cvp@1.0-halimpl.so
+vendor/lib/libcvp.so
+vendor/lib/libcvp_common.so
+vendor/lib/libcvp_stub.so
+vendor/lib/vendor.qti.hardware.cvp@1.0.so
+vendor/lib64/libcvp.so
+vendor/lib64/libcvp_common.so
+vendor/lib64/libcvp_stub.so
+vendor/lib64/vendor.qti.hardware.cvp@1.0.so
+vendor/lib64/vendor.qti.hardware.cvp@1.0-halimpl.so
+
 # CNE
 -priv-app/CNEService/CNEService.apk
 etc/permissions/cneapiclient.xml

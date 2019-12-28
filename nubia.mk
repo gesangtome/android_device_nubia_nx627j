@@ -85,6 +85,10 @@ PRODUCT_PACKAGES += \
     Snap
 endif
 
+# ConfURIDialer
+PRODUCT_PACKAGES += \
+    ConfURIDialer
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \

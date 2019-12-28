@@ -70,6 +70,21 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fs_config_files
 
+# Camera
+PRODUCT_PACKAGES += \
+    android.frameworks.displayservice@1.0 \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service_64 \
+    libxml2
+
+ifeq ($(strip $(TARGET_USES_NUBIA_CAMERA)),true)
+PRODUCT_PACKAGES += \
+    NB-Camera
+else
+PRODUCT_PACKAGES += \
+    Snap
+endif
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \

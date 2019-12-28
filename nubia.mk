@@ -235,6 +235,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
 
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext
+
+PRODUCT_BOOT_JAR += telephony-ext
+
 # VNDK
 PRODUCT_PACKAGES += \
     vndk_package

@@ -1480,6 +1480,30 @@ vendor/etc/thermal-engine.conf
 vendor/lib64/libthermalclient.so
 vendor/lib/libthermalclient.so
 
+# Thermal engine profile
+etc/.tp/.thermal-mode-00-01.conf:vendor/etc/.tp/.thermal-mode-00-01.conf
+etc/.tp/.thermal-mode-00-02.conf:vendor/etc/.tp/.thermal-mode-00-02.conf
+etc/.tp/.thermal-mode-00-03.conf:vendor/etc/.tp/.thermal-mode-00-03.conf
+etc/.tp/.thermal-mode-00-04.conf:vendor/etc/.tp/.thermal-mode-00-04.conf
+etc/.tp/.thermal-mode-00-05.conf:vendor/etc/.tp/.thermal-mode-00-05.conf
+etc/.tp/.thermal-mode-01-01.conf:vendor/etc/.tp/.thermal-mode-01-01.conf
+etc/.tp/.thermal-mode-01-02.conf:vendor/etc/.tp/.thermal-mode-01-02.conf
+etc/.tp/.thermal-mode-01-03.conf:vendor/etc/.tp/.thermal-mode-01-03.conf
+etc/.tp/.thermal-mode-01-04.conf:vendor/etc/.tp/.thermal-mode-01-04.conf
+etc/.tp/.thermal-mode-01-05.conf:vendor/etc/.tp/.thermal-mode-01-05.conf
+etc/.tp/.thermal-mode-02-01.conf:vendor/etc/.tp/.thermal-mode-02-01.conf
+etc/.tp/.thermal-mode-02-02.conf:vendor/etc/.tp/.thermal-mode-02-02.conf
+etc/.tp/.thermal-mode-02-03.conf:vendor/etc/.tp/.thermal-mode-02-03.conf
+etc/.tp/.thermal-mode-02-04.conf:vendor/etc/.tp/.thermal-mode-02-04.conf
+etc/.tp/.thermal-mode-02-05.conf:vendor/etc/.tp/.thermal-mode-02-05.conf
+etc/.tp/.thermal-mode-02-06.conf:vendor/etc/.tp/.thermal-mode-02-06.conf
+etc/.tp/.thermal-mode-03-01.conf:vendor/etc/.tp/.thermal-mode-03-01.conf
+etc/.tp/.thermal-mode-03-02.conf:vendor/etc/.tp/.thermal-mode-03-02.conf
+etc/.tp/.thermal-mode-03-03.conf:vendor/etc/.tp/.thermal-mode-03-03.conf
+etc/.tp/.thermal-mode-03-04.conf:vendor/etc/.tp/.thermal-mode-03-04.conf
+etc/.tp/.thermal-mode-03-05.conf:vendor/etc/.tp/.thermal-mode-03-05.conf
+etc/.tp/.thermal-mode-03-06.conf:vendor/etc/.tp/.thermal-mode-03-06.conf
+
 # Thermal service - nubia
 bin/thermalserviced
 etc/init/thermalservice.rc

@@ -83,6 +83,10 @@ endif
 PRODUCT_PACKAGES += \
     libcryptfs_hw
 
+# ConfURIDialer
+PRODUCT_PACKAGES += \
+    ConfURIDialer
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \

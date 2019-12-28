@@ -34,6 +34,18 @@ lib/rfsa/adsp/libsns_low_lat_stream_skel.so:vendor/lib/rfsa/adsp/libsns_low_lat_
 lib/rfsa/adsp/libtracker_6dof_skel.so:vendor/lib/rfsa/adsp/libtracker_6dof_skel.so
 lib/rfsa/adsp/libtracker_6dof_skel_v65.so:vendor/lib/rfsa/adsp/libtracker_6dof_skel_v65.so
 
+# ANT+ (system)
+lib/com.qualcomm.qti.ant@1.0.so
+-lib/libantradio.so
+lib64/com.qualcomm.qti.ant@1.0.so
+-lib64/libantradio.so
+
+# ANT+ (vendor)
+vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
+vendor/lib/com.qualcomm.qti.ant@1.0.so
+vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
+vendor/lib64/com.qualcomm.qti.ant@1.0.so
+
 # Audio (amplifier firmware)
 vendor/firmware/tfa98xx.cnt
 

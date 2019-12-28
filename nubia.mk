@@ -67,6 +67,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fs_config_files
 
+# ANT+
+PRODUCT_PACKAGES += \
+    AntHalService
+
 # Camera
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \

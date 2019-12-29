@@ -1303,7 +1303,6 @@ vendor/lib/libqmiservices.so
 etc/permissions/embms.xml
 etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
-etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
 framework/embmslibrary.jar
 framework/qcnvitems.jar
 framework/qcrilhook.jar

@@ -110,6 +110,10 @@ PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0-impl.generic \
     android.hardware.contexthub@1.0-service
 
+# DATA
+PRODUCT_COPY_FILES += \
+    device/nubia/nx627j/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \

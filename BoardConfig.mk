@@ -225,6 +225,15 @@ VENDOR_SECURITY_PATCH := 2018-08-05
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
+    device/nubia/nx627j/sepolicy/private
+
+BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
+    device/nubia/nx627j/sepolicy/public
+
+BOARD_SEPOLICY_DIRS += \
+    device/nubia/nx627j/sepolicy/vendor
+
 # Recovery
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true

@@ -1,0 +1,14 @@
+# Created by 弱弱的胖橘猫丷
+
+
+# Firmware
+/firmware				u:object_r:firmware_file:s0
+/bt_firmware/bt_firmware(/.*)?		u:object_r:bt_firmware_file:s0
+/bt_firmware				u:object_r:bt_firmware_file:s0
+
+# DSP
+/(vendor|system/vendor)/dsp(/.*)?	u:object_r:adsprpcd_file:s0
+/dsp(/.*)?				u:object_r:adsprpcd_file:s0
+
+# Persist
+/persist(/.*)?				u:object_r:mnt_vendor_file:s0

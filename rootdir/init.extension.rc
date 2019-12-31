@@ -1,0 +1,13 @@
+#
+# Copyright (c) 2016-2019, nubia. All rights reserved.
+#
+
+import /vendor/etc/init/hw/init.touch.rc
+import /vendor/etc/init/hw/init.camera.rc
+import /vendor/etc/init/hw/init.platform.rc
+import /vendor/etc/init/hw/init.dmapp.rc
+import /vendor/etc/init/hw/init.sensors.rc
+import /vendor/etc/init/hw/init.haptic.rc
+import /vendor/etc/init/hw/init.fingerprint.rc
+import /vendor/etc/init/hw/init.light.rc
+import /vendor/etc/init/hw/init.led.rc

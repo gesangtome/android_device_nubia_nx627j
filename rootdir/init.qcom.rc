@@ -28,8 +28,6 @@
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.msm.usb.configfs.rc
 import /vendor/etc/init/hw/init.target.rc
-import /vendor/etc/init/hw/init.qcom.factory.rc
-import /vendor/etc/init/hw/init.qcom.test.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -125,6 +123,7 @@ on boot
 
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/device/extldo
     chmod 0660 /sys/class/rfkill/rfkill0/device/extldo
+    chmod 0666 /sys/module/lpm_levels/parameters/sleep_disabled
 
     #Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
@@ -223,6 +222,13 @@ on boot
     chown system system /sys/class/sensors/apds9930-proximity/enable
     chown system system /sys/class/sensors/apds9930-proximity/poll_delay
 
+    # change ownership and premission for awinic haptic shock with music
+    chown system audio /dev/aw8695_haptic
+    chmod 0660 /dev/aw8695_haptic
+    chown system audio /sys/class/leds/vibrator_aw8695/haptic_audio
+    chmod 0660 /sys/class/leds/vibrator_aw8695/haptic_audio
+    mkdir /data/awinic 0770 system audio
+
     # Create directory used for display
     # for backward compatibility
     mkdir /persist/display 0770 system graphics
@@ -234,6 +240,8 @@ on boot
 
     # Create hvdcp_opti directory
     mkdir /mnt/vendor/persist/hvdcp_opti 0770 root system
+    mkdir /mnt/vendor/persist/factory/ 0777 system system
+    mkdir /mnt/vendor/persist/woodpecker/ 0777 system system
 
 # msm specific files that need to be created on /data
 on post-fs-data
@@ -264,7 +272,15 @@ on post-fs-data
     mkdir /data/vendor/qtee 0770 system system
 
     #Create folder of camera
-    mkdir /data/vendor/camera 0770 camera camera
+    mkdir /data/vendor/camera 0775 camera camera
+    chown cameraserver cameraserver /sys/kernel/camera/file_dump
+    chown cameraserver cameraserver /sys/kernel/camera/torch_switch
+    chown cameraserver cameraserver /sys/kernel/camera/ois_switch
+    chown cameraserver cameraserver /sys/kernel/camera/eeprom_calibration
+    chmod 0666 /sys/kernel/camera/file_dump
+    chmod 0666 /sys/kernel/camera/torch_switch
+    chmod 0666 /sys/kernel/camera/ois_switch
+    chmod 0666 /sys/kernel/camera/eeprom_calibration
 
     #Change ownership to system
     chown system system /data/vendor/tombstones
@@ -420,6 +436,14 @@ on post-fs-data
 
     #Start move time data to /data/vendor once post-fs-data done
     start vendor.move_time_data
+
+    #Start DTS EAGLE
+    mkdir /data/vendor/audio/dts 0771 media audio
+
+    copy /data/misc/dts/dts_hpx_settings /data/vendor/audio/dts/dts_hpx_settings
+    chown audioserver audio /data/vendor/audio/dts/dts_hpx_settings
+    setprop ro.vendor.dts.licensepath "/vendor/etc/dts/"
+    setprop ro.vendor.dts.cfgpath "/vendor/etc/dts/"
 
 service nqnfcinfo /system/vendor/bin/nqnfcinfo
     class late_start
@@ -1025,9 +1049,9 @@ service profiler_daemon /system/bin/profiler_daemon
     group root
     disabled
 
-service charger /charger
+service poweroffcharge /sbin/poweroffcharge
     class charger
-    group system graphics
+    group system graphics root
     seclabel u:r:healthd:s0
 
 service vendor.ssr_diag /system/vendor/bin/ssr_diag

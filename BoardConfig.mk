@@ -145,14 +145,17 @@ BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_TAGS_OFFSET := 0x00000100
 
+BOARD_PREBUILT_DTBOIMAGE := \
+    device/nubia/nx627j/dtb/dtbo.img
+
 BOARD_MKBOOTIMG_ARGS := \
     --kernel_offset $(BOARD_KERNEL_OFFSET) \
     --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
     --tags_offset $(BOARD_TAGS_OFFSET)
 
-BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 NEED_KERNEL_MODULE_VENDOR := true
+
 
 BOARD_KERNEL_CMDLINE := \
     console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xa90000 \

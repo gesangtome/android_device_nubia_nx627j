@@ -164,6 +164,9 @@ BOARD_KERNEL_CMDLINE := \
 BOARD_KERNEL_CMDLINE += \
     androidboot.usbcontroller=a600000.dwc3
 
+# Keymaster
+TARGET_PROVIDES_KEYMASTER := true
+
 # OTA Package
 TARGET_OTA_ASSERT_DEVICE	:= nx627j,NX627J
 

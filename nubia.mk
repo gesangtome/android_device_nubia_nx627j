@@ -141,6 +141,15 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+PRODUCT_COPY_FILES += \
+    device/nubia/nx627j/configs/media_codecs.xml:vendor/etc/media_codecs.xml \
+    device/nubia/nx627j/configs/media_codecs_performance.xml:vendor/etc/media_codecs_performance.xml \
+    device/nubia/nx627j/configs/media_codecs_vendor.xml:vendor/etc/media_codecs_vendor.xml \
+    device/nubia/nx627j/configs/media_profiles.xml:vendor/etc/media_profiles.xml \
+    device/nubia/nx627j/configs/media_profiles_V1_0.xml:vendor/etc/media_profiles_V1_0.xml \
+    device/nubia/nx627j/configs/media_profiles_vendor.xml:vendor/etc/media_profiles_vendor.xml \
+    device/nubia/nx627j/configs/system_properties.xml:vendor/etc/system_properties.xml
+
 # Nubia
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/permissions/privapp-permissions-nubia.xml:system/etc/permissions/privapp-permissions-nubia.xml

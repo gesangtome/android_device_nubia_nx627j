@@ -230,6 +230,9 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 VENDOR_SECURITY_PATCH := 2018-08-05
 
 # SELinux
+# Split selinux policy
+PRODUCT_SEPOLICY_SPLIT := true
+
 include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \

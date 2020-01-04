@@ -27,20 +27,14 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __INIT_MSM__H__
-#define __INIT_MSM__H__
+#ifndef __INIT_MSM_NUBIA__H__
+#define __INIT_MSM_NUBIA__H__
 
-#include <sys/system_properties.h>
+#define system_fingerprint	"ro.build.fingerprint"
+#define system_description	"ro.build.description"
+#define vendor_fingerprint	"ro.vendor.build.fingerprint"
 
-#define PROP_HWROTATE    "ro.sf.hwrotation"
-#define PROP_LCDDENSITY  "ro.sf.lcd_density"
-#define PROP_QEMU_NAVKEY "qemu.hw.mainkeys"
-#define PROP_BOOT_BASEBAND "ro.boot.baseband"
+#define finger_sys		"nubia/NX627J/NX627J:9/PKQ1.190714.001/eng.nubia.20191016.215019:user/release-keys"
+#define desc_sys		"NX627J-user 9 PKQ1.190714.001 eng.nubia.20191016.215019 release-keys"
 
-#define UNUSED(a)       ((void)(a))
-#define ISMATCH(a,b)    (!strncmp(a,b,PROP_VALUE_MAX))
-
-void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type);
-int read_file2(const char *fname, char *data, int max_size);
-
-#endif /* __INIT_MSM__H__ */
+#endif /* __INIT_MSM_NUBIA__H__ */

@@ -137,6 +137,10 @@ DEVICE_MANIFEST_FILE := \
 DEVICE_MATRIX_FILE   := \
     device/nubia/nx627j/compatibility_matrix.xml
 
+# Vendor init
+TARGET_INIT_VENDOR_LIB := //device/nubia/nx627j:libinit.nubia_sm8150
+TARGET_RECOVERY_DEVICE_MODULES := libinit.nubia_sm8150
+
 # Kernel 
 TARGET_KERNEL_SOURCE := kernel/nubia/sm8150
 TARGET_KERNEL_CONFIG := sm8150-perf_defconfig

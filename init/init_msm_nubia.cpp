@@ -1,5 +1,5 @@
 /*
-   Copyright (c) 2013, The Linux Foundation. All rights reserved.
+   Copyright (c) 2013-2015, The Linux Foundation. All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -27,55 +27,43 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <stdlib.h>
-
-#include "vendor_init.h"
+#include <sys/sysinfo.h>
+#include <android-base/properties.h>
 #include "property_service.h"
-#include "log.h"
-#include "util.h"
+#include "vendor_init.h"
+#include "init_msm_nubia.h"
 
-#include "init_msm.h"
+using android::base::GetProperty;
+using android::init::property_set;
 
-void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
+/* Initialize new string variables */
+const std::string finger;
+const std::string desc;
+const std::string v_finger;
+
+void checking_device_Identifier()
 {
-    char platform[PROP_VALUE_MAX];
-    int rc;
+    /* Assigning a null character variable */
+    GetProperty(system_fingerprint, finger);
+    GetProperty(system_description, desc);
+    GetProperty(vendor_fingerprint, v_finger);
 
-    rc = property_get("ro.board.platform", platform);
-    if (!rc || !ISMATCH(platform, ANDROID_TARGET))
-        return;
+    /* Set to the fingerprint of the vendor If not equal*/
+    if (finger != finger_sys) {
+        property_set(system_fingerprint, finger_sys);
+    }
+    /* Set to the description of the vendor If not equal*/
+    if (desc != desc_sys) {
+        property_set(system_description, desc_sys);
+    }
+    /* vendor fingerprint == system fingerprint, Direct assignment */
+    if (v_finger != finger_sys) {
+        property_set(vendor_fingerprint, finger_sys);
+    }
+}
 
-    if (ISMATCH(board_type, "Liquid")) {
-        if (msm_ver == 196608) {
-            property_set(PROP_HWROTATE, "90");
-        }
-        property_set(PROP_LCDDENSITY, "160");
-    }
-    else if (ISMATCH(board_type, "MTP"))
-        property_set(PROP_LCDDENSITY, "240");
-    else {
-        if (msm_id == 109)
-            property_set(PROP_LCDDENSITY, "160");
-        else
-            property_set(PROP_LCDDENSITY, "240");
-    }
-
-    /* Populate system properties */
-    switch (msm_id) {
-        case 87:
-            /* 8960 */
-            property_set("debug.composition.type", "dyn");
-            break;
-        case 138:
-        case 153:
-        case 154:
-        case 155:
-        case 156:
-        case 157:
-            /* 8064 V2 PRIME | 8930AB | 8630AB | 8230AB | 8030AB | 8960AB */
-            property_set("debug.composition.type", "c2d");
-            break;
-        default:
-            ; /* do nothing */
-    }
+void vendor_load_properties()
+{
+    /* Call: checking_device_Identifier */
+    checking_device_Identifier();
 }

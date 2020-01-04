@@ -90,26 +90,5 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_FLASH_BLOCK_SIZE := 262144
 
-# Recovery
-TW_THEME := portrait_hdpi
-TW_EXTRA_LANGUAGES := true
-TW_INCLUDE_NTFS_3G := true
-TW_USE_TOOLBOX := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
-TW_DEFAULT_BRIGHTNESS := 160
-TW_MAX_BRIGHTNESS := 255
-TW_SCREEN_BLANK_ON_BOOT := true
-TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_EXCLUDE_TWRPAPP := true
-TW_INCLUDE_LOGCAT := true
-TW_USES_LOGD := true
-TW_AUTHOR_NAME := '弱弱的胖橘猫丷'
-TW_DEVICE_NAME := nubia Z20
-TW_DEVICE_VERSION := $(shell date "+%Y-%m-%d %H:%M")
-
-RECOVERY_SDCARD_ON_DATA := true
-TARGET_RECOVERY_QCOM_RTC_FIX := true
-
 # inherit from the proprietary version
 -include vendor/nubia/nx627j/BoardConfigVendor.mk

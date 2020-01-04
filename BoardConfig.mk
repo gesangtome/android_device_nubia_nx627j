@@ -109,6 +109,9 @@ TARGET_USES_NUBIA_CAMERA := true
 BOARD_CHARGER_NO_UI := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
+# CNE
+BOARD_USES_QCNE := true
+
 # configfs
 TARGET_FS_CONFIG_GEN := \
     device/nubia/nx627j/config.fs

@@ -148,18 +148,6 @@ BOARD_KERNEL_CMDLINE := \
 BOARD_KERNEL_CMDLINE += \
     androidboot.usbcontroller=a600000.dwc3
 
-ifeq ($(TARGET_BUILD_VARIANT),user)
-  BOARD_KERNEL_CMDLINE += buildvariant=user
-else
-ifeq ($(TARGET_BUILD_VARIANT),userdebug)
-  BOARD_KERNEL_CMDLINE += buildvariant=userdebug
-else
-ifeq ($(TARGET_BUILD_VARIANT),eng)
-  BOARD_KERNEL_CMDLINE += buildvariant=eng
-endif
-endif
-endif
-
 # Partitions
 TARGET_USES_UEFI := true
 TARGET_USES_MKE2FS := true

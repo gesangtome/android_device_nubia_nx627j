@@ -202,6 +202,11 @@ PRODUCT_COPY_FILES += \
     device/nubia/nx627j/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml \
     device/nubia/nx627j/permissions/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml
 
+# QMI
+PRODUCT_COPY_FILES += \
+    device/nubia/nx627j/permissions/qti_libpermissions.xml:system/etc/permissions/qti_libpermissions.xml \
+    device/nubia/nx627j/permissions/qti_permissions.xml:system/etc/permissions/qti_permissions.xml
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.msm.usb.configfs.rc \

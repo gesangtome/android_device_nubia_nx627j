@@ -235,6 +235,7 @@ VENDOR_SECURITY_PATCH := 2018-08-05
 PRODUCT_SEPOLICY_SPLIT := true
 
 include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy-legacy/sepolicy.mk
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
     device/nubia/nx627j/sepolicy/private

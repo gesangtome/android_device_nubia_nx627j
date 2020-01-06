@@ -43,6 +43,7 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
+    audio.primary.msmnile \
     tinymix
 
 # Audio (SoundFX)
@@ -80,6 +81,10 @@ PRODUCT_PACKAGES += \
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+    libbt-vendor
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -131,6 +136,10 @@ PRODUCT_PACKAGES += \
 # Fstab
 PRODUCT_PACKAGES += \
     fstab.qcom
+
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service
 
 # Graphics
 PRODUCT_PACKAGES += \
@@ -263,7 +272,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service-qti \
+    android.hardware.power@1.2-service-qti
 
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml

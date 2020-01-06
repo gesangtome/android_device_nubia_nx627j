@@ -1027,10 +1027,7 @@ vendor/lib/libspcom.so
 vendor/lib64/libspcom.so
 
 # light
-framework/android.hardware.light-V2.0-java.jar
 vendor/etc/permissions/android.hardware.light.xml
-vendor/lib64/hw/lights.msmnile.so
-vendor/lib/hw/lights.msmnile.so
 
 # Latency
 framework/vendor.qti.hardware.data.latency-V1.0-java.jar

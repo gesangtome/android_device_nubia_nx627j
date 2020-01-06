@@ -189,6 +189,12 @@ BOARD_KERNEL_CMDLINE := \
 BOARD_KERNEL_CMDLINE += \
     androidboot.usbcontroller=a600000.dwc3
 
+# android selinux
+ifneq ($(TARGET_BUILD_VARIANT),user)
+BOARD_KERNEL_CMDLINE += \
+    androidboot.selinux=permissive
+endif
+
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 

@@ -321,7 +321,8 @@ PRODUCT_PACKAGES += \
     init.light.rc \
     init.platfrom.rc \
     init.sensors.rc \
-    init.touch.rc
+    init.touch.rc \
+    init.flowertome.rc
 
 # Shell
 PRODUCT_PACKAGES += \

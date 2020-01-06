@@ -123,6 +123,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
 
+# DPM
+PRODUCT_BOOT_JARS += \
+    tcmiface
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
@@ -140,6 +144,9 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service
+
+PRODUCT_BOOT_JARS += \
+    ifaa_fingerprint
 
 # Graphics
 PRODUCT_PACKAGES += \

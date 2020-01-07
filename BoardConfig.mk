@@ -178,7 +178,7 @@ BOARD_BOOTIMG_HEADER_VERSION := 1
 BOARD_MKBOOTIMG_ARGS := \
     --kernel_offset $(BOARD_KERNEL_OFFSET) \
     --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
-    --tags_offset $(BOARD_TAGS_OFFSET)
+    --tags_offset $(BOARD_TAGS_OFFSET) \
     --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
 BOARD_KERNEL_SEPARATED_DTBO := true

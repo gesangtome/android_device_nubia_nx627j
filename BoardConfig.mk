@@ -256,6 +256,9 @@ TARGET_SYSTEM_PROP += \
 # RenderScript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
+# seccomp policy
+BOARD_SECCOMP_POLICY := device/nubia/nx627j/seccomp
+
 # Security patch level
 VENDOR_SECURITY_PATCH := 2018-08-05
 

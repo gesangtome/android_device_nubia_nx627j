@@ -143,6 +143,22 @@ $(LIBGLES_SYMLINK_ARM64): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(LIBEGL_SYMLINK_ARM) $(LIBEGL_SYMLINK_ARM64)
 ALL_DEFAULT_INSTALLED_MODULES += $(LIBGLES_SYMLINK_ARM) $(LIBGLES_SYMLINK_ARM64)
 
+LIBGLES_3DTOOLS_SYMLINK_ARM := $(TARGET_OUT_VENDOR)/lib/libq3dtools_adreno.so
+$(LIBGLES_3DTOOLS_SYMLINK_ARM): $(LOCAL_INSTALLED_MODULE)
+	@echo "OpenGL 3D tools arm link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+LIBGLES_3DTOOLS_SYMLINK_ARM64 := $(TARGET_OUT_VENDOR)/lib64/libq3dtools_adreno.so
+$(LIBGLES_3DTOOLS_SYMLINK_ARM64): $(LOCAL_INSTALLED_MODULE)
+	@echo "OpenGL 3D tools arm64 link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(LIBGLES_3DTOOLS_SYMLINK_ARM) $(LIBGLES_3DTOOLS_SYMLINK_ARM64)
+
 $(shell mkdir -p out/target/common/docs/; \
         touch out/target/common/docs/lineage-api-stubs-timestamp;)
 endif

@@ -1,0 +1,25 @@
+tz.mbn			/dev/block/bootdevice/by-name/tz
+xbl_config.elf		/dev/block/bootdevice/by-name/xbl_config
+xbl.elf			/dev/block/bootdevice/by-name/xbl
+hyp.mbn			/dev/block/bootdevice/by-name/hyp
+NON-HLOS.bin		/dev/block/bootdevice/by-name/modem
+cmnlib.mbn		/dev/block/bootdevice/by-name/cmnlib
+cmnlib64.mbn		/dev/block/bootdevice/by-name/cmnlib64
+dspso.bin		/dev/block/bootdevice/by-name/dsp
+qupv3fw.elf		/dev/block/bootdevice/by-name/qupfw
+km4.mbn			/dev/block/bootdevice/by-name/keymaster
+BTFM.bin		/dev/block/bootdevice/by-name/bluetooth
+aop.mbn			/dev/block/bootdevice/by-name/aop
+abl.elf			/dev/block/bootdevice/by-name/abl
+devcfg.mbn		/dev/block/bootdevice/by-name/devcfg
+splash.img		/dev/block/bootdevice/by-name/splash
+uefi_sec.mbn		/dev/block/bootdevice/by-name/uefisecapp
+parameter.img		/dev/block/bootdevice/by-name/parameter
+storsec.mbn		/dev/block/bootdevice/by-name/storsec
+imagefv.elf		/dev/block/bootdevice/by-name/ImageFv
+dtbo.img		/dev/block/bootdevice/by-name/dtbo
+
+
+
+
+

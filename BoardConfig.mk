@@ -144,6 +144,9 @@ TARGET_FS_CONFIG_GEN := \
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
+# Firmware update
+ADD_RADIO_FILES := true
+
 # Graphics
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API := true

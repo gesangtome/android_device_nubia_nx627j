@@ -12,9 +12,6 @@ vendor/lib64/libfastcvopt.so
 vendor/lib64/libmdsprpc.so
 
 # ADSP-Modules
-vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
-vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Encoder.so
-vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libarcsoft_hdrplus_hvx_skel.so
 vendor/lib/rfsa/adsp/libcamera_nn_skel.so
@@ -57,7 +54,6 @@ etc/firmware/aw8695_haptic.bin
 etc/firmware/aw8695_rtp.bin
 
 # Audio
-etc/permissions/audiosphere.xml
 framework/audiosphere.jar
 vendor/bin/audioflacapp
 vendor/lib/libacdb-fts.so
@@ -138,7 +134,10 @@ vendor/lib64/vendor.hardware.wl.bt.bluetoothext@1.0.so
 
 # Bluetooth-AptX
 -vendor/app/aptxals/aptxals.apk
--vendor/overlay/aptxalsOverlay/aptxalsOverlay.apk
+-vendor/overlay/aptxalsOverlay/aptxalsOverlay.apk:vendor/app/aptxalsOverlay/aptxalsOverlay.apk
+vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
+vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Encoder.so
+vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
 
 # CDSP
 vendor/bin/cdsprpcd
@@ -151,15 +150,14 @@ vendor/lib64/libcdsp_default_listener.so
 
 # CNE
 -priv-app/CNEService/CNEService.apk
-etc/permissions/cneapiclient.xml
-etc/permissions/com.quicinc.cne.xml
+vendor/bin/cnd
 framework/cneapiclient.jar
+framework/com.quicinc.cne.jar
 framework/com.quicinc.cne.api-V1.0-java.jar
 framework/com.quicinc.cne.api-V1.1-java.jar
 framework/com.quicinc.cne.constants-V1.0-java.jar
 framework/com.quicinc.cne.constants-V2.0-java.jar
 framework/com.quicinc.cne.constants-V2.1-java.jar
-framework/com.quicinc.cne.jar
 framework/com.quicinc.cne.server-V1.0-java.jar
 framework/com.quicinc.cne.server-V2.0-java.jar
 framework/com.quicinc.cne.server-V2.1-java.jar
@@ -168,34 +166,6 @@ framework/com.quicinc.cne.server-V2.3-java.jar
 framework/vendor.qti.hardware.data.connection-V1.0-java.jar
 framework/vendor.qti.hardware.data.dynamicdds-V1.0-java.jar
 framework/vendor.qti.hardware.data.qmi-V1.0-java.jar
-vendor/bin/cnd
-vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
-vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml
-vendor/etc/cne/wqeclient/ATT/ATT_profile3.xml
-vendor/etc/cne/wqeclient/ATT/ATT_profile4.xml
-vendor/etc/cne/wqeclient/ATT/ATT_profile5.xml
-vendor/etc/cne/wqeclient/ATT/ATT_profile6.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile1.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile15.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile16.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile17.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile18.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile19.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile2.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile20.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile21.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile3.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile32.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile4.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile5.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile6.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile7.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile1.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile2.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
 lib/vendor.qti.hardware.data.connection@1.0.so
 lib/vendor.qti.hardware.data.dynamicdds@1.0.so
 lib64/vendor.qti.hardware.data.connection@1.0.so
@@ -498,16 +468,13 @@ vendor/bin/poweroffcharge-getprop
 vendor/etc/driver.iso
 
 # DPM
--priv-app/dpmserviceapp/dpmserviceapp.apk
+bin/dpmd
+etc/init/dpmd.rc
 framework/com.qti.dpmframework.jar
 framework/dpmapi.jar
 framework/tcmclient.jar
 -framework/tcmiface.jar
-bin/dpmd
-etc/dpm/dpm.conf
-etc/init/dpmd.rc
-etc/permissions/com.qti.dpmframework.xml
-etc/permissions/dpmapi.xml
+-priv-app/dpmserviceapp/dpmserviceapp.apk
 lib/com.qualcomm.qti.dpm.api@1.0.so
 lib/libdpmctmgr.so
 lib/libdpmfdmgr.so
@@ -523,6 +490,15 @@ vendor/lib/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib/libdpmqmihal.so
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
+
+# Colorservice
+-product/app/colorservice/colorservice.apk
+-product/app/QdcmFF/QdcmFF.apk
+framework/com.qti.snapdragon.sdk.display.jar
+product/lib/libsdm-disp-apis.qti.so
+product/lib/libsd_sdk_display.qti.so
+product/lib64/libsdm-disp-apis.qti.so
+product/lib64/libsd_sdk_display.qti.so
 
 # DRM
 vendor/bin/seemp_healthd
@@ -719,6 +695,10 @@ vendor/lib64/hw/vendor.qti.hardware.factory@1.0-impl.so
 vendor/lib64/vendor.qti.data.factory@1.0.so
 vendor/lib64/vendor.qti.data.factory@1.1.so
 vendor/lib64/vendor.qti.hardware.factory@1.0.so
+
+# FTS Manager
+vendor/bin/fstman
+vendor/etc/wifi/fstman.ini
 
 # Fingerprint
 -priv-app/FingerprintServiceExtension/FingerprintServiceExtension.apk
@@ -1318,7 +1298,6 @@ vendor/lib64/vendor.display.color@1.3.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
 # QMI
-etc/permissions/qti_telephony_common.xml
 vendor/bin/irsc_util
 vendor/bin/pd-mapper
 vendor/lib/libdiag.so
@@ -1371,13 +1350,18 @@ vendor/lib64/libQTEEConnector_vendor.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 
 # Radio
+-app/atfwd/atfwd.apk
 -app/datastatusnotification/datastatusnotification.apk
 -app/embms/embms.apk
+-app/QtiSystemService/QtiSystemService.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
+-app/xdivert/xdivert.apk
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-etc/permissions/embms.xml
 etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
+etc/permissions/qcnvitems.xml
+etc/permissions/privapp-permissions-com.qualcomm.wfd.service.xml
+etc/permissions/privapp-permissions-com.qualcomm.location.xml
 framework/embmslibrary.jar
 framework/qcnvitems.jar
 framework/qcrilhook.jar
@@ -1542,6 +1526,7 @@ vendor/lib/lib-imsqimf.so
 vendor/lib/lib-imsrcs-v2.so
 vendor/lib/lib-imsrcsbaseimpl.so
 vendor/lib/lib-imsxml.so
+vendor/lib/libqsap_sdk.so
 vendor/lib/lib-rtpcommon.so
 vendor/lib/lib-rtpcore.so
 vendor/lib/lib-rtpdaemoninterface.so
@@ -1568,6 +1553,7 @@ vendor/lib64/lib-imsqimf.so
 vendor/lib64/lib-imsrcs-v2.so
 vendor/lib64/lib-imsrcsbaseimpl.so
 vendor/lib64/lib-imsxml.so
+vendor/lib64/libqsap_sdk.so
 vendor/lib64/lib-rtpcommon.so
 vendor/lib64/lib-rtpcore.so
 vendor/lib64/lib-rtpdaemoninterface.so
@@ -1830,14 +1816,15 @@ vendor/lib/vendor.qti.voiceprint@1.0.so
 vendor/lib64/vendor.qti.voiceprint@1.0.so
 
 # WIFI
+framework/vendor.qti.hardware.wigig.netperftuner-V1.0-java.jar
+framework/vendor.qti.hardware.wigig.supptunnel-V1.0-java.jar
+framework/wigig-service.jar
 vendor/bin/wifilearner
 vendor/bin/wigighalsvc
 vendor/bin/wigignpt
 vendor/bin/cnss-daemon
 vendor/bin/cnss_diag
-vendor/bin/fstman
 vendor/bin/iwpriv
-vendor/etc/wifi/fstman.ini
 vendor/etc/wifi/icm.conf
 vendor/etc/wifi/aoa_cldb_falcon.bin
 vendor/etc/wifi/aoa_cldb_swl14.bin
@@ -1845,6 +1832,10 @@ vendor/etc/wifi/wpa_supplicant_diag.conf
 vendor/etc/wifi/wigig_p2p_supplicant.conf
 vendor/etc/wifi/wigig_supplicant.conf
 vendor/lib64/vendor.qti.hardware.wifi.wifilearner@1.0.so
+vendor/lib/vendor.qti.hardware.wigig.netperftuner@1.0.so
+vendor/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
+vendor/lib/vendor.qti.hardware.wigig.supptunnel@1.0.so
+vendor/lib64/vendor.qti.hardware.wigig.supptunnel@1.0.so
 
 # WFD
 -priv-app/WfdService/WfdService.apk
@@ -1925,6 +1916,7 @@ vendor/bin/hdcp2p2prov
 vendor/bin/iwlist
 vendor/bin/KmInstallKeybox
 vendor/bin/ks
+vendor/bin/mdm_helper
 vendor/bin/mdm_helper_proxy
 vendor/bin/mm-vidc-omx-test
 vendor/bin/myftm
@@ -1991,7 +1983,6 @@ vendor/lib64/unnhal-acc-hta.so
 
 # Here are some service binaries with unclear purpose
 vendor/bin/hbtp_daemon
-vendor/bin/mdm_helper
 vendor/bin/mm-audio-ftm
 vendor/bin/mmid
 vendor/bin/qcom-system-daemon

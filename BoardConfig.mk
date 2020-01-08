@@ -142,6 +142,7 @@ TARGET_ENABLE_MEDIADRM_64 := true
 
 # Firmware update
 ADD_RADIO_FILES := true
+TARGET_RELEASETOOLS_EXTENSIONS := device/nubia/nx627j/release-tools
 
 # Graphics
 TARGET_USES_ION := true

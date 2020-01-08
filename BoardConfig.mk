@@ -204,6 +204,9 @@ endif
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
+# Media
+TARGET_USES_QCOM_MM_AUDIO := true
+
 # OTA Package
 TARGET_OTA_ASSERT_DEVICE	:= nx627j,NX627J
 

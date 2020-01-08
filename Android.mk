@@ -110,6 +110,39 @@ $(WCNSS_MAC_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /mnt/vendor/persist/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_INI_SYMLINK) $(WCNSS_MAC_SYMLINK)
+
+# OpenGL SYMLINK
+LIBEGL_SYMLINK_ARM := $(TARGET_OUT_VENDOR)/lib/libEGL_adreno.so
+$(LIBEGL_SYMLINK_ARM): $(LOCAL_INSTALLED_MODULE)
+	@echo "OpenGL arm link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+LIBEGL_SYMLINK_ARM64 := $(TARGET_OUT_VENDOR)/lib64/libEGL_adreno.so
+$(LIBEGL_SYMLINK_ARM64): $(LOCAL_INSTALLED_MODULE)
+	@echo "OpenGL arm64 link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+LIBGLES_SYMLINK_ARM := $(TARGET_OUT_VENDOR)/lib/libGLESv2_adreno.so
+$(LIBGLES_SYMLINK_ARM): $(LOCAL_INSTALLED_MODULE)
+	@echo "OpenGL arm link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+LIBGLES_SYMLINK_ARM64 := $(TARGET_OUT_VENDOR)/lib64/libGLESv2_adreno.so
+$(LIBGLES_SYMLINK_ARM64): $(LOCAL_INSTALLED_MODULE)
+	@echo "OpenGL arm64 link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(LIBEGL_SYMLINK_ARM) $(LIBEGL_SYMLINK_ARM64)
+ALL_DEFAULT_INSTALLED_MODULES += $(LIBGLES_SYMLINK_ARM) $(LIBGLES_SYMLINK_ARM64)
+
 $(shell mkdir -p out/target/common/docs/; \
         touch out/target/common/docs/lineage-api-stubs-timestamp;)
 endif

@@ -152,10 +152,6 @@ PRODUCT_COPY_FILES += \
     device/nubia/nx627j/configs/cne/VZW_profile5.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/VZW_profile5.xml \
     device/nubia/nx627j/configs/cne/VZW_profile6.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/VZW_profile6.xml
 
-# ConfURIDialer
-PRODUCT_PACKAGES += \
-    ConfURIDialer
-
 # ConfigStore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service

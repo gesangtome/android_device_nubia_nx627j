@@ -264,6 +264,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     ims-ext-common_system
 
+# IRQ
+PRODUCT_COPY_FILES += \
+    device/nubia/nx627j/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \

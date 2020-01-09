@@ -1842,7 +1842,6 @@ vendor/etc/wifi/wigig_supplicant.conf
 vendor/lib64/vendor.qti.hardware.wifi.wifilearner@1.0.so
 vendor/lib/vendor.qti.hardware.wigig.netperftuner@1.0.so
 vendor/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
-vendor/lib/vendor.qti.hardware.wigig.supptunnel@1.0.so
 vendor/lib64/vendor.qti.hardware.wigig.supptunnel@1.0.so
 
 # WFD

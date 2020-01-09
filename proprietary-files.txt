@@ -684,6 +684,7 @@ lib64/vendor.qti.hardware.fm@1.0.so
 # Factory
 framework/vendor.qti.data.factory-V1.0-java.jar
 framework/vendor.qti.data.factory-V1.1-java.jar
+framework/vendor.qti.hardware.factory-V1.0-java.jar
 vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
 vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc
 vendor/etc/permissions/vendor.qti.hardware.factory.xml
@@ -915,6 +916,7 @@ vendor/firmware/leia_pm4_470.fw
 
 # IFAA
 -framework/ifaa_fingerprint.jar
+framework/vendor.nubia.ifaa-V1.0-java.jar
 lib64/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
 lib/vendor.qti.hardware.fingerprint@1.0.so
 
@@ -1333,6 +1335,9 @@ vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
 
+# Voice print
+framework/vendor.qti.voiceprint-V1.0-java.jar
+
 # Qdutils
 vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
 vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
@@ -1747,28 +1752,28 @@ bin/thermalserviced
 etc/init/thermalservice.rc
 lib64/libthermalservice.so
 lib64/libthermalcallback.so
-etc/.tp/.thermal-mode-00-01.conf:vendor/etc/.tp/.thermal-mode-00-01.conf
-etc/.tp/.thermal-mode-00-02.conf:vendor/etc/.tp/.thermal-mode-00-02.conf
-etc/.tp/.thermal-mode-00-03.conf:vendor/etc/.tp/.thermal-mode-00-03.conf
-etc/.tp/.thermal-mode-00-04.conf:vendor/etc/.tp/.thermal-mode-00-04.conf
-etc/.tp/.thermal-mode-00-05.conf:vendor/etc/.tp/.thermal-mode-00-05.conf
-etc/.tp/.thermal-mode-01-01.conf:vendor/etc/.tp/.thermal-mode-01-01.conf
-etc/.tp/.thermal-mode-01-02.conf:vendor/etc/.tp/.thermal-mode-01-02.conf
-etc/.tp/.thermal-mode-01-03.conf:vendor/etc/.tp/.thermal-mode-01-03.conf
-etc/.tp/.thermal-mode-01-04.conf:vendor/etc/.tp/.thermal-mode-01-04.conf
-etc/.tp/.thermal-mode-01-05.conf:vendor/etc/.tp/.thermal-mode-01-05.conf
-etc/.tp/.thermal-mode-02-01.conf:vendor/etc/.tp/.thermal-mode-02-01.conf
-etc/.tp/.thermal-mode-02-02.conf:vendor/etc/.tp/.thermal-mode-02-02.conf
-etc/.tp/.thermal-mode-02-03.conf:vendor/etc/.tp/.thermal-mode-02-03.conf
-etc/.tp/.thermal-mode-02-04.conf:vendor/etc/.tp/.thermal-mode-02-04.conf
-etc/.tp/.thermal-mode-02-05.conf:vendor/etc/.tp/.thermal-mode-02-05.conf
-etc/.tp/.thermal-mode-02-06.conf:vendor/etc/.tp/.thermal-mode-02-06.conf
-etc/.tp/.thermal-mode-03-01.conf:vendor/etc/.tp/.thermal-mode-03-01.conf
-etc/.tp/.thermal-mode-03-02.conf:vendor/etc/.tp/.thermal-mode-03-02.conf
-etc/.tp/.thermal-mode-03-03.conf:vendor/etc/.tp/.thermal-mode-03-03.conf
-etc/.tp/.thermal-mode-03-04.conf:vendor/etc/.tp/.thermal-mode-03-04.conf
-etc/.tp/.thermal-mode-03-05.conf:vendor/etc/.tp/.thermal-mode-03-05.conf
-etc/.tp/.thermal-mode-03-06.conf:vendor/etc/.tp/.thermal-mode-03-06.conf
+etc/.tp/.thermal-mode-00-01.conf
+etc/.tp/.thermal-mode-00-02.conf
+etc/.tp/.thermal-mode-00-03.conf
+etc/.tp/.thermal-mode-00-04.conf
+etc/.tp/.thermal-mode-00-05.conf
+etc/.tp/.thermal-mode-01-01.conf
+etc/.tp/.thermal-mode-01-02.conf
+etc/.tp/.thermal-mode-01-03.conf
+etc/.tp/.thermal-mode-01-04.conf
+etc/.tp/.thermal-mode-01-05.conf
+etc/.tp/.thermal-mode-02-01.conf
+etc/.tp/.thermal-mode-02-02.conf
+etc/.tp/.thermal-mode-02-03.conf
+etc/.tp/.thermal-mode-02-04.conf
+etc/.tp/.thermal-mode-02-05.conf
+etc/.tp/.thermal-mode-02-06.conf
+etc/.tp/.thermal-mode-03-01.conf
+etc/.tp/.thermal-mode-03-02.conf
+etc/.tp/.thermal-mode-03-03.conf
+etc/.tp/.thermal-mode-03-04.conf
+etc/.tp/.thermal-mode-03-05.conf
+etc/.tp/.thermal-mode-03-06.conf
 vendor/bin/thermal-engine
 vendor/etc/thermal-engine.conf
 vendor/lib/libthermalclient.so

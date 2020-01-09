@@ -183,7 +183,7 @@ PRODUCT_PACKAGES += \
 
 # Color Service
 PRODUCT_COPY_FILES += \
-    device/nubia/NX627J/permissions/com.qti.snapdragon.sdk.display.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qti.snapdragon.sdk.display.xml
+    device/nubia/nx627j/permissions/com.qti.snapdragon.sdk.display.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qti.snapdragon.sdk.display.xml
 
 # DPM
 PRODUCT_PACKAGES += \
@@ -195,7 +195,7 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/permissions/dpmapi.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/dpmapi.xml \
     device/nubia/nx627j/permissions/com.qti.dpmframework.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qti.dpmframework.xml \
-    device/nubia/nx627j/dpm.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/dpm/dpm.conf
+    device/nubia/nx627j/configs/dpm.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/dpm/dpm.conf
 
 # DRM
 PRODUCT_PACKAGES += \

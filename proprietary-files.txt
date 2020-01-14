@@ -54,6 +54,7 @@ etc/firmware/aw8695_haptic.bin
 etc/firmware/aw8695_rtp.bin
 
 # Audio
+etc/permissions/audiosphere.xml
 framework/audiosphere.jar
 vendor/bin/audioflacapp
 vendor/lib/libacdb-fts.so
@@ -150,7 +151,8 @@ vendor/lib64/libcdsp_default_listener.so
 
 # CNE
 -priv-app/CNEService/CNEService.apk
-vendor/bin/cnd
+etc/permissions/cneapiclient.xml
+etc/permissions/com.quicinc.cne.xml
 framework/cneapiclient.jar
 framework/com.quicinc.cne.jar
 framework/com.quicinc.cne.api-V1.0-java.jar
@@ -172,6 +174,7 @@ lib64/vendor.qti.hardware.data.connection@1.0.so
 lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
 lib/com.quicinc.cne.server@1.0.so
 lib64/com.quicinc.cne.server@1.0.so
+vendor/bin/cnd
 vendor/lib/com.quicinc.cne.api@1.0.so
 vendor/lib/com.quicinc.cne.api@1.1.so
 vendor/lib/com.quicinc.cne.constants@1.0.so
@@ -470,8 +473,10 @@ vendor/etc/driver.iso
 # DPM
 bin/dpmd
 etc/init/dpmd.rc
-framework/com.qti.dpmframework.jar
+etc/permissions/dpmapi.xml
+etc/permissions/com.qti.dpmframework.xml
 framework/dpmapi.jar
+framework/com.qti.dpmframework.jar
 framework/tcmclient.jar
 -framework/tcmiface.jar
 -priv-app/dpmserviceapp/dpmserviceapp.apk
@@ -494,6 +499,7 @@ vendor/lib64/libdpmqmihal.so
 # Colorservice
 -product/app/colorservice/colorservice.apk
 -product/app/QdcmFF/QdcmFF.apk
+etc/permissions/com.qti.snapdragon.sdk.display.xml
 framework/com.qti.snapdragon.sdk.display.jar
 product/lib/libsdm-disp-apis.qti.so
 product/lib/libsd_sdk_display.qti.so
@@ -1205,6 +1211,7 @@ vendor/lib64/libhexagon_nn_stub.so
 # Perf
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
 vendor/bin/msm_irqbalance
+vendor/etc/msm_irqbalance.conf
 vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
 vendor/etc/perf/commonresourceconfigs.xml
 vendor/etc/perf/perfboostsconfig.xml
@@ -1330,6 +1337,10 @@ etc/permissions/telephonyservice.xml
 etc/permissions/qcnvitems.xml
 etc/permissions/privapp-permissions-com.qualcomm.wfd.service.xml
 etc/permissions/privapp-permissions-com.qualcomm.location.xml
+etc/permissions/embms.xml
+etc/permissions/qti_permissions.xml
+etc/permissions/qti_libpermissions.xml
+etc/permissions/qti_telephony_common.xml
 framework/embmslibrary.jar
 framework/qcnvitems.jar
 framework/qcrilhook.jar

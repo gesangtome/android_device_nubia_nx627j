@@ -28,5 +28,4 @@ $(call add-radio-file,images/uefi_sec.mbn)
 $(call add-radio-file,images/parameter.img)
 $(call add-radio-file,images/storsec.mbn)
 $(call add-radio-file,images/imagefv.elf)
-$(call add-radio-file,images/dtbo.img)
 endif

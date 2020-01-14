@@ -17,8 +17,6 @@ uefi_sec.mbn		/dev/block/bootdevice/by-name/uefisecapp
 parameter.img		/dev/block/bootdevice/by-name/parameter
 storsec.mbn		/dev/block/bootdevice/by-name/storsec
 imagefv.elf		/dev/block/bootdevice/by-name/ImageFv
-dtbo.img		/dev/block/bootdevice/by-name/dtbo
-
 
 
 

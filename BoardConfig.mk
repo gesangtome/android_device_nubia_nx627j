@@ -270,8 +270,6 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 VENDOR_SECURITY_PATCH := 2018-08-05
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
-
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
     device/nubia/nx627j/sepolicy/private
 

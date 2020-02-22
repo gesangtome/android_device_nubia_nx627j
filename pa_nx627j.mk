@@ -22,6 +22,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Include Paranoid Android common configuration
 TARGET_BOOT_ANIMATION_RES := 1080
 
+include device/qcom/common/utils.mk
 include vendor/pa/config/common_full_phone.mk
 
 # Inherit AOSP device configuration

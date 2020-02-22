@@ -168,7 +168,9 @@ DEVICE_MANIFEST_FILE := \
 DEVICE_MATRIX_FILE   := \
     device/nubia/nx627j/compatibility_matrix.xml
 
-# Kernel 
+# Kernel
+TARGET_COMPILE_WITH_MSM_KERNEL := true
+TARGET_HAS_QC_KERNEL_SOURCE := true
 TARGET_KERNEL_SOURCE := kernel/nubia/sm8150
 TARGET_KERNEL_CONFIG := sm8150-perf_defconfig
 TARGET_KERNEL_CLANG_COMPILE := true

@@ -1,4 +1,4 @@
-From d9011bc2a92d574077590c64bf30036f06779b96 Mon Sep 17 00:00:00 2001
+From e356b9035f410b01cc57c84a35c9361c4c6a3fe7 Mon Sep 17 00:00:00 2001
 From: gesangtome <gesangtome@foxmail.com>
 Date: Sun, 22 Dec 2019 20:45:11 +0800
 Subject: [PATCH] media: fix build error
@@ -10,7 +10,7 @@ Change-Id: I69c3e0f052a33c806e43a9e8b617861dc721c1c1
  2 files changed, 10 insertions(+)
 
 diff --git a/mm-core/Android.mk b/mm-core/Android.mk
-index 56b7cfc34..1ca361aed 100644
+index 37a954e0..9c02f67f 100644
 --- a/mm-core/Android.mk
 +++ b/mm-core/Android.mk
 @@ -8,6 +8,10 @@ OMXCORE_CFLAGS += -O0 -fno-inline -fno-short-enums
@@ -25,7 +25,7 @@ index 56b7cfc34..1ca361aed 100644
  #             Figure out the targets
  #===============================================================================
 diff --git a/mm-core/src/common/qc_omx_core.c b/mm-core/src/common/qc_omx_core.c
-index 341a44d34..0408f675a 100644
+index 341a44d3..0408f675 100644
 --- a/mm-core/src/common/qc_omx_core.c
 +++ b/mm-core/src/common/qc_omx_core.c
 @@ -49,7 +49,9 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

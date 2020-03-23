@@ -502,6 +502,7 @@ vendor/etc/driver.iso
 framework/com.qti.dpmframework.jar
 framework/dpmapi.jar
 framework/tcmclient.jar
+-framework/tcmiface.jar
 bin/dpmd
 etc/dpm/dpm.conf
 etc/init/dpmd.rc

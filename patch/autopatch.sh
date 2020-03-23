@@ -4,8 +4,8 @@
 
 
 function applypatch() {
-    cp 0001-audio-Fix-build-problems.patch ../../../../vendor/qcom/sm8150/opensource/audio-hal/primary-hal/
-    cd ../../../../vendor/qcom/sm8150/opensource/audio-hal/primary-hal/
+    cp 0001-audio-Fix-build-problems.patch ../../../../vendor/qcom/opensource/audio-hal/primary-hal/
+    cd ../../../../vendor/qcom/opensource/audio-hal/primary-hal/
     git am 0001-audio-Fix-build-problems.patch
     cd -
     cp 0001-media-fix-build-error.patch ../../../../hardware/qcom/media/

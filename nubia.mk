@@ -312,7 +312,13 @@ PRODUCT_PACKAGES += \
 # Whitelist
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
- 
+
+# VR
+PRODUCT_PACKAGES += \
+    android.hardware.vr@1.0-impl \
+    android.hardware.vr@1.0-service \
+    vr.msmnile
+
 # WLAN
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \

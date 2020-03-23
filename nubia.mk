@@ -158,6 +158,9 @@ PRODUCT_COPY_FILES += \
     device/nubia/nx627j/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
 
 # DPM
+PRODUCT_BOOT_JARS += \
+    tcmiface
+
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/configs/dpm.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/dpm/dpm.conf \
     device/nubia/nx627j/permissions/dpmapi.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/dpmapi.xml \

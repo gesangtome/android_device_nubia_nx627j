@@ -55,7 +55,16 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.common@5.0-util
 
 PRODUCT_COPY_FILES += \
-    device/nubia/mx627j/permissions/audiosphere.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/audiosphere.xml
+    device/nubia/nx627j/permissions/audiosphere.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/audiosphere.xml \
+    device/nubia/nx627j/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_platform_info.xml \
+    device/nubia/nx627j/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_policy_volumes.xml \
+    device/nubia/nx627j/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/default_volume_tables.xml
+
+PRODUCT_COPY_FILES += \
+    device/nubia/nx627j/audio/sound_trigger_mixer_paths:$(TARGET_COPY_OUT_SYSTEM)/etc/sound_trigger_mixer_paths.xml \
+    device/nubia/nx627j/audio/sound_trigger_mixer_paths_wcd9340.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sound_trigger_mixer_paths_wcd9340.xml \
+    device/nubia/nx627j/audio/sound_trigger_mixer_paths_wcd9340_qrd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sound_trigger_mixer_paths_wcd9340_qrd.xml \
+    device/nubia/nx627j/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sound_trigger_platform_info.xml
 
 # Audio (SoundFX)
 PRODUCT_PACKAGES += \

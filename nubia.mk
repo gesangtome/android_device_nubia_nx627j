@@ -114,6 +114,21 @@ PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0-impl.generic \
     android.hardware.contexthub@1.0-service
 
+# Camera
+PRODUCT_PACKAGES += \
+    android.frameworks.displayservice@1.0 \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service_64 \
+    libxml2
+
+ifeq ($(TARGET_USES_NUBIA_CAMERA),true)
+PRODUCT_PACKAGES += \
+    NB-Camera
+else
+PRODUCT_PACKAGES += \
+    Snap
+endif
+
 # CNE
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/permissions/cneapiclient.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/cneapiclient.xml \

@@ -6,3 +6,6 @@ service vl53l1_daemon_main /vendor/bin/vl53l1_daemon_main
     user root
     group root
     socket vl53l1_daemon stream 660 root system
+
+on property:sys.boot_completed=1
+    start vl53l1_daemon_main

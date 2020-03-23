@@ -2,15 +2,10 @@
 <manifest>
 <!-- Created by 弱弱的胖橘猫丷 -->
 
-  <remote  name="nubia_dev"
-           fetch="https://github.com/flowertome"
-           revision="lineage-17.0" />
-
-  <!-- <remove-project name="LineageOS/android_bootable_recovery" />
-
-       <project path="bootable/recovery" name="android_bootable_recovery" remote="nubia_dev" revision="android-9.0"/> -->
-
-  <project path="device/nubia/nx627j" name="android_device_nubia_nx627j" remote="nubia_dev" />
-  <project path="kernel/nubia/sm8150" name="android_kernel_nubia_sm8150" remote="nubia_dev" revision="android-10.0" />
+<!-- <remove-project name="LineageOS/android_bootable_recovery" />
+  <project path="bootable/recovery" name="android_bootable_recovery" remote="nubia_dev" revision="android-9.0"/>
+-->
+  <project path="device/nubia/nx627j" name="gesangtome/android_device_nubia_nx627j" revision="lineage-17.1" />
+  <project path="kernel/nubia/sm8150" name="gesangtome/android_kernel_nubia_sm8150" revision="lineage-17.1" />
 
 </manifest>

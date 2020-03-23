@@ -30,6 +30,10 @@ $(call inherit-product-if-exists, vendor/nubia/nx627j/nx627j-vendor.mk)
 # Vendor properties
 -include device/nubia/nx627j/vendor_props.mk
 
+# AAPT
+PRODUCT_AAPT_CONFIG := xxhdpi
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \

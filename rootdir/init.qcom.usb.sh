@@ -29,17 +29,41 @@
 #
 
 # Set platform variables
-soc_hwplatform=`cat /sys/devices/soc0/hw_platform 2> /dev/null`
-soc_machine=`cat /sys/devices/soc0/machine 2> /dev/null`
-soc_machine=${soc_machine:0:2}
-soc_id=`cat /sys/devices/soc0/soc_id 2> /dev/null`
+if [ -f /sys/devices/soc0/hw_platform ]; then
+    soc_hwplatform=`cat /sys/devices/soc0/hw_platform 2> /dev/null`
+else
+    soc_hwplatform=`cat /sys/devices/system/soc/soc0/hw_platform` 2> /dev/null
+fi
+
+if [ -f /sys/devices/soc0/machine ]; then
+    soc_machine=`cat /sys/devices/soc0/machine 2> /dev/null`
+else
+    soc_machine=`cat /sys/devices/system/soc/soc0/machine 2> /dev/null`
+fi
+
+if [ -f /sys/devices/soc0/soc_id ]; then
+    soc_id=`cat /sys/devices/soc0/soc_id 2> /dev/null`
+else
+    soc_id=`cat /sys/devices/system/soc/soc0/id`
+fi
+
+soc_machine=${soc_machine:0:3}
 
 #
 # Check ESOC for external modem
 #
 # Note: currently only a single MDM/SDX is supported
 #
-esoc_name=`cat /sys/bus/esoc/devices/esoc0/esoc_name 2> /dev/null`
+if [ -d /sys/bus/esoc/devices ]; then
+    for esoc_file in /sys/bus/esoc/devices/*; do
+        if [ -d $esoc_file ]; then
+            if [ `grep -e "^MDM" -e "^SDX" $esoc_file/esoc_name` ]; then
+                esoc_name=`cat /sys/bus/esoc/devices/esoc0/esoc_name 2> /dev/null`
+                break
+            fi
+        fi
+    done
+fi
 
 target=`getprop ro.board.platform`
 
@@ -67,7 +91,7 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a \
 	          ;;
                   *)
 		  case "$soc_machine" in
-		    "SA")
+		    "SA*" | "SDA")
 	              setprop persist.vendor.usb.config diag,adb
 		    ;;
 		    *)
@@ -109,7 +133,7 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a \
 	              "sdm845" | "sdm710")
 		          setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,adb
 		      ;;
-	              "msmnile" | "sm6150" | "trinket")
+	              "msmnile" | "sm6150" | "trinket" | "talos")
 			  setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,qdss,adb
 		      ;;
 	              *)
@@ -127,7 +151,7 @@ fi
 
 # Start peripheral mode on primary USB controllers for Automotive platforms
 case "$soc_machine" in
-    "SA")
+    "SA*")
 	if [ -f /sys/bus/platform/devices/a600000.ssusb/mode ]; then
 	    default_mode=`cat /sys/bus/platform/devices/a600000.ssusb/mode`
 	    case "$default_mode" in
@@ -172,6 +196,29 @@ if [ "$target" == "msm8996" ]; then
        fi
 fi
 
+# set device mode notification to USB driver for SA8150 Auto ADP
+product=`getprop ro.build.product`
+case "$product" in
+	"msmnile_au")
+	echo peripheral > /sys/bus/platform/devices/a600000.ssusb/mode
+  ;;
+	"nx627j")
+	echo peripheral > /sys/bus/platform/devices/a600000.ssusb/mode
+  ;;
+	*)
+  ;;
+esac
+
+enabledock=`getprop persist.vendor.usb.enabledock`
+case "$enabledock" in
+	"0" | "1")
+        # do nothing
+  ;;
+	*)
+        setprop persist.vendor.usb.enabledock 0
+  ;;
+esac
+
 # check configfs is mounted or not
 if [ -d /config/usb_gadget ]; then
 	# Chip-serial is used for unique MSM identification in Product string
@@ -181,11 +228,26 @@ if [ -d /config/usb_gadget ]; then
 	product_string="$machine_type-$soc_hwplatform _SN:$msm_serial_hex"
 	echo "$product_string" > /config/usb_gadget/g1/strings/0x409/product
 
+        # Use fixed serialno if in ffbm mode or /persist/property/persist.vendor.usb.fixedserialno is set
+        serialnomode=`cat /persist/property/persist.vendor.usb.fixedserialno`
+        if [ "$bootmode" = "ffbm-01" ] || [ "$serialnomode" -eq 1 ]; then
+            setprop persist.vendor.usb.fixedserialno 1
+        else
+            setprop persist.vendor.usb.fixedserialno 0
+        fi
+
 	# ADB requires valid iSerialNumber; if ro.serialno is missing, use dummy
 	serialnumber=`cat /config/usb_gadget/g1/strings/0x409/serialnumber 2> /dev/null`
 	if [ "$serialnumber" == "" ]; then
 		serialno=1234567
 		echo $serialno > /config/usb_gadget/g1/strings/0x409/serialnumber
+	fi
+
+	persist_comp=`getprop persist.sys.usb.config`
+	comp=`getprop sys.usb.config`
+	if [ "$comp" != "$persist_comp" ]; then
+		echo "setting sys.usb.config"
+		setprop sys.usb.config $persist_comp
 	fi
 fi
 

@@ -245,12 +245,20 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    init.msm.usb.configfs.rc \
     init.qcom.rc \
-    init.qcom.usb.rc \
     init.recovery.qcom.rc \
     init.target.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    init.extension.rc \
+    init.camera.rc \
+    init.dmapp.rc \
+    init.fingerprint.rc \
+    init.haptic.rc \
+    init.led.rc \
+    init.light.rc \
+    init.platfrom.rc \
+    init.sensors.rc \
+    init.touch.rc
 
 # Shell
 PRODUCT_PACKAGES += \
@@ -302,7 +310,9 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    init.qcom.usb.sh
+    init.qcom.usb.rc \
+    init.qcom.usb.sh \
+    init.msm.usb.configfs.rc
 
 # Telephony
 PRODUCT_PACKAGES += \

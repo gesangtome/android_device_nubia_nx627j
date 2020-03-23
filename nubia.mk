@@ -14,9 +14,6 @@
 
 PRODUCT_ENFORCE_RRO_TARGETS := framework-res
 
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    device/nubia/nx627j/overlay-lineage/lineage-sdk
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
 	device/nubia/nx627j/overlay \

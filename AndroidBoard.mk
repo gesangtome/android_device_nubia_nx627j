@@ -1,31 +1,28 @@
 LOCAL_PATH := $(call my-dir)
 
-#----------------------------------------------------------------------
-# Radio image
-#----------------------------------------------------------------------
+#----------------------------------
+# Install firmware image
+#----------------------------------
 ifeq ($(ADD_RADIO_FILES), true)
-radio_dir := $(LOCAL_PATH)/radio
-RADIO_FILES := $(shell cd $(radio_dir) ; ls)
-$(foreach f, $(RADIO_FILES), \
-    $(call add-radio-file,radio/$(f)))
-
-$(call add-radio-file,images/tz.mbn)
-$(call add-radio-file,images/xbl_config.elf)
-$(call add-radio-file,images/xbl.elf)
-$(call add-radio-file,images/hyp.mbn)
-$(call add-radio-file,images/NON-HLOS.bin)
-$(call add-radio-file,images/cmnlib.mbn)
-$(call add-radio-file,images/cmnlib64.mbn)
-$(call add-radio-file,images/dspso.bin)
-$(call add-radio-file,images/qupv3fw.elf)
-$(call add-radio-file,images/km4.mbn)
-$(call add-radio-file,images/BTFM.bin)
-$(call add-radio-file,images/aop.mbn)
-$(call add-radio-file,images/abl.elf)
-$(call add-radio-file,images/devcfg.mbn)
-$(call add-radio-file,images/splash.img)
-$(call add-radio-file,images/uefi_sec.mbn)
-$(call add-radio-file,images/parameter.img)
-$(call add-radio-file,images/storsec.mbn)
-$(call add-radio-file,images/imagefv.elf)
+INSTALLED_RADIOIMAGE_TARGET += \
+    $(LOCAL_PATH)/images/abl.elf \
+    $(LOCAL_PATH)/images/tz.mbn \
+    $(LOCAL_PATH)/images/xbl_config.elf \
+    $(LOCAL_PATH)/images/xbl.elf \
+    $(LOCAL_PATH)/images/hyp.mbn \
+    $(LOCAL_PATH)/images/NON-HLOS.bin \
+    $(LOCAL_PATH)/images/cmnlib.mbn \
+    $(LOCAL_PATH)/images/cmnlib64.mbn \
+    $(LOCAL_PATH)/images/dspso.bin \
+    $(LOCAL_PATH)/images/qupv3fw.elf \
+    $(LOCAL_PATH)/images/km4.mbn \
+    $(LOCAL_PATH)/images/BTFM.bin \
+    $(LOCAL_PATH)/images/aop.mbn \
+    $(LOCAL_PATH)/images/abl.elf \
+    $(LOCAL_PATH)/images/devcfg.mbn \
+    $(LOCAL_PATH)/images/splash.img \
+    $(LOCAL_PATH)/images/uefi_sec.mbn \
+    $(LOCAL_PATH)/images/parameter.img \
+    $(LOCAL_PATH)/images/storsec.mbn \
+    $(LOCAL_PATH)/images/imagefv.elf
 endif

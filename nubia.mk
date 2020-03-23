@@ -12,6 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+	device/nubia/nx627j/overlay
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 

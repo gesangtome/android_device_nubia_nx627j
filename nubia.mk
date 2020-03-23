@@ -236,10 +236,6 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service
 
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@1.0-service-sdm
-
 # keylayout
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl

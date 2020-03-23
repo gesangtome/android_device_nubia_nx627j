@@ -234,6 +234,4 @@ $(LIBGLES_3DTOOLS_SYMLINK_ARM64): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(LIBGLES_3DTOOLS_SYMLINK_ARM) $(LIBGLES_3DTOOLS_SYMLINK_ARM64)
 
-$(shell mkdir -p out/target/common/docs/; \
-        touch out/target/common/docs/lineage-api-stubs-timestamp;)
 endif

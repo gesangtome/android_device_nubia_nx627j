@@ -110,6 +110,9 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_FS_CONFIG_GEN := \
     device/nubia/nx627j/config.fs
 
+# CNE
+BOARD_USES_QCNE := true
+
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 

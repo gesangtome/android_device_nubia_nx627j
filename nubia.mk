@@ -176,6 +176,14 @@ PRODUCT_COPY_FILES += \
     device/nubia/nx627j/configs/media_profiles_vendor.xml:vendor/etc/media_profiles_vendor.xml \
     device/nubia/nx627j/configs/system_properties.xml:vendor/etc/system_properties.xml
 
+S_MEDIACODEC_CONFIG := frameworks/av/media/libstagefright/data
+
+PRODUCT_COPY_FILES += \
+    $(S_MEDIACODEC_CONFIG)/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
+    $(S_MEDIACODEC_CONFIG)/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
+    $(S_MEDIACODEC_CONFIG)/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
+    $(S_MEDIACODEC_CONFIG)/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
+
 # Netutils
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0

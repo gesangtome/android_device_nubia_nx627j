@@ -129,6 +129,10 @@ PRODUCT_PACKAGES += \
     Snap
 endif
 
+# Charger
+PRODUCT_PACKAGES += \
+    charger
+
 # CNE
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/permissions/cneapiclient.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/cneapiclient.xml \

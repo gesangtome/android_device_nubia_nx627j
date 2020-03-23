@@ -422,7 +422,7 @@ PRODUCT_COPY_FILES += \
 $(foreach f,$(wildcard device/nubia/nx627j/configs/sensors/system/*.*),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/sensors/proto/$(notdir $f)))
 
-$(foreach f,$(wildcard device/nubia/nx627j/configs/sensors/vendor/config/*.*,\
+$(foreach f,$(wildcard device/nubia/nx627j/configs/sensors/vendor/config/*.*),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/$(notdir $f)))
 
 # Thermal

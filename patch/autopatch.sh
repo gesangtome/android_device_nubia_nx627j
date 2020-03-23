@@ -1,15 +1,15 @@
 #!/bin/env bash
 # Created by 弱弱的胖橘猫丷
-# 2020.01.15 08:48:00
+# 2020.02.22 09:33:00
 
 
 function applypatch() {
-    cp 0001-audio-Fix-compilation-error.patch ../../../../hardware/qcom-caf/sm8150/audio
-    cd ../../../../hardware/qcom-caf/sm8150/audio
-    git am 0001-audio-Fix-compilation-error.patch
+    cp 0001-audio-Fix-build-problems.patch ../../../../vendor/qcom/sm8150/opensource/audio-hal/primary-hal/
+    cd ../../../../vendor/qcom/sm8150/opensource/audio-hal/primary-hal/
+    git am 0001-audio-Fix-build-problems.patch
     cd -
-    cp 0001-media-fix-build-error.patch ../../../../hardware/qcom-caf/sm8150/media
-    cd ../../../../hardware/qcom-caf/sm8150/media
+    cp 0001-media-fix-build-error.patch ../../../../hardware/qcom/media/
+    cd ../../../../hardware/qcom/media/
     git am 0001-media-fix-build-error.patch
     cd -
 }

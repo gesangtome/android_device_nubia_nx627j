@@ -59,7 +59,7 @@ PRODUCT_COPY_FILES += \
     device/nubia/nx627j/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/default_volume_tables.xml
 
 PRODUCT_COPY_FILES += \
-    device/nubia/nx627j/audio/sound_trigger_mixer_paths:$(TARGET_COPY_OUT_SYSTEM)/etc/sound_trigger_mixer_paths.xml \
+    device/nubia/nx627j/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sound_trigger_mixer_paths.xml \
     device/nubia/nx627j/audio/sound_trigger_mixer_paths_wcd9340.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sound_trigger_mixer_paths_wcd9340.xml \
     device/nubia/nx627j/audio/sound_trigger_mixer_paths_wcd9340_qrd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sound_trigger_mixer_paths_wcd9340_qrd.xml \
     device/nubia/nx627j/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sound_trigger_platform_info.xml
@@ -116,8 +116,8 @@ PRODUCT_PACKAGES += \
 
 # CNE
 PRODUCT_COPY_FILES += \
-    device/nubia/mx627j/permissions/cneapiclient.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/cneapiclient.xml \
-    device/nubia/mx627j/permissions/com.quicinc.cne.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.quicinc.cne.xml \
+    device/nubia/nx627j/permissions/cneapiclient.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/cneapiclient.xml \
+    device/nubia/nx627j/permissions/com.quicinc.cne.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.quicinc.cne.xml \
     device/nubia/nx627j/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
 
 $(foreach f,$(wildcard device/nubia/nx627j/configs/cne/ATT_*.xml),\
@@ -131,7 +131,7 @@ $(foreach f,$(wildcard device/nubia/nx627j/configs/cne/VZW_*.xml),\
 
 # COLOR SERVICE
 PRODUCT_COPY_FILES += \
-    device/nubia/mx627j/permissions/com.qti.snapdragon.sdk.display.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qti.snapdragon.sdk.display.xml
+    device/nubia/nx627j/permissions/com.qti.snapdragon.sdk.display.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qti.snapdragon.sdk.display.xml
 
 # DATA
 PRODUCT_COPY_FILES += \
@@ -139,9 +139,9 @@ PRODUCT_COPY_FILES += \
 
 # DPM
 PRODUCT_COPY_FILES += \
-    device/nubia/nx627j/dpm.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/dpm/dpm.conf \
-    device/nubia/mx627j/permissions/dpmapi.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/dpmapi.xml \
-    device/nubia/mx627j/permissions/com.qti.dpmframework.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qti.dpmframework.xml
+    device/nubia/nx627j/configs/dpm.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/dpm/dpm.conf \
+    device/nubia/nx627j/permissions/dpmapi.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/dpmapi.xml \
+    device/nubia/nx627j/permissions/com.qti.dpmframework.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qti.dpmframework.xml
 
 # DRM
 PRODUCT_PACKAGES += \

@@ -34,12 +34,11 @@ It allows additional grants on top of privapp-permissions-platform.xml
     </privapp-permissions>
 
     <privapp-permissions package="com.qti.dpmserviceapp">
-        <permission name="android.permission.DEVICE_POWER"/>
-        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
     </privapp-permissions>
 
     <privapp-permissions package="com.qualcomm.qcrilmsgtunnel">
-        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
     </privapp-permissions>
 
     <privapp-permissions package="org.codeaurora.dialer">
@@ -64,9 +63,8 @@ It allows additional grants on top of privapp-permissions-platform.xml
 
     <privapp-permissions package="org.codeaurora.ims">
         <permission name="android.permission.READ_PRECISE_PHONE_STATE"/>
-        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
         <permission name="android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME"/>
-        <permission name="android.permission.STATUS_BAR_SERVICE"/>
     </privapp-permissions>
 
     <privapp-permissions package="com.android.soundrecorder">
@@ -84,11 +82,6 @@ It allows additional grants on top of privapp-permissions-platform.xml
     </privapp-permissions>
 
     <privapp-permissions package="com.qualcomm.wfd.service">
-        <permission name="android.permission.INJECT_EVENTS"/>
-        <permission name="android.permission.ACCESS_SURFACE_FLINGER"/>
-        <permission name="android.permission.WRITE_SETTINGS"/>
-        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
-        <permission name="android.permission.BLUETOOTH_STACK"/>
         <permission name="android.permission.READ_FRAME_BUFFER"/>
         <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
     </privapp-permissions>

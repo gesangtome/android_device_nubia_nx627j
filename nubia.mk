@@ -56,7 +56,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.allocator@1.0-service \
-    vendor.display.config@1.7
+    vendor.display.config@1.11
 
 # HIDL
 PRODUCT_PACKAGES += \

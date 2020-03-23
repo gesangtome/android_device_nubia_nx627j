@@ -88,6 +88,10 @@ TARGET_USE_QTI_BT_STACK := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := \
     device/nubia/nx627j/bluetooth/include
 
+# Camera
+TARGET_USES_QTI_CAMERA_DEVICE := true
+USE_DEVICE_SPECIFIC_CAMERA := true
+
 # configfs
 TARGET_FS_CONFIG_GEN := \
     device/nubia/nx627j/config.fs

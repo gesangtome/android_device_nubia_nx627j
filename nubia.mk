@@ -20,7 +20,7 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
 	device/nubia/nx627j/overlay \
-	device/nubia/nx627j/overlay-lineage
+	device/nubia/nx627j/overlay-pa
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)

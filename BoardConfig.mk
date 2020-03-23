@@ -33,6 +33,10 @@ TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := "nubia smartphone"
 TARGET_BOARD_PLATFORM := msmnile
 
+# configfs
+TARGET_FS_CONFIG_GEN := \
+    device/nubia/nx627j/config.fs
+
 # Kernel 
 TARGET_KERNEL_SOURCE := kernel/nubia/sm8150
 TARGET_KERNEL_CONFIG := sm8150-perf_defconfig

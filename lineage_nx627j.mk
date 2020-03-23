@@ -15,6 +15,16 @@
 # Release name
 PRODUCT_RELEASE_NAME := nubia NX627J
 
+# Inherit from those products
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Inherit from natrium device
+$(call inherit-product, device/nubia/nx627j/nubia.mk)
+
+# Inherit some common lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := nx627j
 PRODUCT_NAME := lineage_nx627j

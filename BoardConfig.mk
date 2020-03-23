@@ -107,6 +107,10 @@ TARGET_USES_GRALLOC1 := true
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 
+# Hardware-based disk encryption
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_HW_DISK_ENCRYPTION_PERF := true
+
 # HIDL
 DEVICE_MANIFEST_FILE := \
     device/nubia/nx627j/manifest.xml

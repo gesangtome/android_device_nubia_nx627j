@@ -5,7 +5,13 @@
 <!-- <remove-project name="LineageOS/android_bootable_recovery" />
   <project path="bootable/recovery" name="android_bootable_recovery" remote="nubia_dev" revision="android-9.0"/>
 -->
-  <project path="device/nubia/nx627j" name="gesangtome/android_device_nubia_nx627j" revision="lineage-17.1" />
-  <project path="kernel/nubia/sm8150" name="gesangtome/android_kernel_nubia_sm8150" revision="lineage-17.1" />
+  <project path="device/nubia/nx627j" name="gesangtome/android_device_nubia_nx627j" revision="quartz-10.0" />
+  <project path="kernel/nubia/sm8150" name="gesangtome/android_kernel_nubia_sm8150" revision="quartz-10.0" />
+  <project path="vendor/nubia/nx627j" name="gesangtome/android_vendor_nubia_nx627j" revision="quartz-10.0" />
+
+  <project path="vendor/qcom/opensource/audio-hal/primary-hal" name="AOSPA/android_hardware_qcom_audio" remote="aospa" revision="quartz-855" />
+  <project path="hardware/qcom/display" name="AOSPA/android_hardware_qcom_display" remote="aospa" revision="quartz-855" />
+  <project path="hardware/qcom/media" name="AOSPA/android_hardware_qcom_media" remote="aospa" revision="quartz-855" />
+  <project path="vendor/qcom/opensource/commonsys-intf/display" name="AOSPA/android_vendor_qcom_opensource_commonsys-intf_display" remote="aospa" revision="quartz" />
 
 </manifest>

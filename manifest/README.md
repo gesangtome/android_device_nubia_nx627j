@@ -7,7 +7,7 @@ This file records the required dependencies
 Execute the following command to apply the changes to your ANDROID repository:
 
 ```
-➜  cd $HOME/lineage
+➜  cd $HOME/aospa
 
 ➜  mkdir .repo/local_manifests/
 

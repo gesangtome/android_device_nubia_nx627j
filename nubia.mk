@@ -113,6 +113,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service
 
+PRODUCT_BOOT_JARS += \
+    ifaa_fingerprint
+
 # Graphics
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-service \

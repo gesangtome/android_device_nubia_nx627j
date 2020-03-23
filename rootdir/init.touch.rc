@@ -1,0 +1,77 @@
+#
+# Copyright (c) 2016-2019, nubia. All rights reserved.
+#
+
+# touch panel
+
+on boot
+    # front 
+    mkdir /data/vendor/tp 0775 system system
+
+    # back
+    mkdir /data/vendor/tp2 0775 system system
+
+    # gtm test
+    mkdir /data/rawdata/frontfiles 0775 system system
+    mkdir /data/rawdata/backfiles 0775 system system
+
+    chmod 0777 /system/bin/gt_mp_test
+    chmod 0777 /dev/gtp_tools
+    chmod 0777 /dev/gtp_back_tools
+    chmod 0777 /vendor/etc/rawdata/frontfiles/GT9886_test_sensor_0_front.tporder
+    chmod 0777 /vendor/etc/rawdata/backfiles/GT9886_test_sensor_0_back.tporder
+    chown system system /system/bin/gt_mp_test
+
+    chown system system /sys/kernel/lcd_enhance/cabc
+    chown system system /sys/kernel/lcd_enhance/sec_cabc
+    chown system system /sys/kernel/lcd_enhance/hbm_mode
+    chown system system /sys/kernel/lcd_enhance/nubia_mode
+    chown system system /sys/kernel/lcd_enhance/lcd_state
+    chown system system /sys/kernel/lcd_enhance/lcd_reg
+    chown system system /sys/kernel/lcd_enhance/aod_mode
+    chown system system /sys/kernel/lcd_enhance/sec_aod_mode
+    chown system system /sys/class/backlight/panel1-backlight/brightness
+    chown system system /sys/kernel/lcd_enhance/front_dimming
+    chown system system /sys/kernel/lcd_enhance/disp_reset
+
+    # touch panel
+    chown system system /sys/devices/platform/front_touch.0/chip_info
+    symlink /sys/devices/platform/front_touch.0/chip_info /data/vendor/tp/ic_ver
+    chown system system /sys/devices/platform/front_touch.0/read_cfg
+    symlink /sys/devices/platform/front_touch.0/read_cfg /data/vendor/tp/read_cfg
+    chown system system /sys/devices/platform/front_touch.0/palm
+    symlink /sys/devices/platform/front_touch.0/palm /data/vendor/tp/palm
+    chown system system /sys/devices/platform/front_touch.0/gesture/enable
+    symlink /sys/devices/platform/front_touch.0/gesture/enable /data/vendor/tp/gesture_enable
+
+    chown system system /sys/devices/platform/second_touch.0/chip_info
+    symlink /sys/devices/platform/second_touch.0/chip_info /data/vendor/tp2/ic_ver
+    chown system system /sys/devices/platform/second_touch.0/read_cfg
+    symlink /sys/devices/platform/second_touch.0/read_cfg /data/vendor/tp2/read_cfg
+    chown system system /sys/devices/platform/second_touch.0/palm
+    symlink /sys/devices/platform/second_touch.0/palm /data/vendor/tp2/palm
+    chown system system /sys/devices/platform/second_touch.0/gesture/enable
+    chown system system /sys/devices/platform/second_touch.0/resume
+    symlink /sys/devices/platform/second_touch.0/resume /data/vendor/tp2/resume
+
+    # dmapp
+    chmod 0666 /mnt/vendor/persist/wlan_mac.bin
+    chown wifi wifi /mnt/vendor/persist/wlan_mac.bin
+    start dmapp
+
+# touch panel game mode
+on property:sys.nubia.touch.private=1
+    write /sys/devices/platform/front_touch.0/gesture/enable 1
+
+on property:sys.nubia.touch.private=0
+    write /sys/devices/platform/front_touch.0/gesture/enable 0
+
+# touch panel cfg change state
+on property:persist.sys.nubia.touch_cfg=0
+    write /sys/devices/platform/front_touch.0/gesture/enable 2
+
+on property:persist.sys.nubia.touch_cfg=1
+    write /sys/devices/platform/front_touch.0/gesture/enable 3
+
+on property:persist.sys.nubia.touch_cfg=2
+    write /sys/devices/platform/front_touch.0/gesture/enable 4

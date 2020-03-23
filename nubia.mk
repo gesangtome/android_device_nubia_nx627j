@@ -22,6 +22,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
 $(call inherit-product-if-exists, vendor/nubia/nx627j/nx627j-vendor.mk)
 
+# Audio (SoundFX)
+PRODUCT_PACKAGES += \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libvolumelistener \
+
 # AID/fs configs
 PRODUCT_PACKAGES += \
     fs_config_files

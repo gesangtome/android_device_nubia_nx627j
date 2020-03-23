@@ -12,4 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+$(call inherit-product-if-exists, vendor/nubia/nx627j/nx627j-vendor.mk)
+
 

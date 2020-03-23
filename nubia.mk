@@ -197,7 +197,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.allocator-service \
-    vendor.display.config@1.11
+    vendor.display.config@1.16
 
 # GPS
 PRODUCT_COPY_FILES += \

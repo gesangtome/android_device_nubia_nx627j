@@ -14,3 +14,10 @@
 
 # Release name
 PRODUCT_RELEASE_NAME := nubia NX627J
+
+# Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := nx627j
+PRODUCT_NAME := lineage_nx627j
+PRODUCT_BRAND := nubia
+PRODUCT_MODEL := nx627j
+PRODUCT_MANUFACTURER := nubia

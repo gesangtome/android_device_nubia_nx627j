@@ -28,5 +28,10 @@ TARGET_2ND_CPU_VARIANT := cortex-a75
 
 TARGET_USES_64_BIT_BINDER := true
 
+# Bootloader
+TARGET_NO_BOOTLOADER := true
+TARGET_BOOTLOADER_BOARD_NAME := "nubia smartphone"
+TARGET_BOARD_PLATFORM := msmnile
+
 # inherit from the proprietary version
 -include vendor/nubia/nx627j/BoardConfigVendor.mk

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Created by 弱弱的胖橘猫丷
 
-source ../../../vendor/lineage/build/tools/extract_utils.sh
+source ../../../vendor/pa/build/tools/extract_utils.sh
 
 function device_root_check() {
     adb shell "type su" > /dev/null 2>&1

@@ -14,10 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_nx627j.mk
+    $(LOCAL_DIR)/pa_nx627j.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_nx627j-eng \
-    lineage_nx627j-user \
-    lineage_nx627j-userdebug
-
+    pa_nx627j-eng \
+    pa_nx627j-user \
+    pa_nx627j-userdebug

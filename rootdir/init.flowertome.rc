@@ -1,0 +1,147 @@
+# Created by 弱弱的胖橘猫丷
+
+on init
+    # Create energy-aware scheduler tuning nodes
+    mkdir /dev/stune/audio-app
+    chown system system /dev/stune/audio-app
+    chown system system /dev/stune/audio-app/tasks
+    chmod 0664 /dev/stune/audio-app/tasks
+
+    # CPU control
+    mkdir /dev/cpuctl/background
+    chown system system /dev/cpuctl/background/tasks
+    chmod 0666 /dev/cpuctl/background/tasks
+    write /dev/cpuctl/background/cpu.shares 52
+    write /dev/cpuctl/background/cpu.rt_period_us 1000000
+
+    # active FIFO threads will never be in BG
+    write /dev/cpuctl/background/cpu.rt_runtime_us 10000
+
+    # restricted is for system tasks that are being throttled
+    # due to screen off.
+    write /dev/cpuset/restricted/cpus "0-3"
+
+    mkdir /dev/cpuset/audio-app
+    copy /dev/cpuset/cpus /dev/cpuset/audio-app/cpus
+    copy /dev/cpuset/mems /dev/cpuset/audio-app/mems
+
+    mkdir /dev/cpuset/dex2oat
+    copy /dev/cpuset/cpus /dev/cpuset/dex2oat/cpus
+    copy /dev/cpuset/mems /dev/cpuset/dex2oat/mems
+
+    mkdir /dev/cpuset/dex2oatfg
+    copy /dev/cpuset/cpus /dev/cpuset/dex2oatfg/cpus
+    copy /dev/cpuset/mems /dev/cpuset/dex2oatfg/mems
+
+    mkdir /dev/cpuset/fullon
+    copy /dev/cpuset/cpus /dev/cpuset/fullon/cpus
+    copy /dev/cpuset/mems /dev/cpuset/fullon/mems
+
+    mkdir /dev/cpuset/systemserver
+    copy /dev/cpuset/cpus /dev/cpuset/systemserver/cpus
+    copy /dev/cpuset/mems /dev/cpuset/systemserver/mems
+
+    # TGPA
+    mkdir /dev/cpuset/bigcluster
+    copy /dev/cpuset/cpus /dev/cpuset/bigcluster/cpus
+    copy /dev/cpuset/mems /dev/cpuset/bigcluster/mems
+
+    mkdir /dev/cpuset/littlecluster
+    copy /dev/cpuset/cpus /dev/cpuset/littlecluster/cpus
+    copy /dev/cpuset/mems /dev/cpuset/littlecluster/mems
+
+    # superbig
+    mkdir /dev/cpuset/superbig
+    copy /dev/cpuset/cpus /dev/cpuset/superbig/cpus
+    copy /dev/cpuset/mems /dev/cpuset/superbig/mems
+    write /dev/cpuset/superbig/cpus "7"
+
+    # change permissions for all cpusets we'll touch at runtime
+    chown system system /dev/cpuset/audio-app
+    chown system system /dev/cpuset/dex2oat
+    chown system system /dev/cpuset/dex2oatfg
+    chown system system /dev/cpuset/fullon
+    chown system system /dev/cpuset/systemserver
+
+    # TGPA
+    chown system system /dev/cpuset/bigcluster
+    chown system system /dev/cpuset/littlecluster
+
+    chown system system /dev/cpuset/audio-app/tasks
+    chown system system /dev/cpuset/dex2oat/tasks
+    chown system system /dev/cpuset/dex2oatfg/tasks
+    chown system system /dev/cpuset/fullon/tasks
+    chown system system /dev/cpuset/systemserver/tasks
+
+    # super big
+    chown system system /dev/cpuset/superbig
+    chown system system /dev/cpuset/superbig/tasks
+    #nubia add end for lock in super big
+
+    # TGPA
+    chown system system /dev/cpuset/bigcluster/tasks
+    chown system system /dev/cpuset/littlecluster/tasks
+
+    # set system-background to 0775 so SurfaceFlinger can touch it
+    chmod 0664 /dev/cpuset/audio-app/tasks
+    chmod 0664 /dev/cpuset/dex2oat/tasks
+    chmod 0664 /dev/cpuset/dex2oatfg/tasks
+    chmod 0664 /dev/cpuset/fullon/tasks
+    chmod 0664 /dev/cpuset/systemserver/tasks
+
+    # cold boot
+    chmod 0666 /dev/cpuset/background/cpus
+    chmod 0666 /dev/cpuset/systemserver/cpus
+
+    # app launch boost start
+    chown system system /dev/cpuset/systemserver/cpus
+    chmod 0664 /dev/cpuset/systemserver/cpus
+    chown system system /dev/cpuset/systemserver/cgroup.procs
+    chmod 0664 /dev/cpuset/systemserver/cgroup.procs
+    chown system system /dev/cpuset/top-app/cgroup.procs
+    chmod 0664 /dev/cpuset/top-app/cgroup.procs
+    chown system system /dev/stune/foreground/cgroup.procs
+    chmod 0664 /dev/stune/foreground/cgroup.procs
+    chown system system /dev/stune/top-app/schedtune.boost
+    chmod 0664 /dev/stune/top-app/schedtune.boost
+
+    # super big
+    chmod 0664 /dev/cpuset/superbig/tasks
+
+    # TGPA
+    chmod 0664 /dev/cpuset/bigcluster/tasks
+    chmod 0664 /dev/cpuset/littlecluster/tasks
+
+on post-fs-data
+    # silead fingerprint
+    mkdir /data/vendor/silead 0770 system system
+
+on boot
+    # change ownership and premission for awinic haptic shock with music
+    chown system audio /dev/aw8695_haptic
+    chmod 0660 /dev/aw8695_haptic
+    chown system audio /sys/class/leds/vibrator_aw8695/haptic_audio
+    chmod 0660 /sys/class/leds/vibrator_aw8695/haptic_audio
+    mkdir /data/awinic 0770 system audio	
+
+# Copy recovery log to sdcard
+on property:ro.crypto.fbefinish=1
+    mkdir /data/media/0/TWRP/debug
+    copy /cache/recovery/last_log /data/media/0/TWRP/debug/last_log
+
+# update battery informations.
+on property:sys.batteryinfo.update=*
+    chmod 0644 /sys/class/power_supply/battery/update_now
+    write /sys/class/power_supply/battery/update_now 1
+
+# add for smartPA calibration
+on property:persist.sys.calibrate.smartpa=1
+	write /sys/kernel/debug/tfa98xx-34/impedance_state 1
+
+# DTS Sound
+on property:persist.sys.dts.settings=1
+    copy /vendor/etc/dts/dts_audio_settings /data/vendor/audio/dts/dts_audio_settings
+    chmod 600 /data/vendor/audio/dts/dts_audio_settings
+    chown audioserver audio /data/vendor/audio/dts/dts_audio_settings
+    setprop persist.sys.dts.settings 2
+

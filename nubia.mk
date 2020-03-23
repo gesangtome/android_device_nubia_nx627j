@@ -22,3 +22,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
 $(call inherit-product-if-exists, vendor/nubia/nx627j/nx627j-vendor.mk)
 
+# VNDK
+PRODUCT_PACKAGES += \
+    vndk_package

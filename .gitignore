@@ -2,4 +2,6 @@
 
 *~
 *.*~
-
+*.rej
+*.patch
+!patch/*.patch

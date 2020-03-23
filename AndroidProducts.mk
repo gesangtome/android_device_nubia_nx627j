@@ -16,3 +16,8 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_nx627j.mk
 
+COMMON_LUNCH_CHOICES := \
+    lineage_nx627j-eng \
+    lineage_nx627j-user \
+    lineage_nx627j-userdebug
+

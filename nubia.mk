@@ -169,6 +169,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.2-service.clearkey
 
+# DTS
+PRODUCT_PACKAGES += \
+    DTS_SOUND
+
 # Fstab
 PRODUCT_PACKAGES += \
     fstab.qcom

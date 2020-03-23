@@ -36,6 +36,8 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Audio
 PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio@4.0-impl \
     android.hardware.audio@5.0-impl \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@5.0-impl \
@@ -45,6 +47,15 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     audio.primary.msmnile \
     tinymix
+
+PRODUCT_PACKAGES += \
+    android.hardware.audio.common-util \
+    android.hardware.audio.common@2.0-util \
+    android.hardware.audio.common@4.0-util \
+    android.hardware.audio.common@5.0-util
+
+PRODUCT_COPY_FILES += \
+    device/nubia/mx627j/permissions/audiosphere.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/audiosphere.xml
 
 # Audio (SoundFX)
 PRODUCT_PACKAGES += \
@@ -95,9 +106,33 @@ PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0-impl.generic \
     android.hardware.contexthub@1.0-service
 
+# CNE
+PRODUCT_COPY_FILES += \
+    device/nubia/mx627j/permissions/cneapiclient.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/cneapiclient.xml \
+    device/nubia/mx627j/permissions/com.quicinc.cne.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.quicinc.cne.xml \
+    device/nubia/nx627j/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
+
+$(foreach f,$(wildcard device/nubia/nx627j/configs/cne/ATT_*.xml),\
+	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ATT/$(notdir $f)))
+
+$(foreach f,$(wildcard device/nubia/nx627j/configs/cne/ROW_*.xml),\
+	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ROW/$(notdir $f)))
+
+$(foreach f,$(wildcard device/nubia/nx627j/configs/cne/VZW_*.xml),\
+	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/VZW/$(notdir $f)))
+
+# COLOR SERVICE
+PRODUCT_COPY_FILES += \
+    device/nubia/mx627j/permissions/com.qti.snapdragon.sdk.display.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qti.snapdragon.sdk.display.xml
+
 # DATA
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
+
+# DPM
+PRODUCT_COPY_FILES += \
+    device/nubia/mx627j/permissions/dpmapi.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/dpmapi.xml \
+    device/nubia/mx627j/permissions/com.qti.dpmframework.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qti.dpmframework.xml
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -118,6 +153,7 @@ PRODUCT_BOOT_JARS += \
 
 # Graphics
 PRODUCT_PACKAGES += \
+    libGLES_android \
     android.hardware.graphics.composer@2.3-service \
     android.hardware.graphics.mapper@2.0-impl-qti-display \
     android.hardware.memtrack@1.0-impl \
@@ -125,11 +161,12 @@ PRODUCT_PACKAGES += \
     hwcomposer.msmnile \
     memtrack.msmnile \
     gralloc.msmnile \
+    libgui_vendor \
     libtinyxml \
     libvulkan
 
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.display.allocator@1.0-service \
+    vendor.qti.hardware.display.allocator-service \
     vendor.display.config@1.11
 
 # GPS
@@ -175,8 +212,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sdm
 
+# keylayout
+PRODUCT_COPY_FILES += \
+    device/nubia/nx627j/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
+
 # Media
 PRODUCT_PACKAGES += \
+    com.android.mediadrm.signer
+
+PRODUCT_PACKAGES += \
+    libmm-omxcore \
     libc2dcolorconvert \
     libOmxAacEnc \
     libOmxAmrEnc \
@@ -250,6 +295,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml \
+    frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.freeform_window_management.xml \
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service-qti
@@ -259,8 +309,8 @@ PRODUCT_COPY_FILES += \
 
 # QTI
 PRODUCT_COPY_FILES += \
-    device/nubia/nx627j/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml \
-    device/nubia/nx627j/permissions/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml
+    device/nubia/nx627j/permissions/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml \
+    
 
 # QMI
 PRODUCT_COPY_FILES += \
@@ -271,6 +321,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libjson \
     librmnetctl
+
+PRODUCT_PACKAGES += \
+    android.hardware.broadcastradio@1.0-impl
+
+PRODUCT_COPY_FILES += \
+    device/nubia/nx627j/permissions/embms.xml:system/etc/permissions/embms.xml \
+    device/nubia/nx627j/permissions/qti_permissions.xml:system/etc/permissions/qti_permissions.xml \
+    device/nubia/nx627j/permissions/qti_telephony_common.xml:system/etc/permissions/qti_telephony_common.xml
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -369,7 +427,8 @@ PRODUCT_PACKAGES += \
 
 # Whitelist
 PRODUCT_COPY_FILES += \
-    device/nubia/nx627j/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+    device/nubia/nx627j/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
+    device/nubia/nx627j/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
 
 # VR
 PRODUCT_PACKAGES += \
@@ -380,9 +439,17 @@ PRODUCT_PACKAGES += \
 # WLAN
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
+    vendor.qti.hardware.wifi@1.0 \
+    vendor.qti.hardware.wifi.hostapd@1.0 \
+    vendor.qti.hardware.wifi.supplicant@2.0
+
+PRODUCT_PACKAGES += \
     hostapd \
+    hostapd_cli \
+    libcld80211 \
     libwifi-hal-qcom \
     libwpa_client \
+    wpa_cli \
     wpa_supplicant \
     wpa_supplicant.conf
 

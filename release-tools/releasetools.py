@@ -20,10 +20,10 @@ import re
 import sha
 
 def FullOTA_Assertions(info):
-  print "FullOTA_Assertions not implemented"
+  print("FullOTA_Assertions not implemented")
 
 def IncrementalOTA_Assertions(info):
-  print "IncrementalOTA_Assertions not implemented"
+  print("IncrementalOTA_Assertions not implemented")
 
 def InstallImage(img_name, img_file, partition, info):
   common.ZipWriteStr(info.output_zip, img_name, img_file)
@@ -60,7 +60,7 @@ def FullOTA_InstallEnd(info):
       info.script.Print("update image " + k + "...")
       InstallImage(k, img_file, v, info)
     except KeyError:
-      print "warning: no " + k + " image in input target_files; not flashing " + k
+      print("warning: no " + k + " image in input target_files; not flashing" + k)
 
 
 def IncrementalOTA_InstallEnd(info):
@@ -71,6 +71,6 @@ def IncrementalOTA_InstallEnd(info):
       if source_file != target_file:
         InstallImage(k, target_file, v, info)
       else:
-        print k + " image unchanged; skipping"
+        print(k + " image unchanged; skipping")
     except KeyError:
-      print "warning: " + k + " image missing from target; not flashing " + k
+      print("warning: " + k + " image missing from target; not flashing " + k)

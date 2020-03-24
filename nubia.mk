@@ -36,8 +36,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio@4.0-impl \
     android.hardware.audio@5.0-impl \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@5.0-impl \
@@ -77,6 +75,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/audio/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf \
     device/nubia/nx627j/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    device/nubia/nx627j/audio/audio_effects.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_effects.xml \
     device/nubia/nx627j/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf \
     device/nubia/nx627j/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     device/nubia/nx627j/audio/audio_policy_dts_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
@@ -140,6 +139,7 @@ PRODUCT_COPY_FILES += \
 
 # DPM
 PRODUCT_COPY_FILES += \
+    device/nubia/nx627j/dpm.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/dpm/dpm.conf \
     device/nubia/mx627j/permissions/dpmapi.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/dpmapi.xml \
     device/nubia/mx627j/permissions/com.qti.dpmframework.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qti.dpmframework.xml
 
@@ -218,6 +218,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
+    android.hardware.light-V2.0-java \
     android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service
 
@@ -307,10 +308,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
-    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
+    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
+    device/nubia/nx627j/permissions/defaultPermission.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/defaultPermission.xml
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.verified_boot.xml \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.freeform_window_management.xml \
 
@@ -385,7 +387,8 @@ PRODUCT_PACKAGES += \
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
-    device/nubia/nx627j/seccomp/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
+    device/nubia/nx627j/seccomp/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy \
+    device/nubia/nx627j/seccomp/mediaextractor.policy_system:$(TARGET_COPY_OUT_SYSTEM)/etc/seccomp_policy/mediaextractor.policy
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += device/nubia/nx627j
@@ -399,6 +402,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
     device/nubia/nx627j/configs/sensors/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sec_config
+
+$(foreach f,$(wildcard device/nubia/nx627j/configs/sensors/system/*.*),\
+	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/sensors/proto/$(notdir $f)))
+
+$(foreach f,$(wildcard device/nubia/nx627j/configs/sensors/vendor/config/*.*,\
+	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/$(notdir $f)))
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -425,6 +434,9 @@ PRODUCT_PACKAGES += \
     telephony-ext
 
 PRODUCT_BOOT_JAR += telephony-ext
+
+PRODUCT_COPY_FILES += \
+    device/nubia/nx627j/configs/telephony.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/telephony/config.xml
 
 # USB default HAL
 PRODUCT_PACKAGES += \
@@ -483,6 +495,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libdisplayconfig \
     libnl \
+    libqdMetaData \
     libqdMetaData.system
 
 PRODUCT_BOOT_JARS += \

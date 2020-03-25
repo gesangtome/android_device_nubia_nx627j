@@ -133,8 +133,6 @@ vendor/lib64/libbt_nv_tool.so
 vendor/lib64/vendor.hardware.wl.bt.bluetoothext@1.0.so
 
 # Bluetooth-AptX
--vendor/app/aptxals/aptxals.apk
--vendor/overlay/aptxalsOverlay/aptxalsOverlay.apk:vendor/app/aptxalsOverlay/aptxalsOverlay.apk
 vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Encoder.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so

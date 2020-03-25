@@ -23,3 +23,7 @@ Kernel source for nubia Z20 - Unofficial
 
 ![nubia Z20](https://oss.static.nubia.cn/active/5d48dd2463fc329.png "nubia Z20")
 
+
+Updated daily
+===========================================
+You can find more information on this page： [Jenkins Robot](http://flowertome.ticp.io/jenkins/view/Paranoid/job/Paranoid%20Project/job/Quartz-10.0/job/aospa_nx627j/)

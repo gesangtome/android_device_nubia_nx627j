@@ -102,6 +102,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libbt-vendor
 
+# Bluetooth (Qualcomm APTX)
+PRODUCT_PACKAGES += \
+    aptxals
+
 # ConfigStore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service

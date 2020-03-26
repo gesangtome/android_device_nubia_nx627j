@@ -19,7 +19,7 @@ Camera  | 1/2 inch CMOS camera sensor, Fill light (two-color temperature) + soft
 Kernel source for nubia Z20 - Unofficial 
 ===========================================
 
-[Click to view](https://github.com/Flowertome/android_kernel_nubia_sm8150)
+[Click to view](https://github.com/gesangtome/android_kernel_nubia_sm8150)
 
 ![nubia Z20](https://oss.static.nubia.cn/active/5d48dd2463fc329.png "nubia Z20")
 

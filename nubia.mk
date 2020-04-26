@@ -433,7 +433,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/configs/sensors/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config \
     device/nubia/nx627j/configs/sensors/vendor/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
-    device/nubia/nx627j/configs/sensors/vendor/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sec_config
+    device/nubia/nx627j/configs/sensors/vendor/sns_reg_config:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sns_reg_config
 
 $(foreach f,$(wildcard device/nubia/nx627j/configs/sensors/system/*.*),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/sensors/proto/$(notdir $f)))

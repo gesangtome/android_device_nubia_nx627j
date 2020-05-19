@@ -1,0 +1,42 @@
+From 1d1e14da2943cf80c66060d8865c8ecda12d940b Mon Sep 17 00:00:00 2001
+From: gesangtome <gesangtome@foxmail.com>
+Date: Tue, 19 May 2020 17:37:06 +0800
+Subject: [PATCH 3/3] Audio: dts_eagle.c: fixed some errors
+
+error: passing 'const struct stream_out *' to parameter of type 'struct stream_out *' discards qualifiers
++ add the missing qualifier 'const'
+
+error: format specifies type 'unsigned long' but the argument has type 'unsigned int'
++ change the printed data type to size_t
+
+Change-Id: I563dc458be69305605d8786cdf20d83b099374f6
+Signed-off-by: gesangtome <gesangtome@foxmail.com>
+---
+ hal/audio_extn/dts_eagle.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/hal/audio_extn/dts_eagle.c b/hal/audio_extn/dts_eagle.c
+index bee0e91b..cce9ab03 100644
+--- a/hal/audio_extn/dts_eagle.c
++++ b/hal/audio_extn/dts_eagle.c
+@@ -61,7 +61,7 @@ static struct dts_eagle_param_desc_alsa *fade_out_data = NULL;
+ //static int32_t mCurrDevice = 0;
+ //static const char* DTS_EAGLE_STR = DTS_EAGLE_KEY;
+ 
+-static int do_DTS_Eagle_params_stream(struct stream_out *out, struct dts_eagle_param_desc_alsa *t, bool get) {
++static int do_DTS_Eagle_params_stream(const struct stream_out *out, struct dts_eagle_param_desc_alsa *t, bool get) {
+     char mixer_string[128];
+     char mixer_str_query[128];
+     struct mixer_ctl *ctl;
+@@ -316,7 +316,7 @@ void audio_extn_dts_eagle_set_parameters(struct audio_device *adev, struct str_p
+         }
+ 
+         if (dts_found && count > 1 && size != (int)(count * sizeof(int))) {
+-            ALOGE("DTS_EAGLE_HAL (%s): size/count mismatch (size = %i bytes, count = %i integers / %u bytes).", __func__, size, count, count*sizeof(int));
++            ALOGE("DTS_EAGLE_HAL (%s): size/count mismatch (size = %i bytes, count = %i integers / %zu bytes).", __func__, size, count, count*sizeof(int));
+         } else if (dts_found) {
+             ALOGI("DTS_EAGLE_HAL (%s): param detected: %s", __func__, str_parms_to_str(parms));
+             if (!(*t))
+-- 
+2.26.2
+

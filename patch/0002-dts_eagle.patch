@@ -1,0 +1,29 @@
+From e759dec6f8c202790e9704a7c80a8e8bebcbcb8a Mon Sep 17 00:00:00 2001
+From: gesangtome <gesangtome@foxmail.com>
+Date: Tue, 19 May 2020 17:13:14 +0800
+Subject: [PATCH 2/3] Audio: dts_eagle.c: Fix implicitly declared function
+ 'close'
+
+Include the function close's header file
+
+Change-Id: If0ff511578c74b7f0d6b641c24a5e019ee2f6f13
+Signed-off-by: gesangtome <gesangtome@foxmail.com>
+---
+ hal/audio_extn/dts_eagle.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/hal/audio_extn/dts_eagle.c b/hal/audio_extn/dts_eagle.c
+index 0dc17be0..bee0e91b 100644
+--- a/hal/audio_extn/dts_eagle.c
++++ b/hal/audio_extn/dts_eagle.c
+@@ -21,6 +21,7 @@
+ #include <math.h>
+ #include <stdlib.h>
+ #include <fcntl.h>
++#include <unistd.h>
+ #include <log/log.h>
+ #include <cutils/properties.h>
+ #include <cutils/str_parms.h>
+-- 
+2.26.2
+

@@ -1,0 +1,106 @@
+pipeline
+{
+    agent any
+
+    environment
+    {
+        LANG = 'en_US.UTF-8'
+    }
+
+    options
+    {
+        timeout(activity: true, time: 45)
+    }
+
+    stages
+    {
+        stage('Cleanup')
+        { 
+            steps
+            {
+                script
+                {
+                     try
+                     {
+                         sh label: '', script: 'rm -rf /home/android/SkyHawk/.repo/local_manifests/nx627j.xml'
+                     }
+                     catch (e)
+                     {
+                         currentBuild.result = 'ABORTED'
+                         throw e
+                     }
+                }
+            }
+        }
+        stage('Set link')
+        { 
+            steps
+            {
+                script
+                {
+                     try
+                     {
+                         sh label: '', script: 'cp -a android.xml /home/android/SkyHawk/.repo/local_manifests/nx627j.xml'
+                     }
+                     catch (e)
+                     {
+                         currentBuild.result = 'ABORTED'
+                         throw e
+                     }
+                }
+            }
+        }
+        stage('update source')
+        { 
+            steps
+            {
+                script
+                {
+                     try
+                     {
+                         dir('/home/android/SkyHawk/')
+                         {
+                             sh label: '', script: '$REPO_SCRIPT sync gesangtome/android_device_nubia_nx627j'
+                         }
+                     }
+                     catch (e)
+                     {
+                         currentBuild.result = 'ABORTED'
+                         throw e
+                     }
+                }
+            }
+        }
+        stage('make recovery')
+        { 
+            steps
+            {
+                script
+                {
+                     try
+                     {
+                         dir('/home/android/SkyHawk/')
+                         {
+                             sh label: '', script: 'bash make.sh omni_nx627j-eng'
+                         }
+                     }
+                     catch (e)
+                     {
+                         currentBuild.result = 'FAILED'
+                         throw e
+                     }
+                }
+            }
+        }
+    }
+    post
+    {
+        success
+        {
+            dir('/home/android/SkyHawk/out/target/product/nx627j')
+            {
+                archiveArtifacts artifacts: 'recovery.img', onlyIfSuccessful: true
+            }
+        }
+    }
+}

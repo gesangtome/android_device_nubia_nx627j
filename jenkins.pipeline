@@ -102,5 +102,12 @@ pipeline
                 archiveArtifacts artifacts: 'SHRP_v2.3_nx627j-*.zip', onlyIfSuccessful: true
             }
         }
+        cleanup
+        {
+            dir('/home/android/SkyHawk/out/target/product')
+            {
+                sh label: '', script: 'rm -rf nx627j/'
+            }
+        }
     }
 }

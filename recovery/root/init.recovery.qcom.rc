@@ -28,6 +28,7 @@
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    export ANDROID_ROOT /system_root
     chmod 0660 /dev/qseecom
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
@@ -38,7 +39,7 @@ on init
     mkdir /system/bin
     mkdir /system/etc
     symlink /system/etc /etc
-    symlink /sbin/toolbox /system/bin/sh
+    symlink /sbin/busybox /system/bin/sh
     symlink /vendor/manifest.xml /system/manifest.xml
 
     start hwservicemanager
@@ -92,11 +93,11 @@ service gatekeeper-1-0 /sbin/android.hardware.gatekeeper@1.0-service-qti
     disabled
     seclabel u:r:recovery:s0
 
-service keymaster-3-0 /sbin/android.hardware.keymaster@3.0-service-qti
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
+#service keymaster-3-0 /sbin/android.hardware.keymaster@3.0-service-qti
+#    user root
+#    group root
+#    disabled
+#    seclabel u:r:recovery:s0
 
 service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service-qti
     user root

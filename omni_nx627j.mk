@@ -28,3 +28,12 @@ PRODUCT_NAME := omni_nx627j
 PRODUCT_BRAND := nubia
 PRODUCT_MODEL := nubia Z20
 PRODUCT_MANUFACTURER := nubia
+
+# HACK: Set vendor patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.security_patch=2099-12-31
+
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
+    ro.product.device \
+    ro.product.name \
+    ro.build.product

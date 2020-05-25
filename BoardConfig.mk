@@ -150,8 +150,8 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 # Whether to set the panel brightness?
 # Default: 160
 # Max: 255
-TW_DEFAULT_BRIGHTNESS := 160
-TW_MAX_BRIGHTNESS := 255
+TW_DEFAULT_BRIGHTNESS := 1500
+TW_MAX_BRIGHTNESS := 4095
 
 # Whether to set the panel brightness path?
 # Default: /sys/class/backlight/panel0-backlight/brightness
@@ -159,7 +159,7 @@ TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 
 # Whether to customize the lun file path?
 # Default: /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
+# TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
 
 # Whether to exclude generic init.{variants}.rc?
 # Default: true
@@ -167,7 +167,7 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 
 # Whether to add recovery device module?
 # Default: android.hardware.boot
-TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
+# TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
 
 # Whether to customize the display pixel format?
 # Default: BGRA_8888
@@ -214,27 +214,27 @@ SHRP_PATH := device/nubia/nx627j
 SHRP_MAINTAINER := gesangtome
 SHRP_DEVICE_CODE := NX627J
 SHRP_EDL_MODE := 1
-SHRP_EXTERNAL := /external_sd
+# SHRP_EXTERNAL := /external_sd
 SHRP_INTERNAL := /sdcard
 SHRP_OTG := /usb_otg
 SHRP_FLASH := 1
-SHRP_CUSTOM_FLASHLIGHT := true
-SHRP_FONP_1 := /sys/class/leds/led:torch_0/brightness
-SHRP_FONP_2 := /sys/class/leds/led:torch_1/brightness
-SHRP_FONP_3 := /sys/class/leds/led:torch_2/brightness
+# SHRP_CUSTOM_FLASHLIGHT := true
+#SHRP_FONP_1 := /sys/class/leds/led:torch_0/brightness
+#SHRP_FONP_2 := /sys/class/leds/led:torch_1/brightness
+#SHRP_FONP_3 := /sys/class/leds/led:torch_2/brightness
+#SHRP_FONP_4 := /sys/class/leds/led:switch_0/brightness
+#SHRP_FONP_5 := /sys/class/leds/led:switch_1/brightness
+#SHRP_FONP_6 := /sys/class/leds/led:switch_2/brightness
 SHRP_FLASH_MAX_BRIGHTNESS := 200
 SHRP_REC := /dev/block/bootdevice/by-name/recovery
-SHRP_REC_TYPE := SRA
+SHRP_REC_TYPE := SAR
 SHRP_DEVICE_TYPE := A_Only
-SHRP_STATUSBAR_RIGHT_PADDING := 40
-SHRP_STATUSBAR_LEFT_PADDING := 40
+SHRP_STATUSBAR_RIGHT_PADDING := 80
+SHRP_STATUSBAR_LEFT_PADDING := 80
 SHRP_EXPRESS := true
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
-
-# Security patch level
-VENDOR_SECURITY_PATCH := 2099-12-31
 
 # SELINUX
 PRODUCT_SEPOLICY_SPLIT := false

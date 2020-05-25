@@ -20,5 +20,6 @@ replace ${WORKSPACE}/qseecomd
 replace ${WORKSPACE}/android.hardware.gatekeeper@1.0-service-qti
 replace ${WORKSPACE}/android.hardware.keymaster@3.0-service-qti
 replace ${WORKSPACE}/android.hardware.keymaster@4.0-service-qti
+replace ${WORKSPACE}/android.hardware.vibrator@1.0-service
 
 ${SETPROP} crypto.ready 1

@@ -93,11 +93,11 @@ service gatekeeper-1-0 /sbin/android.hardware.gatekeeper@1.0-service-qti
     disabled
     seclabel u:r:recovery:s0
 
-#service keymaster-3-0 /sbin/android.hardware.keymaster@3.0-service-qti
-#    user root
-#    group root
-#    disabled
-#    seclabel u:r:recovery:s0
+service vibrator-1-0 /sbin/android.hardware.vibrator@1.0-service
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
 
 service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service-qti
     user root
@@ -119,7 +119,7 @@ on property:crypto.ready=1
     start qseecomd_twrp
 
 on property:vendor.sys.listeners.registered=true
-    #start keymaster-3-0
+    start vibrator-1-0
     start keymaster-4-0
     start gatekeeper-1-0
     start servicemanager

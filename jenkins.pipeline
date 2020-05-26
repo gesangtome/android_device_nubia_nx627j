@@ -1,0 +1,70 @@
+pipeline
+{
+    agent any
+
+    environment
+    {
+        LANG = 'en_US.UTF-8'
+    }
+
+    options
+    {
+        timeout(activity: true, time: 45)
+    }
+
+    stages
+    {
+        stage('update source')
+        { 
+            steps
+            {
+                script
+                {
+                    try
+                    {
+                        dir('/home/android/paranoid-10.0/device/nubia/nx627j')
+                        {
+                            sh label: '--- Processing --- ',
+                            script: 'rsync -av $WORKSPACE/ ./ --exclude={.git*,.*,*@tmp}'
+                        }
+                    }
+                    catch (e)
+                    {
+                        currentBuild.result = 'UNSTABLE'
+                        throw e
+                    }
+                }
+            }
+        }
+        stage('apply patch')
+        { 
+            steps
+            {
+                script
+                {
+                    try
+                    {
+                        dir('/home/android/paranoid-10.0/device/nubia/nx627j/patch')
+                        {
+                            sh label: '--- Processing --- ',
+                            script: 'bash autopatch.sh'
+                        }
+                    }
+                    catch (e)
+                    {
+                        currentBuild.result = 'UNSTABLE'
+                        throw e
+                    }
+                }
+            }
+        }
+    }
+    post
+    {
+        always
+        {
+            sh label: '--- Processing --- ',
+            script: 'git show --stat'
+        }
+    }
+}

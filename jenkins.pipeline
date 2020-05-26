@@ -14,7 +14,7 @@ pipeline
 
     stages
     {
-        stage('Cleanup')
+        stage('clean up')
         { 
             steps
             {
@@ -32,7 +32,7 @@ pipeline
                 }
             }
         }
-        stage('Set link')
+        stage('set source')
         { 
             steps
             {
@@ -50,7 +50,7 @@ pipeline
                 }
             }
         }
-        stage('update source')
+        stage('update workspace')
         { 
             steps
             {
@@ -58,9 +58,30 @@ pipeline
                 {
                      try
                      {
-                         dir('/home/android/SkyHawk/')
+                        dir('/home/android/SkyHawk/device/nubia/nx627j')
                          {
-                             sh label: '', script: '$REPO_SCRIPT sync gesangtome/android_device_nubia_nx627j'
+                             sh label: '', script: 'rsync -av $WORKSPACE/ ./'
+                         }
+                     }
+                     catch (e)
+                     {
+                         currentBuild.result = 'ABORTED'
+                         throw e
+                     }
+                }
+            }
+        }
+        stage('syncing source')
+        { 
+            steps
+            {
+                script
+                {
+                     try
+                     {
+                         dir('/home/android/SkyHawk')
+                         {
+                             sh label: '', script: '$REPO_SCRIPT sync gesangtome/android_device_nubia_nx627j --force-sync'
                          }
                      }
                      catch (e)

@@ -2,5 +2,5 @@
 
 You can find the latest mirror on friendly jenkins:
 
- [![Build Status](http://flowertome.ticp.io/jenkins/buildStatus/icon?job=device_nubia_nx627j_twrp%2Ftwrp-master)](http://flowertome.ticp.io/jenkins/view/recovery/job/device_nubia_nx627j_twrp/job/twrp-master/)
+[![Build Status](http://flowertome.ticp.io/jenkins/buildStatus/icon?job=skyhawk-nubia_nx627j%2Ftwrp-master)](http://flowertome.ticp.io/jenkins/view/recovery/job/skyhawk-nubia_nx627j/job/twrp-master/)
 

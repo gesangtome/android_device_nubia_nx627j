@@ -19,10 +19,10 @@ BUILD_BROKEN_DUP_RULES := true
 DEXPREOPT_GENERATE_APEX_IMAGE := true
  
 # Avb
-BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += \
-    --set_hashtree_disabled_flag \
-    --flags 2
+BOARD_AVB_ENABLE := false
+#BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += \
+#    --set_hashtree_disabled_flag \
+#    --flags 2
 
 # Architecture
 TARGET_ARCH := arm64

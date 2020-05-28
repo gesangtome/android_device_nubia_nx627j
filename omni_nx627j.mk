@@ -33,7 +33,10 @@ PRODUCT_MANUFACTURER := nubia
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.security_patch=2099-12-31
 
+# HACK: Set build product
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.product=NX627J
+    
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
     ro.product.device \
-    ro.product.name \
-    ro.build.product
+    ro.product.name

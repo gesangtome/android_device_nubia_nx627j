@@ -312,6 +312,17 @@ case "$target" in
                 fi
                 ;;
         esac
+        #nubia add for boot boost
+        echo "performance" > /sys/devices/platform/soc/soc:qcom,kgsl-busmon/devfreq/soc:qcom,kgsl-busmon/governor
+        echo 10 10 > /proc/sys/kernel/sched_downmigrate
+        echo 10 > /proc/sys/kernel/sched_group_downmigrate
+        echo 10 10 > /proc/sys/kernel/sched_upmigrate
+        echo 10 > /proc/sys/kernel/sched_group_upmigrate
+
+        #nubia add for check gpu overclock
+        if [ `cat /sys/class/kgsl/kgsl-3d0/num_pwrlevels` -gt 5 ]; then
+            setprop ro.vendor.gpu.overclock true
+        fi
         ;;
     "sdm710" | "msmpeafowl")
         case "$soc_hwplatform" in
@@ -387,20 +398,11 @@ esac
 case "$product" in
         "sdmshrike_au")
          setprop vendor.display.lcd_density 160
-         echo 940800000 > /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/min_freq
-         echo 940800000 > /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/min_freq
          ;;
         *)
         ;;
 esac
 
-case "$product" in
-        "msmnile_gvmq")
-         setprop vendor.display.lcd_density 160
-         ;;
-        *)
-        ;;
-esac
 # Setup display nodes & permissions
 # HDMI can be fb1 or fb2
 # Loop through the sysfs nodes and determine

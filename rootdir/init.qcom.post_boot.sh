@@ -101,6 +101,7 @@ if [ $feature_id == 6 ]; then
 	echo 940800000 > /sys/class/devfreq/soc\:qcom,cpu6-cpu-l3-lat/min_freq
 	echo 1017600000 > /sys/class/devfreq/soc\:qcom,cpu6-cpu-l3-lat/max_freq
 	echo 3 > /sys/class/kgsl/kgsl-3d0/max_pwrlevel
+	echo 3 > /sys/class/kgsl/kgsl-3d0/min_pwrlevel
 	echo {class:ddr, res:fixed, val: 1016} > /sys/kernel/debug/aop_send_message
 	setprop vendor.sku_identified 1
 elif [ $feature_id == 5 ]; then
@@ -126,6 +127,7 @@ elif [ $feature_id == 5 ]; then
 	echo 940800000 > /sys/class/devfreq/soc\:qcom,cpu6-cpu-l3-lat/min_freq
 	echo 1363200000 > /sys/class/devfreq/soc\:qcom,cpu6-cpu-l3-lat/max_freq
 	echo 2 > /sys/class/kgsl/kgsl-3d0/max_pwrlevel
+	echo 2 > /sys/class/kgsl/kgsl-3d0/min_pwrlevel
 	echo {class:ddr, res:fixed, val: 1333} > /sys/kernel/debug/aop_send_message
 	setprop vendor.sku_identified 1
 elif [ $feature_id == 4 || $feature_id == 3 ]; then
@@ -151,6 +153,7 @@ elif [ $feature_id == 4 || $feature_id == 3 ]; then
 	echo 940800000 > /sys/class/devfreq/soc\:qcom,cpu6-cpu-l3-lat/min_freq
 	echo 1363200000 > /sys/class/devfreq/soc\:qcom,cpu6-cpu-l3-lat/max_freq
 	echo 0 > /sys/class/kgsl/kgsl-3d0/max_pwrlevel
+	echo 0 > /sys/class/kgsl/kgsl-3d0/min_pwrlevel
 	echo {class:ddr, res:fixed, val: 1555} > /sys/kernel/debug/aop_send_message
 	setprop vendor.sku_identified 1
 else
@@ -176,6 +179,7 @@ else
 	echo 940800000 > /sys/class/devfreq/soc\:qcom,cpu6-cpu-l3-lat/min_freq
 	echo 1363200000 > /sys/class/devfreq/soc\:qcom,cpu6-cpu-l3-lat/max_freq
 	echo 0 > /sys/class/kgsl/kgsl-3d0/max_pwrlevel
+	echo 0 > /sys/class/kgsl/kgsl-3d0/min_pwrlevel
 	echo {class:ddr, res:fixed, val: 1555} > /sys/kernel/debug/aop_send_message
         setprop vendor.sku_identified 1
 fi
@@ -545,7 +549,7 @@ else
     # wsf Range : 1..1000 So set to bare minimum value 1.
     echo 1 > /proc/sys/vm/watermark_scale_factor
 
-    configure_zram_parameters
+    #configure_zram_parameters
 
     configure_read_ahead_kb_values
 
@@ -572,10 +576,10 @@ function enable_memory_features()
 function start_hbtp()
 {
         # Start the Host based Touch processing but not in the power off mode.
-        bootmode=`getprop ro.bootmode`
-        if [ "charger" != $bootmode ]; then
-                start vendor.hbtp
-        fi
+      #  bootmode=`getprop ro.bootmode`
+      #  if [ "charger" != $bootmode ]; then
+      #          start vendor.hbtp
+      #  fi
 }
 
 case "$target" in
@@ -4073,7 +4077,7 @@ case "$target" in
 	echo 95 95 > /proc/sys/kernel/sched_upmigrate
 	echo 85 85 > /proc/sys/kernel/sched_downmigrate
 	echo 100 > /proc/sys/kernel/sched_group_upmigrate
-	echo 10 > /proc/sys/kernel/sched_group_downmigrate
+	echo 95 > /proc/sys/kernel/sched_group_downmigrate
 	echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 
 	# cpuset parameters
@@ -4105,6 +4109,8 @@ case "$target" in
 	echo 1612800 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/pl
 
+	#nubia add for boot boost
+	echo "gpubw_mon" > /sys/devices/platform/soc/soc:qcom,kgsl-busmon/devfreq/soc:qcom,kgsl-busmon/governor
 	# configure input boost settings
 	echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
 	echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
@@ -4115,6 +4121,9 @@ case "$target" in
 
         echo 0-3 > /dev/cpuset/background/cpus
         echo 0-3 > /dev/cpuset/system-background/cpus
+	echo 1 > /sys/kernel/debug/tracing/events/sched/sched_get_task_cpu_cycles/enable
+	echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/cpufreq_ctrl
+	echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/cpufreq_ctrl
 
         # Enable oom_reaper
 	if [ -f /sys/module/lowmemorykiller/parameters/oom_reaper ]; then
@@ -4305,7 +4314,7 @@ case "$target" in
 
         # Enable input boost configuration
         echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
-        echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
+        echo 200 > /sys/module/cpu_boost/parameters/input_boost_ms
         # Enable bus-dcvs
         for cpubw in /sys/class/devfreq/*qcom,cpubw*
         do

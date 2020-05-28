@@ -189,7 +189,7 @@ on boot
     # an ack packet comes out of order
     write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
 
-    # Set the console loglevel to KERN_INFO
+    # Set the console loglevel to < KERN_INFO
     # Set the default message loglevel to KERN_INFO
     write /proc/sys/kernel/printk "6 6 1 7"
 
@@ -260,10 +260,10 @@ on post-fs-data
     mkdir /data/vendor/media 0770 mediacodec media
 
     # create QDMA dropbox
-    mkdir /data/vendor/qdmastats 0700 system system
-    mkdir /data/vendor/qdma 0770 system system
-    mkdir /dev/socket/qdma 0777 system system
-    chmod 2777 /dev/socket/qdma
+    #mkdir /data/vendor/qdmastats 0700 system system
+    #mkdir /data/vendor/qdma 0770 system system
+    #mkdir /dev/socket/qdma 0777 system system
+    #chmod 2777 /dev/socket/qdma
 
     # Create /data/vendor/tzstorage directory for SFS listener
     mkdir /data/vendor/tzstorage 0770 system system
@@ -462,6 +462,7 @@ service qcomsysd /vendor/bin/qcom-system-daemon
     class main
     user root
     group root diag oem_2901
+    disabled
 
 on property:persist.vendor.qcomsysd.enabled=1
     enable qcomsysd
@@ -905,11 +906,7 @@ service ssgtzd /vendor/bin/ssgtzd
     class late_start
     user system
     group system
-    disabled
     socket ssgtzd stream 0660 system inet
-
-on property:sys.boot_completed=1
-    start ssgtzd
 
 service mlid /vendor/bin/mlid
     class late_start
@@ -917,10 +914,10 @@ service mlid /vendor/bin/mlid
     group gps
     socket mlid stream 0666 gps gps
 
-service vendor.qdmastatsd /system/vendor/bin/qdmastatsd
-    class late_start
-    user system
-    group readproc system net_bw_stats radio vendor_rfs_shared
+#service vendor.qdmastatsd /system/vendor/bin/qdmastatsd
+#    class late_start
+#    user system
+#    group readproc system net_bw_stats radio vendor_rfs_shared
 
 service loc_launcher /system/vendor/bin/loc_launcher
     class late_start
@@ -966,6 +963,13 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     disabled
     oneshot
 
+service qti-testscripts /system/bin/sh /system/etc/init.qcom.testscripts.sh
+    class late_start
+    user root
+    disabled
+    oneshot
+    seclabel u:r:qti-testscripts:s0
+
 service wifi-sdio-on /vendor/bin/init.qcom.sdio.sh
     class late_start
     group wifi inet
@@ -980,6 +984,7 @@ service wifi-crda /vendor/bin/init.crda.sh
 
 on property:sys.boot_completed=1
     start qcom-post-boot
+    start qti-testscripts
 
 on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1
@@ -1051,8 +1056,8 @@ service profiler_daemon /system/bin/profiler_daemon
 
 service poweroffcharge /sbin/poweroffcharge
     class charger
-    group root system graphics
     seclabel u:r:healthd:s0
+    group root system graphics
 
 service vendor.ssr_diag /system/vendor/bin/ssr_diag
     class late_start
@@ -1212,12 +1217,12 @@ service vendor.hbtp /vendor/bin/hbtp_daemon
      capabilities SYS_NICE
      disabled
 
-service chre /vendor/bin/chre
-    class late_start
-    user system
-    group system
-    socket chre seqpacket 0660 root system
-    shutdown critical
+#service chre /vendor/bin/chre
+#    class late_start
+#    user system
+#    group system
+#    socket chre seqpacket 0660 root system
+#    shutdown critical
 
 
 on property:vendor.chre.enabled=0

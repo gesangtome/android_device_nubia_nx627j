@@ -55,8 +55,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/permissions/audiosphere.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/audiosphere.xml \
     device/nubia/nx627j/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_platform_info.xml \
-    device/nubia/nx627j/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_policy_volumes.xml \
-    device/nubia/nx627j/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/default_volume_tables.xml
+    device/nubia/nx627j/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_policy_volumes.xml
 
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sound_trigger_mixer_paths.xml \
@@ -91,7 +90,8 @@ S_AUDIOPOLICY_CONFIG := frameworks/av/services/audiopolicy/config
 PRODUCT_COPY_FILES += \
     $(S_AUDIOPOLICY_CONFIG)/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
     $(S_AUDIOPOLICY_CONFIG)/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
-    $(S_AUDIOPOLICY_CONFIG)/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
+    $(S_AUDIOPOLICY_CONFIG)/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
+    $(S_AUDIOPOLICY_CONFIG)/default_volume_tables.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/default_volume_tables.xml
 
 # AID/fs configs
 PRODUCT_PACKAGES += \
@@ -256,7 +256,7 @@ PRODUCT_PACKAGES += \
 
 # keylayout
 PRODUCT_COPY_FILES += \
-    device/nubia/nx627j/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
+    device/nubia/nx627j/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl
 
 # Media
 PRODUCT_PACKAGES += \
@@ -276,14 +276,14 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 PRODUCT_COPY_FILES += \
-    device/nubia/nx627j/configs/media_codecs.xml:vendor/etc/media_codecs.xml \
-    device/nubia/nx627j/configs/media_codecs_performance.xml:vendor/etc/media_codecs_performance.xml \
-    device/nubia/nx627j/configs/media_codecs_vendor.xml:vendor/etc/media_codecs_vendor.xml \
-    device/nubia/nx627j/configs/media_codecs_vendor_audio.xml:vendor/etc/media_codecs_vendor_audio.xml \
-    device/nubia/nx627j/configs/media_profiles.xml:vendor/etc/media_profiles.xml \
-    device/nubia/nx627j/configs/media_profiles_V1_0.xml:vendor/etc/media_profiles_V1_0.xml \
-    device/nubia/nx627j/configs/media_profiles_vendor.xml:vendor/etc/media_profiles_vendor.xml \
-    device/nubia/nx627j/configs/system_properties.xml:vendor/etc/system_properties.xml
+    device/nubia/nx627j/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    device/nubia/nx627j/configs/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
+    device/nubia/nx627j/configs/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor.xml \
+    device/nubia/nx627j/configs/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml \
+    device/nubia/nx627j/configs/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml \
+    device/nubia/nx627j/configs/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
+    device/nubia/nx627j/configs/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
+    device/nubia/nx627j/configs/system_properties.xml:$(TARGET_COPY_OUT_VENDOR)/etc/system_properties.xml
 
 S_MEDIACODEC_CONFIG := frameworks/av/media/libstagefright/data
 
@@ -299,7 +299,7 @@ PRODUCT_PACKAGES += \
 
 # Nubia
 PRODUCT_COPY_FILES += \
-    device/nubia/nx627j/permissions/privapp-permissions-nubia.xml:system/etc/permissions/privapp-permissions-nubia.xml
+    device/nubia/nx627j/permissions/privapp-permissions-nubia.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-nubia.xml
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -353,13 +353,13 @@ PRODUCT_COPY_FILES += \
 
 # QTI
 PRODUCT_COPY_FILES += \
-    device/nubia/nx627j/permissions/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml \
+    device/nubia/nx627j/permissions/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
     
 
 # QMI
 PRODUCT_COPY_FILES += \
-    device/nubia/nx627j/permissions/qti_libpermissions.xml:system/etc/permissions/qti_libpermissions.xml \
-    device/nubia/nx627j/permissions/qti_permissions.xml:system/etc/permissions/qti_permissions.xml
+    device/nubia/nx627j/permissions/qti_libpermissions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/qti_libpermissions.xml \
+    device/nubia/nx627j/permissions/qti_permissions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/qti_permissions.xml
 
 # Radio
 PRODUCT_PACKAGES += \
@@ -370,9 +370,9 @@ PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl
 
 PRODUCT_COPY_FILES += \
-    device/nubia/nx627j/permissions/embms.xml:system/etc/permissions/embms.xml \
-    device/nubia/nx627j/permissions/qti_permissions.xml:system/etc/permissions/qti_permissions.xml \
-    device/nubia/nx627j/permissions/qti_telephony_common.xml:system/etc/permissions/qti_telephony_common.xml
+    device/nubia/nx627j/permissions/embms.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/embms.xml \
+    device/nubia/nx627j/permissions/qti_permissions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/qti_permissions.xml \
+    device/nubia/nx627j/permissions/qti_telephony_common.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/qti_telephony_common.xml
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -390,7 +390,7 @@ PRODUCT_PACKAGES += \
     init.platfrom.rc \
     init.sensors.rc \
     init.touch.rc \
-    init.flowertome.rc
+    init.gesangtome.rc
 
 # Shell
 PRODUCT_PACKAGES += \
@@ -486,7 +486,7 @@ PRODUCT_PACKAGES += \
 # Whitelist
 PRODUCT_COPY_FILES += \
     device/nubia/nx627j/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
-    device/nubia/nx627j/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
+    device/nubia/nx627j/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml
 
 # VR
 PRODUCT_PACKAGES += \

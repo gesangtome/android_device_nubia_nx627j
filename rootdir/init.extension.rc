@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016-2019, nubia. All rights reserved.
+# Created by 弱弱的胖橘猫丷
 #
 
 import /vendor/etc/init/hw/init.touch.rc
@@ -13,4 +13,4 @@ import /vendor/etc/init/hw/init.light.rc
 import /vendor/etc/init/hw/init.led.rc
 
 # Include init.flowertome.rc
-import /vendor/etc/init/hw/init.flowertome.rc
+import /vendor/etc/init/hw/init.gesangtome.rc

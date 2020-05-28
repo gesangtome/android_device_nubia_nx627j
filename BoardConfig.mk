@@ -140,8 +140,16 @@ TW_DEFAULT_LANGUAGE := zh_CN
 TW_USE_TOOLBOX := true
 
 # Whether to use the ntfs filesystem module?
-# Default: ntfs-3g
+# Default: true
 TW_INCLUDE_NTFS_3G := true
+
+# Whether to use the exfat filesystem module?
+# Default: true
+TW_NO_EXFAT := false
+
+# Whether to use the exfat fuse?
+# Default: true
+TW_NO_EXFAT_FUSE := false
 
 # Whether to use input blacklist?
 # Default: hbtp_vm
@@ -160,6 +168,10 @@ TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 # Whether to customize the lun file path?
 # Default: /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 # TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
+
+# Whether the twrp have USB storage?
+# Default: false
+TW_NO_USB_STORAGE := true
 
 # Whether to exclude generic init.{variants}.rc?
 # Default: true
@@ -208,6 +220,10 @@ TARGET_RECOVERY_QCOM_RTC_FIX := true
 # Whether the twrp have legacy props?
 # Default: false
 TW_NO_LEGACY_PROPS := true
+
+# Whether to customize the power key?
+# Default: 114
+TW_CUSTOM_POWER_BUTTON := 114
 
 # SHRP-specific lines
 SHRP_PATH := device/nubia/nx627j

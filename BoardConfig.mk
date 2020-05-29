@@ -222,8 +222,8 @@ TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_NO_LEGACY_PROPS := true
 
 # Whether to customize the power key?
-# Default: 114
-TW_CUSTOM_POWER_BUTTON := 114
+# Default: 115
+TW_CUSTOM_POWER_BUTTON := 115
 
 # SHRP-specific lines
 SHRP_PATH := device/nubia/nx627j

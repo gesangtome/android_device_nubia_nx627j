@@ -120,7 +120,9 @@ pipeline
         {
             dir('/home/android/SkyHawk/out/target/product/nx627j')
             {
-                archiveArtifacts artifacts: 'SHRP_v2.3_nx627j-*.zip', onlyIfSuccessful: true
+                archiveArtifacts artifacts: 'SHRP_v2.3_nx627j-*.zip',
+                fingerprint: true,
+                onlyIfSuccessful: true
             }
         }
         cleanup

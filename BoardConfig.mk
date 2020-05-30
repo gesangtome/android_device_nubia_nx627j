@@ -225,6 +225,10 @@ TW_NO_LEGACY_PROPS := true
 # Default: 115
 TW_CUSTOM_POWER_BUTTON := 115
 
+# Whether to skip the compatibility check?
+# Default: true
+TW_SKIP_COMPATIBILITY_CHECK := true
+
 # SHRP-specific lines
 SHRP_PATH := device/nubia/nx627j
 SHRP_MAINTAINER := gesangtome

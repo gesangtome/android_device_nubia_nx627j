@@ -29,20 +29,20 @@
 
 #device         mount point      fstype        [device2] [length=]
 
-/dev/block/bootdevice/by-name/system       /               ext4    ro,barrier=1                                                    wait,avb
-/dev/block/bootdevice/by-name/vendor       /vendor         ext4    ro,barrier=1                                                    wait,avb
-/dev/block/bootdevice/by-name/cache        /cache          ext4    noatime,nosuid,nodev,barrier=1,data=ordered                     wait,check
+/dev/block/bootdevice/by-name/system       /system          ext4    ro,barrier=1                                                    wait,avb
+/dev/block/bootdevice/by-name/vendor       /vendor          ext4    ro,barrier=1                                                    wait,avb
+/dev/block/bootdevice/by-name/cache        /cache           ext4    noatime,nosuid,nodev,barrier=1,data=ordered                     wait,check
 #/dev/block/bootdevice/by-name/userdata     /data           ext4    noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc     wait,check,encryptable=footer
-/dev/block/bootdevice/by-name/userdata     /data           f2fs    nosuid,nodev,noatime,nodiratime,inline_xattr                    wait,check,encryptable=footer
+/dev/block/bootdevice/by-name/userdata     /data            f2fs    nosuid,nodev,noatime,nodiratime,inline_xattr                    wait,check,encryptable=footer
 #/dev/block/mmcblk0p1                       /sdcard         vfat    nosuid,nodev                                                    wait
-/dev/block/bootdevice/by-name/boot         /boot           emmc    defaults                                                        defaults
-/dev/block/bootdevice/by-name/recovery     /recovery       emmc    defaults                                                        defaults
-/dev/block/bootdevice/by-name/misc         /misc           emmc    defaults                                                        defaults
+/dev/block/bootdevice/by-name/boot         /boot            emmc    defaults                                                        defaults
+/dev/block/bootdevice/by-name/recovery     /recovery        emmc    defaults                                                        defaults
+/dev/block/bootdevice/by-name/misc         /misc            emmc    defaults                                                        defaults
 /dev/block/bootdevice/by-name/recovery2    /recovery2       emmc    defaults                                                        defaults
-/dev/block/mmcblk0p1                       /sdcard          fat    nosuid,nodev                                                     wait
-/dev/block/mmcblk0p1                       /storage/sdcard1 fat    nosuid,nodev                                                     wait
-/dev/block/mmcblk0p1                       /ext_sdcard      fat    nosuid,nodev                                                     wait
-/dev/block/sdg1                            /storage/usba    fat    nosuid,nodev,barrier=1,data=ordered,nodelalloc                   wait
-/dev/block/sdg1                            /usba_sdcard     fat    nosuid,nodev,barrier=1,data=ordered,nodelalloc                   wait
-/dev/block/bootdevice/by-name/dtbo         /dtbo           emmc    defaults                                                        defaults
-/dev/block/bootdevice/by-name/vbmeta       /vbmeta         emmc    defaults                                                        defaults
+/dev/block/mmcblk0p1                       /sdcard          fat     nosuid,nodev                                                    wait
+/dev/block/mmcblk0p1                       /storage/sdcard1 fat     nosuid,nodev                                                    wait
+/dev/block/mmcblk0p1                       /ext_sdcard      fat     nosuid,nodev                                                    wait
+/dev/block/sdg1                            /storage/usba    fat     nosuid,nodev,barrier=1,data=ordered,nodelalloc                  wait
+/dev/block/sdg1                            /usba_sdcard     fat     nosuid,nodev,barrier=1,data=ordered,nodelalloc                  wait
+/dev/block/bootdevice/by-name/dtbo         /dtbo            emmc    defaults                                                        defaults
+/dev/block/bootdevice/by-name/vbmeta       /vbmeta          emmc    defaults                                                        defaults

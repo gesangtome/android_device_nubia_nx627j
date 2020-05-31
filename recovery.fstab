@@ -8,7 +8,7 @@
 
 # <mount_point>  <fstype>  <device>        <device2>                  <flags>
 /data             f2fs     /dev/block/bootdevice/by-name/userdata     flags=encryptable=footer;length=-16384;fileencryption=ice:aes-256-cts
-/cache            ext4     /dev/block/bootdevice/by-name/cache        flags=backup=1;wipeingui;wipeduringfactoryreset
+/cache            ext4     /dev/block/bootdevice/by-name/cache        flags=wipeingui;wipeduringfactoryreset
 /system_root      ext4     /dev/block/bootdevice/by-name/system       flags=display="system"
 /system_image     emmc     /dev/block/bootdevice/by-name/system       flags=display="system_image";backup=1;flashimg=1
 /boot             emmc     /dev/block/bootdevice/by-name/boot         flags=backup=1;flashimg=1

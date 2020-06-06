@@ -1620,86 +1620,41 @@ vendor/lib64/libsubsystem_control.so
 vendor/lib/vendor.qti.hardware.seccam@1.0.so
 vendor/lib64/vendor.qti.hardware.seccam@1.0.so
 
-# Sensor-calibrate
+# Sensors Calibrate (QTI)
+framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
+lib/vendor.qti.hardware.sensorscalibrate@1.0.so
+lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service
 vendor/etc/init/vendor.qti.hardware.sensorscalibrate@1.0-service.rc
 vendor/etc/permissions/vendor-qti-hardware-sensorscalibrate.xml
-framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
 vendor/lib/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so
 vendor/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
-# Sensor-configs
-vendor/etc/sensors/config/ak991x_dri_0.json
-vendor/etc/sensors/config/bmi160_0.json
-vendor/etc/sensors/config/default_sensors.json
-vendor/etc/sensors/config/icm206xx_0.json
-vendor/etc/sensors/config/lsm6ds3c_0.json
-vendor/etc/sensors/config/lsm6ds3c_0_8g.json
-vendor/etc/sensors/config/lsm6ds3_0.json
-vendor/etc/sensors/config/lsm6dsm_0.json
-vendor/etc/sensors/config/lsm6dsm_0_16g.json
-vendor/etc/sensors/config/lsm6dsm_0_8g.json
-vendor/etc/sensors/config/lsm6dso_0.json
-vendor/etc/sensors/config/lsm6dso_0_16g.json
-vendor/etc/sensors/config/lsm6dso_0_8g.json
-vendor/etc/sensors/config/msmnile_ak991x_0.json
-vendor/etc/sensors/config/msmnile_icm206xx_0.json
-vendor/etc/sensors/config/msmnile_irq.json
-vendor/etc/sensors/config/msmnile_lsm6ds3c_0.json
-vendor/etc/sensors/config/msmnile_lsm6dsm_0.json
-vendor/etc/sensors/config/msmnile_lsm6dso_0.json
-vendor/etc/sensors/config/msmnile_power_0.json
-vendor/etc/sensors/config/msmnile_shtw2_0.json
-vendor/etc/sensors/config/shtw2_0.json
-vendor/etc/sensors/config/sns_amd.json
-vendor/etc/sensors/config/sns_amd_sw_disabled.json
-vendor/etc/sensors/config/sns_amd_sw_enabled.json
-vendor/etc/sensors/config/sns_aont.json
-vendor/etc/sensors/config/sns_basic_gestures.json
-vendor/etc/sensors/config/sns_bring_to_ear.json
-vendor/etc/sensors/config/sns_ccd.json
-vendor/etc/sensors/config/sns_cm.json
-vendor/etc/sensors/config/sns_dae.json
-vendor/etc/sensors/config/sns_device_orient.json
-vendor/etc/sensors/config/sns_diag_filter.json
-vendor/etc/sensors/config/sns_distance_bound.json
-vendor/etc/sensors/config/sns_dpc.json
-vendor/etc/sensors/config/sns_facing.json
-vendor/etc/sensors/config/sns_fmv.json
-vendor/etc/sensors/config/sns_geomag_rv.json
-vendor/etc/sensors/config/sns_gyro_cal.json
-vendor/etc/sensors/config/sns_heart_rate.json
-vendor/etc/sensors/config/sns_mag_cal.json
-vendor/etc/sensors/config/sns_multishake.json
-vendor/etc/sensors/config/sns_pedometer.json
-vendor/etc/sensors/config/sns_rmd.json
-vendor/etc/sensors/config/sns_rotv.json
-vendor/etc/sensors/config/sns_smd.json
-vendor/etc/sensors/config/sns_tilt.json
-vendor/etc/sensors/config/sns_tilt_sw_disabled.json
-vendor/etc/sensors/config/sns_tilt_sw_enabled.json
-vendor/etc/sensors/config/sns_tilt_to_wake.json
-vendor/etc/sensors/config/sns_wrist_pedo.json
-vendor/etc/sensors/sns_reg_config
+# Sensors (Android mainline)
+vendor/bin/hw/android.hardware.sensors@1.0-service
+vendor/etc/init/android.hardware.sensors@1.0-service.rc
+lib/android.hardware.sensors@1.0.so
+lib64/android.hardware.sensors@1.0.so
 
-# Sensors
-vendor/bin/sensors.qti
+# Sensors (QTI)
 vendor/bin/sscrpcd
-vendor/lib/hw/sensors.sdm845.so
-vendor/lib/libsensorcal.so
-vendor/lib/libsensorslog.so
 vendor/lib/libssc.so
 vendor/lib/libssc_default_listener.so
 vendor/lib/sensors.ssc.so
+vendor/lib64/libssc.so
+vendor/lib64/libssc_default_listener.so
+vendor/lib64/sensors.ssc.so
+vendor/bin/sensors.qti
+vendor/lib/hw/sensors.sdm845.so
+vendor/lib/libsensorcal.so
+vendor/lib/libsensorslog.so
 vendor/lib64/hw/sensors.sdm845.so
 vendor/lib64/libsensorcal.so
 vendor/lib64/libsensorslog.so
-vendor/lib64/libssc.so
-vendor/lib64/libssc_default_listener.so
 vendor/lib64/sensors.oem.so
-vendor/lib64/sensors.ssc.so
+vendor/lib64/libsensorndkbridge.so
 lib64/libqmi_cci_system.so
 lib/libqmi_cci_system.so
 

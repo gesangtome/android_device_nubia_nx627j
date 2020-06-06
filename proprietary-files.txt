@@ -978,11 +978,17 @@ vendor/lib64/vendor.qti.hardware.wifi.keystore@1.0.so
 vendor/lib/libspcom.so
 vendor/lib64/libspcom.so
 
-# light
-# framework/android.hardware.light-V2.0-java.jar
-# vendor/etc/permissions/android.hardware.light.xml
+# backlight
+framework/android.hardware.light-V2.0-java.jar
+lib/android.hardware.light@2.0.so
+lib64/android.hardware.light@2.0.so
+vendor/bin/hw/android.hardware.light@2.0-service
+vendor/etc/init/android.hardware.light@2.0-service.rc
+vendor/etc/permissions/android.hardware.light.xml
 vendor/lib64/hw/lights.msmnile.so
+vendor/lib64/hw/android.hardware.light@2.0-impl.so
 vendor/lib/hw/lights.msmnile.so
+vendor/lib/hw/android.hardware.light@2.0-impl.so
 
 # Latency
 framework/vendor.qti.hardware.data.latency-V1.0-java.jar

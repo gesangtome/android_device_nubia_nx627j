@@ -249,10 +249,10 @@ PRODUCT_COPY_FILES += \
     device/nubia/nx627j/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
 # Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light-V2.0-java \
-    android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service
+#PRODUCT_PACKAGES += \
+#    android.hardware.light-V2.0-java \
+#    android.hardware.light@2.0-impl \
+#    android.hardware.light@2.0-service
 
 # LiveDisplay
 PRODUCT_PACKAGES += \

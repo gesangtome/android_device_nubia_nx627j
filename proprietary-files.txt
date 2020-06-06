@@ -698,41 +698,65 @@ vendor/lib64/vendor.qti.hardware.factory@1.0.so
 vendor/bin/fstman
 vendor/etc/wifi/fstman.ini
 
-# Fingerprint
+# Fingerprint payment (nubia)
 -priv-app/FingerprintServiceExtension/FingerprintServiceExtension.apk
-vendor/bin/qfp-daemon
 etc/permissions/cn.nubia.fingerprintsupersnap.xml
-vendor/etc/permissions/qti_fingerprint_interface.xml
-vendor/etc/init/hw/init.nubia.fingerprint.rc
-vendor/etc/init/init_qfp_daemon.rc
-framework/vendor.goodix.hardware.biometrics.fingerprint-V2.1-java.jar
-framework/vendor.qti.hardware.fingerprint-V1.0-java.jar
-vendor/lib/hw/fingerprint.goodix.so
-vendor/lib64/libqfp-service.so
-vendor/lib/libgf_ca.so
-vendor/lib/libgf_ftm.so
-vendor/lib/libgf_hal.so
-vendor/lib/libgoodixhwfingerprint.so
-vendor/lib64/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
-vendor/lib/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
-vendor/lib/vendor.qti.hardware.biometrics.face@1.0.so
-vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
-vendor/lib64/hw/fingerprint.goodix.so
-vendor/lib64/libgf_ca.so
-vendor/lib64/libgf_ftm.so
-vendor/lib64/libgf_hal.so
-vendor/lib64/libgoodixhwfingerprint.so
-vendor/lib64/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
-vendor/lib64/vendor.qti.hardware.biometrics.face@1.0.so
-vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
+-framework/ifaa_fingerprint.jar
+framework/vendor.nubia.ifaa-V1.0-java.jar
+lib/vendor.nubia.ifaa@1.0.so
+lib64/vendor.nubia.ifaa@1.0.so
+vendor/lib/vendor.nubia.ifaa@1.0-impl.so
+vendor/lib64/vendor.nubia.ifaa@1.0-impl.so
+vendor/lib/vendor.nubia.ifaa@1.0.so
+vendor/lib64/vendor.nubia.ifaa@1.0.so
+vendor/lib/libteeclientjni.so
+vendor/lib64/libteeclientjni.so
 
-# goodix fingerprint firmware
+# Fingerprint (goodix firmware)
 vendor/firmware/goodix_cfg_group.bin
 vendor/firmware/goodix_firmware.bin
 vendor/firmware/goodix_front_cfg_group.bin
 vendor/firmware/goodix_front_cfg_group_1.bin
 vendor/firmware/goodix_front_cfg_group_2.bin
 vendor/firmware/goodix_front_firmware.bin
+
+# Fingerprint (goodix)
+framework/vendor.goodix.hardware.biometrics.fingerprint-V2.1-java.jar
+lib/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
+lib64/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
+vendor/lib/hw/fingerprint.goodix.so
+vendor/lib64/hw/fingerprint.goodix.so
+vendor/lib/libgf_ca.so
+vendor/lib/libgf_ftm.so
+vendor/lib/libgf_hal.so
+vendor/lib/libgoodixhwfingerprint.so
+vendor/lib/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
+vendor/lib64/libgf_ca.so
+vendor/lib64/libgf_ftm.so
+vendor/lib64/libgf_hal.so
+vendor/lib64/libgoodixhwfingerprint.so
+vendor/lib64/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
+
+# Fingerprint (QTI)
+framework/vendor.qti.hardware.fingerprint-V1.0-java.jar
+lib/vendor.qti.hardware.fingerprint@1.0.so
+lib64/vendor.qti.hardware.fingerprint@1.0.so
+vendor/bin/qfp-daemon
+vendor/etc/init/init_qfp_daemon.rc
+vendor/etc/permissions/qti_fingerprint_interface.xml
+vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
+vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
+vendor/lib64/libqfp-service.so
+
+# Fingerprint (mainline)
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
+lib/android.hardware.biometrics.fingerprint@2.1.so
+lib64/android.hardware.biometrics.fingerprint@2.1.so
+
+# faceunlock (QTI)
+vendor/lib/vendor.qti.hardware.biometrics.face@1.0.so
+vendor/lib64/vendor.qti.hardware.biometrics.face@1.0.so
 
 # GPS
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
@@ -910,21 +934,6 @@ vendor/firmware/a420_pfp.fw
 vendor/firmware/a640_zap.b02
 vendor/firmware/leia_pfp_470.fw
 vendor/firmware/leia_pm4_470.fw
-
-# IFAA
--framework/ifaa_fingerprint.jar
-framework/vendor.nubia.ifaa-V1.0-java.jar
-lib64/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
-lib/vendor.qti.hardware.fingerprint@1.0.so
-
-lib64/vendor.qti.hardware.fingerprint@1.0.so
-lib/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
-vendor/lib/vendor.nubia.ifaa@1.0-impl.so
-vendor/lib/vendor.nubia.ifaa@1.0.so
-vendor/lib64/vendor.nubia.ifaa@1.0-impl.so
-vendor/lib64/vendor.nubia.ifaa@1.0.so
-vendor/lib64/libteeclientjni.so
-vendor/lib/libteeclientjni.so
 
 # IOP
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service

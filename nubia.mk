@@ -185,8 +185,8 @@ PRODUCT_PACKAGES += \
     fstab.qcom
 
 # Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service
+#PRODUCT_PACKAGES += \
+#    android.hardware.biometrics.fingerprint@2.1-service
 
 PRODUCT_BOOT_JARS += \
     ifaa_fingerprint

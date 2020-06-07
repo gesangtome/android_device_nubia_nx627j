@@ -165,6 +165,9 @@ TARGET_HW_DISK_ENCRYPTION_PERF := true
 DEVICE_MANIFEST_FILE := \
     device/nubia/nx627j/manifest.xml
 
+DEVICE_FRAMEWORK_MANIFEST_FILE := \
+    device/nubia/nx627j/framework_manifest.xml
+
 DEVICE_MATRIX_FILE   := \
     device/nubia/nx627j/compatibility_matrix.xml
 

@@ -886,4 +886,15 @@
         </interface>
         <fqname>@1.0::IBluetoothExt/default</fqname>
     </hal>
+    <!-- nubia fingerprint payment -->
+    <hal format="hidl">
+        <name>vendor.nubia.ifaa</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IIfaa</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IIfaa/default</fqname>
+    </hal>
 </manifest>

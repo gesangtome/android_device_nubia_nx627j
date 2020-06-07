@@ -20,16 +20,6 @@
         <fqname>@2.0::IHealth/backup</fqname>
     </hal>
     <hal format="hidl">
-        <name>android.hidl.allocator</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IAllocator</name>
-            <instance>ashmem</instance>
-        </interface>
-        <fqname>@1.0::IAllocator/ashmem</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.qti.hardware.radio.atcmdfwd</name>
         <transport>hwbinder</transport>
         <version>1.0</version>

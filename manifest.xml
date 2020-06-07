@@ -307,17 +307,6 @@
             <instance>Uim1</instance>
         </interface>
     </hal>
-    <!-- radio config -->
-    <hal format="hidl">
-        <name>vendor.qti.hardware.radio.config</name>
-           <transport>hwbinder</transport>
-           <version>1.0</version>
-           <interface>
-               <name>IConfig</name>
-               <instance>radioconfig0</instance>
-               <instance>radioconfig1</instance>
-           </interface>
-    </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.qtiradio</name>
         <transport>hwbinder</transport>

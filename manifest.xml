@@ -876,4 +876,14 @@
             <instance>objectTracker</instance>
         </interface>
     </hal>
+    <hal format="hidl">
+        <name>vendor.hardware.wl.bt.bluetoothext</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IBluetoothExt</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IBluetoothExt/default</fqname>
+    </hal>
 </manifest>

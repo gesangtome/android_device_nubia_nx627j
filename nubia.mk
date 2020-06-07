@@ -371,6 +371,7 @@ PRODUCT_PACKAGES += \
     librmnetctl
 
 PRODUCT_PACKAGES += \
+    android.hardware.radio.deprecated@1.0 \
     android.hardware.broadcastradio@1.0-impl
 
 PRODUCT_COPY_FILES += \

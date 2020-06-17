@@ -285,27 +285,6 @@ BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
 BOARD_SEPOLICY_DIRS += \
     device/nubia/nx627j/sepolicy/vendor
 
-# Recovery
-TW_THEME := portrait_hdpi
-TW_EXTRA_LANGUAGES := true
-TW_INCLUDE_NTFS_3G := true
-TW_USE_TOOLBOX := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
-TW_DEFAULT_BRIGHTNESS := 160
-TW_MAX_BRIGHTNESS := 255
-TW_SCREEN_BLANK_ON_BOOT := true
-TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_EXCLUDE_TWRPAPP := true
-TW_INCLUDE_LOGCAT := true
-TW_USES_LOGD := true
-TW_AUTHOR_NAME := '弱弱的胖橘猫丷'
-TW_DEVICE_NAME := nubia Z20
-TW_DEVICE_VERSION := $(shell date "+%Y-%m-%d %H:%M")
-
-RECOVERY_SDCARD_ON_DATA := true
-TARGET_RECOVERY_QCOM_RTC_FIX := true
-
 # VNDK
 BOARD_VNDK_VERSION := current
 BOARD_VNDK_RUNTIME_DISABLE := false

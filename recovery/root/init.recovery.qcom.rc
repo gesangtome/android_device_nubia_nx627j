@@ -93,6 +93,12 @@ service gatekeeper-1-0 /sbin/android.hardware.gatekeeper@1.0-service-qti
     disabled
     seclabel u:r:recovery:s0
 
+service vibrator-1-0 /sbin/android.hardware.vibrator@1.0-service
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+   
 service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service-qti
     user root
     group root
@@ -104,7 +110,6 @@ on boot
 
 on property:crypto.ready=0
     stop qseecomd_twrp
-    #stop keymaster-3-0
     stop keymaster-4-0
     stop gatekeeper-1-0
     stop servicemanager

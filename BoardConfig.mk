@@ -229,6 +229,10 @@ TW_CUSTOM_POWER_BUTTON := 115
 # Default: true
 TW_SKIP_COMPATIBILITY_CHECK := true
 
+# Whether to skip the compatibility check?
+# Default: true
+TW_SUPPORT_INPUT_1_0_HAPTICS := true
+
 # SHRP-specific lines
 SHRP_PATH := device/nubia/nx627j
 SHRP_MAINTAINER := gesangtome

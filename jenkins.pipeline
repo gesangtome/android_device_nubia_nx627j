@@ -102,7 +102,7 @@ pipeline
                      {
                          dir('/home/android/SkyHawk/')
                          {
-                             sh label: '', script: 'bash make.sh omni_nx627j-eng'
+                             sh label: '', script: 'bash make.sh recovery_image omni_nx627j eng'
                          }
                      }
                      catch (e)

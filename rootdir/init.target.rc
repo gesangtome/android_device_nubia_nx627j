@@ -78,8 +78,8 @@ on post-fs
 
     write /dev/ipa 1
 
-#    start vendor.spdaemon
-#    start vendor.sec_nvm
+    start vendor.spdaemon
+    start vendor.sec_nvm
 
 on late-fs
     wait_for_prop hwservicemanager.ready true
@@ -99,6 +99,7 @@ on post-fs-data
 #    chmod 0664 /sys/kernel/fan/fan_speed_level
 #    chown system system /sys/kernel/fan/fan_enable
 #    chmod 0664 /sys/kernel/fan/fan_enable
+
 on early-boot
     start vendor.sensors
 
@@ -109,12 +110,12 @@ on boot
     chown system system /sys/kernel/qvr_external_sensor/fd
     start rmt_storage
     start rfs_access
-#    write /dev/cpuset/top-app/cpus 0-3
+    write /dev/cpuset/top-app/cpus 0-3
     write /dev/cpuset/audio-app/cpus 1-2
-#    write /dev/cpuset/foreground/cpus 0-3
-#    write /dev/cpuset/foreground/boost/cpus 0-3
-#    write /dev/cpuset/background/cpus 0-3
-#    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/foreground/cpus 0-3
+    write /dev/cpuset/foreground/boost/cpus 0-3
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-7
     write /dev/cpuset/foreground/boost/cpus 0-7
@@ -190,16 +191,16 @@ service vendor.qseecomd /vendor/bin/qseecomd
     user root
     group root
 
-#service vendor.spdaemon /vendor/bin/spdaemon
-#    class core
-#    user system
-#    group system
-#    shutdown critical
+service vendor.spdaemon /vendor/bin/spdaemon
+    class core
+    user system
+    group system
+    shutdown critical
 
-#service vendor.sec_nvm /vendor/bin/sec_nvm
-#    class core
-#    user system
-#    group system
+service vendor.sec_nvm /vendor/bin/sec_nvm
+    class core
+    user system
+    group system
 
 service vendor.thermal-engine /vendor/bin/thermal-engine
    class main

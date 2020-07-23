@@ -1,7 +1,7 @@
 # Copyright (c) 2016-2019, nubia. All rights reserved.
 
 # camera daemon
-service vl53l1_daemon_main /vendor/bin/vl53l1_daemon_mains
+service vl53l1_daemon_main /vendor/bin/vl53l1_daemon_main
     class late_start
     user root
     group root

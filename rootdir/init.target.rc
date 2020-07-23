@@ -95,10 +95,6 @@ on post-fs-data
     mkdir /data/vendor/hbtp 0750 system system
     mkdir /data/vendor/tloc 0700 system drmrpc
     mkdir /data/vendor/nnhal 0700 system system
-#    chown system system /sys/kernel/fan/fan_speed_level
-#    chmod 0664 /sys/kernel/fan/fan_speed_level
-#    chown system system /sys/kernel/fan/fan_enable
-#    chmod 0664 /sys/kernel/fan/fan_enable
 
 on early-boot
     start vendor.sensors

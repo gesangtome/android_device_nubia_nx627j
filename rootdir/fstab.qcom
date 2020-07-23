@@ -6,7 +6,7 @@
 # Currently we dont have e2fsck compiled. So fs check would failed.
 
 
-/dev/block/bootdevice/by-name/system                                /system                     ext4    ro,barrier=1,discard										wait
+/dev/block/bootdevice/by-name/system                                /                     ext4    ro,barrier=1,discard										wait
 /dev/block/bootdevice/by-name/cache                                 /cache                      ext4    nosuid,noatime,nodev,barrier=1									wait
 /dev/block/bootdevice/by-name/userdata                              /data                       f2fs    nosuid,nodev,noatime,nodiratime,discard,inline_xattr,fsync_mode=nobarrier  wait,check,fileencryption=ice,quota,reservedsize=128M,latemount
 /dev/block/bootdevice/by-name/modem                                 /vendor/firmware_mnt        vfat	ro,shortname=lower,uid=0,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0	wait
